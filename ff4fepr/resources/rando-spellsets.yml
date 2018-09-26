@@ -1,0 +1,9 @@
+rydia-bonus-calls:
+  - ['rydia-call', ["Imp*", "Bomb*", "Mage*", "Cockatrice*"]]
+
+uber-tellah:
+  - ["tellah-white", ["Reaction"]]
+  - ["tellah-black", ["W. Meteo", "Disrupt", "Storm"]]
+
+tellah-twin:
+  - ["tellah-black", ["Flare*", "Comet*"]]

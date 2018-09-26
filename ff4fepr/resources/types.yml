@@ -1,0 +1,12 @@
+---
+#default is 1 byte
+int2:
+  - hp
+  - maxhp
+  - mp
+  - maxmp
+  - xpnext
+
+int3:
+  - xp
+  - timeinseconds

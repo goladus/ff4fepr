@@ -1,0 +1,14 @@
+paladin-magic:
+  cecil-paladin:
+    - [3, 'Sight*']
+    - [8, 'Peep*']
+    - [15, 'Cure2*']
+    - [19, 'Exit*']
+    - [24, 'Heal*']
+    - [40, 'Dispel*']
+    - [45, 'Armor*']
+    - [50, 'Shell*']
+    - [60, 'Bersk*']
+    - [65, 'Life2*']
+    - [70, 'Cure4*']
+    - [80, 'White*']

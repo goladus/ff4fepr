@@ -1,0 +1,367 @@
+# Mapping of rom offsets, record sizes, table lengths, and relative offsets for records.
+
+#Shop data table.  The order of shops is in shops.yml
+shopdata: 0x108100
+shopsize: 8
+
+monsterdata: 0x72860
+number-of-monsters: 223
+# Monster records have variable lengths.
+# An incomplete list of offsets for each
+# monster is in monster-offsets.yml
+
+# 2 byte entries for xp and gp
+monsterxp: 0x721c0
+monstergp: 0x72000
+
+monsteratk: 0x72380
+monsteratk-len: 671
+monsteratk-size: 3
+
+monsterspd: 0x72620
+monsterspd-size: 2
+
+dropdata: 0x71f00
+dropdata-size: 4
+dropdata-len: 64
+
+numweapons: 96
+weapondata: 0x79101
+weapondata-size: 8
+
+# 1 byte entries for spellpower and visual
+weaponspellpower: 0x79070
+weaponspellvisual: 0x7d4e0
+
+levelupdata: 0x7b528
+levelupdata-size: 5
+
+spellstats: 0x797a0
+spellstats-size: 6
+spellstats-num: 192
+
+player-spellnames: 0x78900
+player-spellnames-size: 6
+other-spellnames: 0x78ab0
+other-spellnames-size: 8
+player-spells: 48
+#spells[:0x48] (player spells)
+#spells[0x48:a9] (Rod -> Counter)
+#spells[0x48:0xb8] (Rod -> Everything?)
+
+charmenus: 0x9fd50
+charmenus-size: 5
+
+charjoin-order:
+  - Dk Cecil
+  - Kain
+  - Kid Rydia
+  - Tellah
+  - Edward
+  - Rosa
+  - Yang
+  - Palom
+  - Porom
+  - Tellah2
+  - Paladin Cecil
+  - Tellah3
+  - Baron Yang
+  - Cid
+  - Zot Kain
+  - Zot Rosa
+  - Rydia
+  - Edge
+  - FuSoYa
+  - Giant Kain
+  - UptCo Edward
+
+
+starting-stats: 0x7a900
+starting-stats-size: 0x20
+
+# [Byte in record, mask for relevant bits, shift]
+# (data[byte] & mask) >> shift
+# data[byte] = (data[byte] & ~ mask) | (value << shift)
+split-stats:
+  charid: [0, 0x1f, 0]
+  left-handed: [0, 0x40, 6]
+  right-handed: [0, 0x80, 7]
+  sprite: [1, 0xf, 0]
+  backrow: [1, 0x80, 7]
+
+#some of these are unknown
+# see types.yml for multi-byte values
+starting-stats-record-map:
+  charid: 0
+  left-handed: 0
+  right-handed: 0
+  sprite: 1
+  backrow: 1
+  level: 2
+  status1: 3
+  status2: 4
+  status3: 5
+  hp: 7
+  maxhp: 9
+  mp: 11
+  maxmp: 13
+  str: 15
+  agi: 16
+  vit: 17
+  wis: 18
+  wil: 19
+  xp: 23
+  xpnext: 29
+
+starting-stats-order:
+  - DK Cecil
+  - Kain
+  - Rydia
+  - Tellah
+  - Edward
+  - Rosa
+  - Yang
+  - Palom
+  - Porom
+  - Paladin Cecil
+  - Cid
+  - Edge
+  - FuSoYa
+  - UptCo Edward
+
+starting-equip: 0x7ab00 #?
+starting-equip-num: 20
+starting-equip-size: 7
+
+starting-equip-record:
+  - head
+  - body
+  - arms
+  - rheq
+  - rhno
+  - lheq
+  - lhno
+
+monsteratk: 0x72380
+monsteratk-len: 671
+monsteratk-size: 3
+
+monsteratk-record:
+  - mult
+  - percent
+  - base
+
+# The starting spells table appears to be a sequence of lists that are either
+# null-terminated(0xff), or 24-bytes long, whichever comes first.
+# In the vanilla rom, this is relevant for FuSoYa, whose starting spell lists
+# are complete (24 bytes of data) and do not have a null terminator.
+starting-spells: 0x7c8c0
+starting-spells-len: 319
+
+# Learned spells table
+# The pattern is: <level>, <spell>, <level>, <spell>, 0xff
+# For each spellcaster (including the unknown caster)
+learned-spells: 0x7c700
+learned-spells-len: 448
+learned-spells-size: 2
+
+
+# 0-indexed list specifies the order for starting spells
+spells-order:
+  - cecil-paladin
+  - unknown-unknown
+  - rydia-white
+  - rydia-black
+  - rydia-call
+  - tellah-white
+  - tellah-black
+  - rosa-white
+  - palom-black
+  - porom-white
+  - fusoya-white
+  - fusoya-black
+  - edge-ninja
+
+# This is incomplete, I'm not 100% sure how to parse properly yet.
+# It appears as if these values are split on nibbles.
+leveluprecord:
+  stats: 0
+  hp: 1
+  mp: 2
+  tnl: 3
+
+# notes on the stat record
+leveluprecord-notes:
+  stats:
+    - "high nibble: bits(str,agi,vit,wis,will,?,?)"
+    - "Low nibble: mod amount?"
+  hp: "One full byte"
+  mp:
+    - "High nibble: tnl large byte"
+    - "Low nibble: mp"
+  tnl: "2 bytes + high nibble from mp byte"
+
+split-weapondata:
+  tohit: [1, 0x7f, 0]
+  uktohit: [1, 0x80, 7]
+
+weapondata-record:
+  - attack
+  - tohit
+  - casts
+  - element-index
+  - racial-bit
+  - equip-index
+  - statmod-index
+  - unknown
+
+weapondata-record-dict:
+  attack: 0
+  tohit: 1
+  uktohit: 1
+  casts: 2
+  element-index: 3
+  racial-bit: 4
+  equip-index: 5
+  statmod-index: 6
+
+split-monster:
+  boss: [0, 0x80, 7]
+  level: [0, 0x7f, 0]
+  speed-index: [6, 0x3f, 0]
+  unused: [6, 0xc0, 6]
+  item-rate: [7, 0xc0, 6]
+  item-table: [7, 0x3f, 0]
+  has-attack-traits: [9, 0x80, 7]
+  has-defense-traits: [9, 0x40, 6]
+  has-element-weakness: [9, 0x20, 5]
+  has-spell-power: [9, 0x10, 4]
+  has-creature-type: [9, 0x8 , 3]
+  has-counter: [9, 0x4, 2]
+  unused9: [9, 0x3, 0]
+
+monster-record:
+  boss: 0
+  level: 0
+  hp: 1
+  patk-index: 3
+  pdef-index: 4
+  mdef-index: 5
+  speed-index: 6
+  unused: 6
+  item-rate: 7
+  item-table: 7
+  attack-sequence: 8
+  has-attack-traits: 9
+  has-defense-traits: 9
+  has-element-weakness: 9
+  has-spell-power: 9
+  has-creature-type: 9
+  has-counter: 9
+  unused9: 9
+
+monster-extra-order:
+  - attack-traits
+  - defense-traits
+  - element-weakness
+  - spell-power
+  - creature-type
+  - counter
+
+#All these masks and shifts are probably wrong and need to
+# be reversed
+monster-extra:
+  attack-traits:
+    - elemental:
+        arrows: [0, 0x20, 5]
+        sacred: [0, 0x10, 4]
+        dark: [0, 0x8, 3]
+        lit: [0, 0x4, 2]
+        ice: [0, 0x2, 1]
+        fire: [0, 0x1, 0]
+    - status1:
+        death: [1, 128, 7]
+        stone: [1, 64, 6]
+        toad: [1, 32, 5]
+        tiny: [1, 16, 4]
+        piggy: [1, 8, 3]
+        mute: [1, 4, 2]
+        blind: [1, 2, 1]
+        poison: [1, 1, 0]
+    - status2:
+        curse: [2, 128, 7]
+        float: [2, 64, 6]
+        hold: [2, 32, 5]
+        sleep: [2, 16, 4]
+        charm: [2, 8, 3]
+        berserk: [2, 4, 2]
+        petrify: [2, 2, 1]
+        d: [2, 1, 0]
+  defense-traits:
+    - defense-elementals:
+        immune: [0, 128, 7]
+        absorb: [0, 64, 6]
+        resist: [0, 32, 5]
+        sacred: [0, 16, 4]
+        dark: [0, 8, 3]
+        lit: [0, 4, 2]
+        ice: [0, 2, 1]
+        fire: [0, 1, 0]
+    - status-immunity-1:
+        death: [1, 128, 7]
+        stone: [1, 64, 6]
+        toad: [1, 32, 5]
+        tiny: [1, 16, 4]
+        piggy: [1, 8, 3]
+        mute: [1, 4, 2]
+        blind: [1, 2, 1]
+        poison: [1, 1, 0]
+    - status-immunity-2:
+        curse: [2, 128, 7]
+        float: [2, 64, 6]
+        hold: [2, 32, 5]
+        sleep: [2, 16, 4]
+        charm: [2, 8, 3]
+        berserk: [2, 4, 2]
+        petrify: [2, 2, 1]
+        calcify: [2, 1, 0]
+  spell-power:
+    - spell-power:
+        spell-power: [0, 0xff, 0]
+  element-weakness:
+    - element-weakness:
+        veryweak: [0, 128, 7]
+        floating: [0, 64, 6]
+        arrows: [0, 32, 5]
+        sacred: [0, 16, 4]
+        dark: [0, 8, 3]
+        lit: [0, 4, 2]
+        ice: [0, 2, 1]
+        fire: [0, 1, 0]
+  creature-type:
+    - creature-type:
+        undead: [0, 128, 7]
+        mage: [0, 64, 6]
+        slime: [0, 32, 5]
+        giant: [0, 16, 4]
+        spirit: [0, 8, 3]
+        reptile: [0, 4, 2]
+        machine: [0, 2, 1]
+        dragon: [0, 1, 0]
+  counter:
+    - counter:
+        counter: [0, 0xff, 0]
+
+#format is [byte, bitmask]
+spellstats-record:
+  cast-time: [0, 0x1f, 0]
+  targeting: [0, 0xe0, 5]
+  attack: [1, 0xff, 0]
+  boss-bit: [2, 0x80, 7]
+  hitrate: [2, 0x7f, 0]
+  effect: [3, 0x7f, 0]
+  damage-flag: [3, 0x80, 7]
+  impact-flag: [4, 0x80, 7]
+  element: [4, 0x7f, 0]
+  mp-cost: [5, 0x7f, 0]
+  ignore-wall: [5, 0x80, 7]

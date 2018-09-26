@@ -1,0 +1,462 @@
+baron:
+  pot1: 0xa8318
+  pot2: 0xa8313
+  water1: 0xa831d
+  water2: 0xa8322
+  sgrass: 0xa830e
+  wgrass: 0xa8309
+  ngrass: 0xa8304
+  innchest-l: 0xa848a
+  innchest-m: 0xa848f
+  innchest-r: 0xa8494
+  innpot: 0xa8499
+  rosapot: 0xa84ad
+  rosashelf: 0xa84b2
+  baron-weaponshop-right: 0xa84a8
+  baron-weaponshop-left: 0xa84a3
+
+towns:
+  kaipo: 0xa839a
+  silvera-top: 0xa8403
+  silvera-topright: 0xa8408
+  silvera-right: 0xa840d
+  agart: 0xa845d
+
+mist-cave:
+  mist-cave-left: 0xa89c6
+  mist-cave-top: 0xa89cb
+  mist-cave-center: 0xa89d0
+  mist-cave-nook: 0xa89d5
+
+damcyan:
+  damcyan-castle-2f: 0xa8741
+  damcyan-prison-lr1: 0xa8750
+  damcyan-prison-lr2: 0xa8755
+  damcyan-prison-lr3: 0xa875a
+  damcyan-basement-lr1: 0xa8769
+  damcyan-basement-lr2: 0xa876e
+  damcyan-basement-lr3: 0xa8773
+  damcyan-basement-rpot1: 0xa8778
+  damcyan-basement-lpot: 0xa877d
+  damcyan-basement-lr4: 0xa8782
+  damcyan-basement-lr5: 0xa8787
+  damcyan-basement-lr6: 0xa878c
+  damcyan-basement-rpot2: 0xa8791
+
+watery-pass:
+  wp-south-2: 0xa89e9
+  wp-south-1: 0xa89ee
+  wp-south-3: 0xa89f3
+  wp-south-4: 0xa89f8
+  wp-south-5: 0xa89fd
+  wp-south-b2f-1: 0xa8a11
+  wp-south-b2f-2: 0xa8a16
+  wp-south-b2f-3: 0xa8a1b
+  wp-south-b3f-1: 0xa8a34
+  wp-south-b3f-2: 0xa8a39
+  wp-north-b2f-passage-1: 0xa8a48
+  wp-north-b2f-passage-2: 0xa8a4d
+  wp-north-1: 0xa8a5c
+  wp-north-2: 0xa8a61
+  wp-north-4: 0xa8a66
+  wp-north-3: 0xa8a6b
+  wp-south-secret-lr1: 0xa8b6a
+  wp-south-secret-lr2: 0xa8b6f
+  wp-south-secret-lr3: 0xa8b74
+
+lake:
+  waterfall-bottom-left: 0xa8a7f
+  waterfall-bottom-right: 0xa8a84
+  lake-top: 0xa8a8e
+  lake-bottom: 0xa8a93
+
+antlion:
+  antlion-b1f-1: 0xa8aa7
+  antlion-b1f-2: 0xa8aac
+  antlion-b1f-3: 0xa8ab1
+  antlion-b1f-4: 0xa8ab6
+  antlion-b1f-6: 0xa8abb
+  antlion-b1f-5: 0xa8ac0
+  antlion-b2f-2: 0xa8ad9
+  antlion-b2f-1: 0xa8ade
+  antlion-b2f-3: 0xa8ae3
+  antlion-save-1: 0xa8b06
+  antlion-save-2: 0xa8b0b
+  antlion-save-3: 0xa8b10
+  antlion-harp: 0xa8b15
+
+fabul:
+  fabul-throne-pot: 0xa87c8
+  fabul-throne-secret-1: 0xa87cd
+  fabul-throne-secret-3: 0xa87d7
+  fabul-barpot: 0xa87ff
+  fabul-kingchest: 0xa880e
+  fabul-ltower-top: 0xa881d
+  fabul-ltower-pot: 0xa8822
+  fabul-ltower-middle: 0xa8827
+  fabul-ltower-bottom: 0xa882c
+
+mount-hobs:
+  hobssum-1: 0xa8b2e
+  hobswest-1: 0xa8b51
+  hobswest-2: 0xa8b56
+  hobswest-3: 0xa8b5b
+  hobswest-4: 0xa8b60
+
+mount-ordeals:
+  ordeals-1: 0xa8b79
+  ordeals-2: 0xa8b7e
+  ordeals-3: 0xa8ba1
+  ordeals-4: 0xa8ba6
+
+village-mist:
+  mist-1: 0xa8368
+  mist-2: 0xa836d
+  mist-3: 0xa8372
+  mist-rydia-1: 0xa84b7
+  mist-rydia-2: 0xa84bc
+  mist-rydia-3: 0xa84c1
+  mist-rydia-4: 0xa84c6
+
+troia-town:
+  troia-town-1: 0xa8426
+  troia-town-3: 0xa842b
+  troia-town-4: 0xa8430
+  troia-town-2: 0xa8435
+
+troia-castle:
+  troia-castle-pot: 0xa8881
+  troia-castle-right-lr1: 0xa8886
+  troia-castle-right-lr2: 0xa888b
+  troia-castle-right-lr3: 0xa8890
+  troia-castle-right-lr4: 0xa8895
+  troia-castle-right-lr5: 0xa889a
+  troia-castle-right-lr6: 0xa889f
+  troia-castle-right-lr7: 0xa88a4
+  troia-castle-right-lr8: 0xa88a9
+  troia-castle-prison-1: 0xa88c7
+  troia-castle-prison-2: 0xa88cc
+  troia-castle-prison-3: 0xa88d1
+  troia-castle-prison-4: 0xa88d6
+  troia-castle-prison-5: 0xa88db
+  troia-castle-prison-6: 0xa88e0
+  troia-castle-prison-7: 0xa88e5
+  troia-castle-prison-8: 0xa88ea
+  troia-castle-prison-9: 0xa88ef
+  troia-castle-prison-18: 0xa88f4
+  troia-castle-prison-17: 0xa88f9
+  troia-castle-prison-16: 0xa88fe
+  troia-castle-prison-15: 0xa8903
+  troia-castle-prison-14: 0xa8908
+  troia-castle-prison-13: 0xa890d
+  troia-castle-prison-12: 0xa8912
+  troia-castle-prison-11: 0xa8917
+  troia-castle-prison-10: 0xa891c
+
+magnes:
+  magnes-1: 0xa8bf1
+  magnes-2: 0xa8bf6
+  magnes-3: 0xa8c05
+  magnes-room1-left: 0xa8c14
+  magnes-room1-right: 0xa8c19
+  magnes-room2-left: 0xa8c2d
+  magnes-room2-center: 0xa8c32
+  magnes-room2-right: 0xa8c37
+  magnes-4: 0xa8c3c
+  magnes-5: 0xa8c46
+
+zot:
+  zot-f1: 0xa8c64
+  zot-f2-flamedog: 0xa8c73
+  zot-f5-left-1: 0xa8c96
+  zot-f5-middle: 0xa8c9b
+  zot-f5-left-2: 0xa8ca0
+  zot-f5-right: 0xa8ca5
+
+eblan-castle:
+  eblan-castle-1f: 0xa8921
+  eblan-castle-2fl-top: 0xa892b
+  eblan-castle-2fl-bottom: 0xa8930
+  eblan-castle-2fr-top: 0xa8935
+  eblan-castle-2fr-left: 0xa893a
+  eblan-castle-2fr-right: 0xa893f
+  eblan-castle-leftt-ml: 0xa8953
+  eblan-castle-leftt-mr: 0xa8958
+  eblan-castle-leftt-pot1: 0xa8962
+  eblan-castle-leftt-pot2: 0xa8967
+  eblan-castle-leftt-chest1: 0xa896c
+  eblan-castle-leftt-chest2: 0xa8971
+  eblan-castle-rightt-ml: 0xa897b
+  eblan-castle-rightt-mr: 0xa8980
+  eblan-castle-rightt-left-top: 0xa898f
+  eblan-castle-rightt-left-bot: 0xa8994
+  eblan-castle-rightt-pot: 0xa8999
+  eblan-castle-rightt-right-top: 0xa899e
+  eblan-castle-rightt-right-bot: 0xa89a3
+  eblan-castle-b-left1: 0xa89b2
+  eblan-castle-b-left2: 0xa89b7
+  eblan-castle-b-right: 0xa89bc
+
+lower-babil:
+  babil-2f-3: 0xa8ff7
+  babil-2f-2: 0xa8ffc
+  babil-4f-bottom: 0xa9001
+  babil-4f-top: 0xa9006
+  babil-1f-l: 0xa9065
+  babil-1f-lb: 0xa906a
+  babil-1f-r: 0xa906f
+  babil-2f-1: 0xa9083
+  babil-3f-top: 0xa909c
+  babil-3f-right: 0xa90a1
+  babil-3f-bottom: 0xa90a6
+  babil-4fp-left: 0xa90ba
+  babil-4fp-right: 0xa90bf
+  babil-5f-left: 0xa90e2
+  babil-5f-right: 0xa90e7
+  babil-7f: 0xa9105
+
+dwarf-castle:
+  dwarf-right: 0xa8fbb
+  dwarf-right-5f-top: 0xa900b
+  dwarf-right-5f-left: 0xa9010
+  dwarf-right-5f-right: 0xa9015
+  dwarf-right-5f-bottom: 0xa901a
+  dwarf-left-5f-top: 0xa901f
+  dwarf-left-5f-left: 0xa9024
+  dwarf-left-5f-right: 0xa9029
+  dwarf-left-5f-bottom: 0xa902e
+  dwarf-left-4f-pot: 0xa9033
+  dwarf-right-4f-pot: 0xa9038
+  dwarf-fatchocpots-left: 0xa8f57
+  dwarf-fatchocpots-middle: 0xa8f5c
+  dwarf-fatchocpots-right: 0xa8f61
+  dwarf-base-b2f-left: 0xa8f7f
+  dwarf-base-b2f-middle: 0xa8f84
+  dwarf-base-b2f-right: 0xa8f89
+
+sylph-cave:
+  sylph-yang-5treasures-clockwise-1: 0xa922c
+  sylph-yang-5treasures-clockwise-2: 0xa9231
+  sylph-yang-5treasures-clockwise-3: 0xa9236
+  sylph-yang-5treasures-clockwise-4: 0xa923b
+  sylph-yang-5treasures-clockwise-5: 0xa9240
+  sylph-yang-nearsave-left: 0xa9245
+  sylph-yang-nearsave-right: 0xa924a
+  sylph-1: 0xa924f
+  sylph-2: 0xa9254
+  sylph-yang-elvenbow: 0xa9259
+  sylph-other-section21-bottomright: 0xa9268
+  sylph-other-section21-bottomleft: 0xa926d
+  sylph-other-section21-topright: 0xa9272
+  sylph-other-section21-middleleft: 0xa9277
+  sylph-other-section21-topleft: 0xa927c
+  sylph-other-section20-topleft: 0xa9281
+  sylph-other-section20-topright: 0xa9286
+  sylph-other-section20-bottomleft: 0xa928b
+  sylph-other-section20-bottomright: 0xa9290
+  sylph-yang-toadladybox: 0xa9295
+  sylph-other-section1-left: 0xa92b3
+  sylph-other-section1-top: 0xa92b8
+  sylph-other-section1-bottom: 0xa92bd
+  sylph-yang-longhall: 0xa92c2
+  sylph-other-section3-topleft: 0xa92d6
+  sylph-other-section3-topmiddle: 0xa92db
+  sylph-other-section3-topright: 0xa92e0
+  sylph-other-section3-bottomleft: 0xa92e5
+  sylph-other-section3-bottommiddle: 0xa92ea
+  sylph-other-section3-bottomright: 0xa92ef
+  sylph-house-top: 0xa92f9
+  sylph-house-bottom: 0xa92fe
+
+kokkol:
+  kokkol-2: 0xa8ed0
+  kokkol-1: 0xa8ed5
+  kokkol-bedroom: 0xa8ee4
+
+tomra:
+  tomra-left-3: 0xa8ef3
+  tomra-left-1: 0xa8ef8
+  tomra-left-2: 0xa8efd
+  tomra-right-3: 0xa8f02
+  tomra-right-2: 0xa8f07
+  tomra-right-1: 0xa8f0c
+
+feymarch:
+  feymarch-b1f-top-left: 0xa9164
+  feymarch-b1f-top-right: 0xa9169
+  feymarch-b1f-bottom-right: 0xa916e
+  feymarch-b2f-top: 0xa917d
+  feymarch-b2f-bottom: 0xa9182
+  feymarch-b3f-top: 0xa918c
+  feymarch-b3f-bottom-left-1: 0xa9191
+  feymarch-b3f-bottom-left-2: 0xa9196
+  feymarch-b3f-bottom-left-3: 0xa919b
+  feymarch-b3f-bottom-middle: 0xa91a0
+  feymarch-b3f-bottom-right: 0xa91a5
+  feymarch-b4f-clockwise-2: 0xa91af
+  feymarch-b4f-clockwise-1: 0xa91b4
+  feymarch-b4f-tailchest: 0xa91b9
+  feymarch-b4f-clockwise-3: 0xa91be
+  feymarch-b4f-clockwise-4: 0xa91c3
+  feymarch-secret-top-left: 0xa91d2
+  feymarch-secret-bottom-left: 0xa91d7
+  feymarch-secret-top-right: 0xa91dc
+  feymarch-secret-bottom-right: 0xa91e1
+  feymarch-save-left: 0xa9204
+  feymarch-save-right: 0xa9209
+
+lucacave:
+  lucacave-b1f-1: 0xa930d
+  lucacave-tr1-left: 0xa9330
+  lucacave-tr1-right: 0xa9335
+  lucacave-tr2-left: 0xa933f
+  lucacave-b2f-bridge: 0xa9353
+  lucacave-b2f-bottom: 0xa9358
+  lucacave-tr4-left: 0xa9394
+  lucacave-tr4-right: 0xa9399
+  lucacave-tr3-left-top: 0xa939e
+  lucacave-tr3-left-bottom: 0xa93a3
+  lucacave-tr3-right: 0xa93a8
+  lucacave-lightchest: 0xa93ad
+  lucacave-tr5: 0xa93b2
+  lucacave-b3f-top: 0xa93bc
+  lucacave-tr6-top: 0xa93da
+  lucacave-tr6-bottom: 0xa93df
+  lucacave-tr7-right: 0xa93ee
+  lucacave-tr7-left: 0xa93f3
+
+baron-castle:
+  baron-castle-baigain-left: 0xa85e3
+  baron-castle-baigain-middle: 0xa85e8
+  baron-castle-baigain-right: 0xa85ed
+  baron-castle-6chests-top-left: 0xa863d
+  baron-castle-6chests-top-middle: 0xa8642
+  baron-castle-6chests-top-right: 0xa8647
+  baron-castle-6chests-bottom-left: 0xa864c
+  baron-castle-6chests-bottom-middle: 0xa8651
+  baron-castle-6chests-bottom-right: 0xa8656
+  baron-castle-rtower-1f-middle: 0xa8692
+  baron-castle-rtower-1f-leftstairs: 0xa8697
+  baron-castle-rtower-1f-left: 0xa869c
+  baron-castle-rtower-1f-right: 0xa86a1
+  baron-castle-rtower-2f-chest-top: 0xa86b0
+  baron-castle-rtower-2f-chest-bot: 0xa86b5
+  baron-castle-rtower-3f-pot: 0xa86c4
+  baron-castle-rtower-3f-left: 0xa86c9
+  baron-castle-rtower-3f-middle: 0xa86ce
+  baron-castle-rtower-3f-right: 0xa86d3
+  baron-castle-basement-pot: 0xa86d8
+  baron-castle-6chests-top-left: 0xa8b31
+  baron-castle-6chests-top-left: 0xa8b63
+  baron-castle-basement-odin: 0xa90fb
+  baron-castle-6chests-top-left: 0xa94d2
+
+old-waterway:
+  old-waterway-b1f-left: 0xa86e7
+  old-waterway-b1f-middle: 0xa86ec
+  old-waterway-b1f-right: 0xa86f1
+  old-waterway-b2f-s1: 0xa8700
+  old-waterway-b2f-s2: 0xa8705
+  old-waterway-b2f-island: 0xa870a
+  old-waterway-savepoint: 0xa8728
+  old-waterway-staircase: 0xa872d
+  old-waterway-entrance: 0xa8796
+
+cave-bahamut:
+  bahamut-b1f-right: 0xa941b
+  bahamut-b1f-left: 0xa9420
+  bahamut-b2f-left: 0xa942a
+  bahamut-b2f-right: 0xa942f
+
+lunar-path:
+  lunar-path-1: 0xa9461
+  lunar-path-3: 0xa9466
+  lunar-path-2: 0xa946b
+
+lunar-subterrane:
+  lunar-b1: 0xa9484
+  lunar-b2-door: 0xa9498
+  lunar-b2-pale: 0xa949d
+  lunar-b2-tunnel: 0xa94a2
+  lunar-b3-1: 0xa94b6
+  lunar-b3-2: 0xa94bb
+  lunar-b3-3: 0xa94c0
+  lunar-b4-top: 0xa94ca
+  lunar-b4-bottom: 0xa94cf
+  lunar-b5-top: 0xa94e8
+  lunar-secret-2: 0xa94ed
+  lunar-b5-topright: 0xa94f2
+  lunar-b5-middle: 0xa94f7
+  lunar-b5-bottom: 0xa94fc
+  lunar-b6-topleft: 0xa951a
+  lunar-b6-topright: 0xa951f
+  lunar-b6-bridge: 0xa9524
+  lunar-secret-1: 0xa9529
+  lunar-core1-1: 0xa9556
+  lunar-core2-1: 0xa9565
+  lunar-core2-2: 0xa956a
+  lunar-core3-left: 0xa9574
+  lunar-core3-right: 0xa9579
+  lunar-b4-smallroom: 0xa958d
+  lunar-b4room-right: 0xa9592
+  lunar-b4room-left: 0xa9597
+  lunar-b5-passage1: 0xa95a1
+  lunar-b5-passage2: 0xa95b0
+  lunar-b5-pinkpuff: 0xa95ba
+  lunar-b6-minerva: 0xa95c4
+  dlunar-left: 0xa95ce
+  dlunar-right: 0xa95d3
+
+upper-babil:
+  upper-babil-1f-1: 0xa8cc8
+  upper-babil-1f-2: 0xa8ccd
+  upper-babil-b2f-ogres: 0xa8ce6
+  upper-babil-b3f: 0xa8cf5
+  upper-babil-b4f: 0xa8d13
+  upper-babil-b5f: 0xa8d3b
+  babil-pitfall: 0xa9047
+  babil-falcon: 0xa905b
+
+giant-babil:
+  giant-chest-1: 0xa8d68
+  giant-chest-2: 0xa8d6d
+  giant-chest-3: 0xa8d72
+  giant-chest-4-topright: 0xa8d77
+  giant-chest-5-bywarp: 0xa8d7c
+  giant-stomach-1: 0xa8d8b
+  giant-stomach-2: 0xa8d90
+  giant-passage: 0xa8d9f
+
+cave-eblana:
+  eblan-cave-1: 0xa8dcc
+  eblan-cave-2: 0xa8dd1
+  eblan-cave-3: 0xa8dd6
+  eblan-tobabil-1: 0xa8dfe
+  eblan-tobabil-2: 0xa8e03
+  eblan-tobabil-left: 0xa8e08
+  eblan-tobabil-rtop: 0xa8e0d
+  eblan-tobabil-rbot: 0xa8e12
+  eblan-tobabil-tops: 0xa8e17
+  eblan-tobabil-bots: 0xa8e1c
+  eblan-tobabil-3s: 0xa8e21
+  eblan-tobabil-bottom-left: 0xa8e26
+  eblan-tobabil-3chest-left: 0xa8e2b
+  eblan-tobabil-3chest-mid: 0xa8e30
+  eblan-tobabil-3chest-right: 0xa8e35
+  eblan-tobabil2-top: 0xa8e4e
+  eblan-tobabil2-wasitflame: 0xa8e53
+  eblan-tobabil2-alcove: 0xa8e58
+  eblan-tobabil2-bots: 0xa8e5d
+  eblan-tobabil2-savepoint: 0xa8e80
+  eblan-cave-b2f-pot2: 0xa8e85
+  eblan-cave-b2f-pot1: 0xa8e8a
+
+chocobo-forests:
+  chocobo-forests-ordeals: 0xa8e94
+  chocobo-forests-baron: 0xa8e99
+  chocobo-forests-fabul: 0xa8e8f
+  chocobo-forests-stroia: 0xa8e9e
+  chocobo-forests-island: 0xa8ea3
+  chocobo-forests-troia-3: 0xa8511
+  chocobo-forests-troia-2: 0xa8516
+  chocobo-forests-troia-1: 0xa851b

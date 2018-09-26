@@ -1,0 +1,381 @@
+spears:
+  - "Spear"
+  - "Wind Spear"
+  - "Flame Spear"
+  - "Blizzard Spear"
+  - "Dragoon Spear"
+  - "White Spear"
+  - "Drain Spear"
+  - "Gungnir Spear"
+longswords:
+  - "Fire Sword"
+  - "IceBrand"
+  - "Defense Sword"
+  - "Drain Sword"
+  - "Ancient Sword"
+  - "Slumber Sword"
+  - "Medusa Sword"
+darkswords:
+  - "Shadow Sword"
+  - "Darkness Sword"
+  - "Black Sword"
+knightswords:
+  - "Legend Sword"
+  - "Light Sword"
+  - "Excalibur"
+  - "Crystal Sword"
+axes1h:
+  - "HandAxe"
+  - "Dwarf Axe"
+  - "Ogre Axe"
+axes2h:
+  - "Poison Axe"
+  - "Rune Axe"
+swords2h:
+  - Avenger
+hammers:
+  - "Silver Hammer"
+  - "Earth Hammer"
+  - "Wooden Hammer"
+stars:
+  - "Ninja Star"
+  - "Shuriken"
+boomerangs:
+  - "Boomerang"
+  - "Full Moon"
+harps:
+  - "Dreamer Harp"
+  - "Charm Harp"
+bows:
+  - "Short Bow"
+  - "Crossbow"
+  - "Great Bow"
+  - "Archer Bow"
+  - "Elven Bow"
+  - "Samurai Bow"
+  - "Artemis Bow"
+arrows:
+  - "Iron Arrows"
+  - "White Arrows"
+  - "Fire Arrows"
+  - "Ice Arrows"
+  - "Lit Arrows"
+  - "Darkness Arrows"
+  - "Poison Arrows"
+  - "Mute Arrows"
+  - "Charm Arrows"
+  - "Samurai Arrows"
+  - "Medusa Arrows"
+  - "Artemis Arrows"
+darkshields:
+  - "Shadow Shield"
+  - "Black Shield"
+shields:
+  - "Iron Shield"
+  - "Paladin Shield"
+  - "Silver Shield"
+  - "Fire Shield"
+  - "Ice Shield"
+  - "Diamond Shield"
+  - "Aegis Shield"
+  - "Samurai Shield"
+  - "Dragoon Shield"
+  - "Crystal Shield"
+claws:
+  - "Fire Claw"
+  - "Ice Claw"
+  - "Thunder Claw"
+  - "Charm Claw"
+  - "Poison Claw"
+  - "Cat Claw"
+rods:
+  - "Rod"
+  - "Ice Rod"
+  - "Flame Rod"
+  - "Thunder Rod"
+  - "Change Rod"
+  - "Charm Rod"
+  - "Stardust Rod"
+  - "Lilith Rod"
+staves:
+  - "Staff"
+  - "Cure Staff"
+  - "Silver Staff"
+  - "Power Staff"
+  - "Lunar Staff"
+  - "Life Staff"
+  - "Silence Staff"
+helms:
+  - "Iron Helm"
+  - "Shadow Helm"
+  - "Darkness Helm"
+  - "Black Helm"
+  - "Paladin Helm"
+  - "Silver Helm"
+  - "Diamond Helm"
+  - "Samurai Helm"
+  - "Dragoon Helm"
+  - "Crystal Helm"
+hats:
+  - "Cap"
+  - "Leather Cap"
+  - "Gaea Helm"
+  - "Wizard Hat"
+  - "Tiara"
+  - "Ribbon"
+  - "Headband"
+  - "Bandanna"
+  - "Ninja"
+  - "Glass Helm"
+armor:
+  - "Iron Armor"
+  - "Shadow Armor"
+  - "Darkness Armor"
+  - "Black Armor"
+  - "Paladin Armor"
+  - "Silver Armor"
+  - "Fire Armor"
+  - "Ice Armor"
+  - "Diamond Armor"
+  - "Samurai Armor"
+  - "Dragoon Armor"
+  - "Crystal Armor"
+  - "Adamant Armor"
+robes:
+  - "Gaia Armor"
+  - "Wizard Robes"
+  - "Black Robes"
+  - "Sorcerer Robes"
+  - "White Robes"
+tunics:
+  - "Cloth Tunic"
+  - "Leather Tunic"
+  - "Power Vest"
+  - "Minerva"
+  - "Prisoner"
+  - "Bard Tunic"
+  - "Karate Gi"
+  - "Black Belt"
+  - "Ninja Tunic"
+gauntlets:
+  - "Iron Gauntlet"
+  - "Shadow Gauntlet"
+  - "Darkness Gauntlet"
+  - "Black Gauntlet"
+  - "Paladin Gauntlet"
+  - "Silver Gauntlet"
+  - "Diamond Gauntlet"
+  - "Zeus Gauntlet"
+  - "Samurai Gauntlet"
+  - "Dragoon Gauntlet"
+  - "Crystal Gauntlet"
+rings:
+  - "Iron Ring"
+  - "Ruby Ring"
+  - "Silver Ring"
+  - "Strength Ring"
+  - "Rune Ring"
+  - "Crystal Ring"
+  - "Diamond Ring"
+  - "Protect Ring"
+  - "Cursed Ring"
+paladingear:
+  - "Excalibur"
+  - "Crystal Sword"
+  - "Light Sword"
+  - "Legend Sword"
+  - "Paladin Shield"
+  - "Crystal Shield"
+  - "Paladin Helm"
+  - "Crystal Helm"
+  - "Paladin Armor"
+  - "Crystal Armor"
+  - "Paladin Gauntlet"
+  - "Crystal Gauntlet"
+whips:
+  - "Whip"
+  - "Chain Whip"
+  - "Blitz Whip"
+  - "Flame Whip"
+  - "Dragon Whip"
+daggers:
+  - "Silver Dagger"
+  - "Dancing Dagger"
+  - "Assassin"
+  - "Mute Dagger"
+dkgear:
+  - "Shadow Sword"
+  - "Darkness Sword"
+  - "Black Sword"
+  - "Shadow Shield"
+  - "Black Shield"
+  - "Shadow Helm"
+  - "Darkness Helm"
+  - "Black Helm"
+  - "Shadow Armor"
+  - "Darkness Armor"
+  - "Black Armor"
+  - "Black Robes"
+  - "Shadow Gauntlet"
+  - "Darkness Gauntlet"
+  - "Black Gauntlet"
+level1-gear:
+  - Rod
+  - Staff
+  - Cap
+  - Leather Cap
+  - Cloth Tunic
+  - Leather Tunic
+  - Iron Ring
+  - Iron Gauntlet
+  - Iron Shield
+  - Iron Armor
+  - Iron Helmet
+  - Ruby Ring
+  - Spear
+  - Shadow Shield
+  - Shadow Armor
+  - Shadow Gauntlet
+  - Shadow Helm
+  - Shadow Sword
+junk-consumables:
+  - Tiny Hammer
+  - ThorRage
+  - Alarm Clock
+  - Maiden Kiss
+  - Bomblet
+  - Notus
+  - "Diet Food"
+  - "Echo Herb"
+  - "Eye Drop"
+  - "Antidote"
+  - "Cross"
+  - Kamikaze
+  - Succubus
+  - Unicorn Horn
+  - Dark Matter
+key-items:
+  - "Package"
+  - "Baron Key"
+  - "SandRuby"
+  - "Earth Crystal"
+  - "Magma"
+  - "Luca Key"
+  - "TwinHarp"
+  - "Dark Crystal"
+  - "Rat Tail"
+  - "Adamant"
+  - "Pan"
+  - "Pink Tail"
+  - "Tower Key"
+callspells:
+  - "Sylph Call"
+  - "Odin Call"
+  - "Levia Call" #"Bomb call"
+  - "Asura Call"
+  - "Baham Call"
+rydia:
+  - Whip
+  - Blitz Whip
+  - Flame Whip
+  - Minerva
+  - Tiara
+  - Sorcerer
+  - Stardust Rod
+  - Dragon Whip
+  - Baham Call
+  - Sylph Call
+  - Levia Call
+  - Asura Call
+  - Odin Call
+  - Adamant Armor
+  - Crystal Ring
+  - Protect Ring
+  - Rune Ring
+  - Ribbon
+goodbuys:
+  - Bacchus
+  - Siren
+  - Life1
+  - Cure2
+  - Cure3
+  - StarVeil
+  - MoonVeil
+  - Illusion
+  - Coffin
+  - Hourglass1
+  - Hourglass2
+  - Hourglass3
+attack-items:
+  - Firebomb
+  - Grimoire
+  - Lit-Bolt
+  - Earth Drum
+  - BigBomb
+  - ZeusRage
+  - Boreas
+  - Blizzard
+  - Vampire
+  - Stardust
+  - Coffin
+  - ThorRage
+  - Notus
+  - Bomblet
+bestweapons:
+  - Crystal Sword
+  - Excalibur
+  - Stardust Rod
+  - Avenger
+  - White Spear
+  - Dragoon Spear
+  - Dragon Whip
+  - Masamune
+  - Murasame
+  - Artemis Bow
+goodweapons:
+  - Flame Whip  
+  - Light Sword
+  - Defense Sword
+  - Rune Axe
+  - Gungnir Spear
+  - Samurai Bow
+bestarmor:
+  - Adamant Armor
+  - Ribbon
+  - Crystal Ring
+  - Dragoon Armor
+  - Dragoon Helm
+  - Dragoon Gauntlet
+  - White Robes
+  - Minerva
+  - Ninja Mask
+  - Zeus Gauntlet
+  - Protect Ring
+  - Power Vest
+goodarmor:
+  - Glass Helm
+  - Crystal Helm
+  - Crystal Gauntlet
+  - Sorcerer Robes
+  - Black Belt
+  - Ninja Garb
+  - Tiara
+  - Crystal Helm
+  - Crystal Gauntlet
+  - Bandanna
+earlyweapons:
+  - Dancing Dagger
+  - Flame Spear
+  - Blizzard Spear
+  - IceBrand
+  - Fire Sword
+  - Ogre Axe
+moneydrops:
+  - Crystal Armor
+  - Poison Axe
+  - Rune Axe
+  - Earth Hammer
+HourGlasses:
+  - Hourglass1
+  - Hourglass2
+  - Hourglass3

@@ -1,0 +1,96 @@
+#!/usr/bin/env python
+description="""
+Description"""
+
+from ff4fepr.output import error, warning, optional_output
+
+def parse_string_args(longstring):
+    lines=longstring.split('\n')
+    results=[]
+    for line in lines:
+        ln=line.strip()
+        if ln != '':
+            if ' ' in line:
+                firstspace=ln.index(' ')
+                arg = ln[:firstspace]
+                helptext = ln[firstspace+1:].strip()
+                results.append(("--%s" % arg, {'help':helptext}))
+            else:
+                results.append(("--%s" % ln, {}))
+    return results
+            
+string_of_args="""
+shuffle-weaponatk     Shuffles weapon attack power within specified weapon categories.
+vary-weaponatk        Varies weapon attack power by -5 to 15.
+rydia-random-calls    Rydia starts with additional call spells.  Arg: <1 to 4 spells to add>
+rydia-starting-calls  Add additional spells to Rydia's starting calls.  Arg: spells to add.
+replace-commandset    Replaces the commandset for specified character.  Arg: <CharnameJoin>=<cmd1>,<cmd2>,<cmd3>
+dual-wield            Sets the character's handedness to R+L.  Arg: <Charname>
+add-bossbit    Add boss bit to comma-delimited list of spells
+remove-bossbit Removes boss bit from comma-delimited list of spells
+"""
+
+sring_of_flags="""
+randomize-drops Randomizes all drop tables.
+modup-weaponatk       Runs a preprogrammed set of various randomizations on weapon attack.
+uber-tellah    Tellah starts with some overpowered enemy abilities
+paladin-spells Add some higher-level white spells to Cecil's Paladin magic
+set-j-drops    Restore the monster drop tables from FF4j
+dump-learned   Dump spell progressions from rom to screen.
+dump-starting-spells    Dump starting spells from rom to screen.
+dump-starting-stats  Dump starting stats from rom to screen.
+dump-menus     Dump character battle menus from rom to screen.
+dump-equip     Dump character starting equipment from rom to screen.
+dump-weapons   Dump weapon data from rom to screen.
+dump-drops     Dump enemy stea/drop data from rom to screen.
+dump-monsters  Dump monster data to screen.
+dump-monster-itemtables  Dump monster item table numbers and drop rates to screen.
+dump-monster-drops Dump monster drop data to screen. (resolves item-table)
+dump-spells    Dump spell stats
+hitratings     list attack * hitrate for each weapon
+test-monsters  Test loading monsters and dumping to rom with no changes
+test-weapons   Test loading weapons into memory and dumping to rom with no changes.
+test-drops     Test loading drop tables and dumping to rom with no changes.
+test-spells    Test loading and writing spell stats with no changes.
+tpassbuff      Add Bacchus, Silkweb, StarVeil, Elixir, and Spoon to Troia Pass Shop
+uptco-edward   ????
+"""
+
+if __name__ == '__main__':
+    import argparse
+    from argparse import RawTextHelpFormatter
+    from pprint import pformat
+    import sys
+    flags=[
+        ('--apply', '-a'),
+        ('--version', '-V'),
+        ('--verbose', '-v'),
+        ('--debug', '-d'),
+        ('--jv', '-j')
+        ]
+    sflags=parse_string_args(sring_of_flags)
+    strargs=parse_string_args(string_of_args)
+    parser=argparse.ArgumentParser(description=description, formatter_class=RawTextHelpFormatter)
+    parser.add_argument('--seed', '-s', help='specify a seed for random functions')
+    parser.add_argument('--output', '-o', help='specify an output file')
+    for sarg, kwargs in strargs:
+        parser.add_argument(sarg, **kwargs)
+    parser.add_argument('rompath', nargs='?')
+    for flag in flags:
+        parser.add_argument(*flag, action='store_true')
+    for flag, kwargs in sflags:
+        parser.add_argument(flag, action='store_true', **kwargs)
+    args=parser.parse_args()
+    debug, verbose=optional_output(args)
+    debug("Args:\n")
+    debug("%s\n" % pformat(args))
+    if args.version:
+        from ff4fepr import __version__ as V
+        sys.stdout.write("ff4fepr %s\n" % V)
+        sys.exit(0)
+    if args.rompath == 'test':
+        from ff4fepr import core
+        print dir(core)
+    else:
+        from ff4fepr.main import main
+        main(args)

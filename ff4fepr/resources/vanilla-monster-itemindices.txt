@@ -1,0 +1,223 @@
+0 Imp 56 1
+1 Basilisk 13 1
+2 Eagle 57 1
+3 FloatEye 3 1
+4 Larva 16 1
+5 Cave Bat 16 1
+6 Treant 4 1
+7 SwordRat 13 1
+8 TinyMage 38 1
+9 Sand Man 2 1
+10 SandMoth 3 1
+11 Sandpede 1 1
+12 SandWorm 17 1
+13 CaveToad 14 1
+14 EvilShel 4 1
+15 Zombie 0 0
+16 Pike 1 1
+17 TrapRose 4 1
+18 Mad Toad 14 1
+19 Jelly 1 1
+20 Cream 1 1
+21 WaterHag 0 0
+22 Weeper 0 0
+23 RocLarva 16 1
+24 Dark Imp 0 0
+25 BlackLiz 55 1
+26 Turtle 2 1
+27 Imp Cap. 0 0
+28 Slime 1 1
+29 Soldier 0 0
+30 Officer 0 0
+31 Needler 13 1
+32 Tricker 56 1
+33 Cannibal 4 1
+34 Spirit 51 1
+35 Skelton 0 0
+36 Cocktric 57 1
+37 Gargoyle 0 0
+38 Roc Baby 57 1
+39 Hooligan 51 1
+40 Raven 18 1
+41 WaterBug 2 1
+42 Aligator 19 1
+43 Pirahna 1 1
+44 Fighter 0 0
+45 General 0 0
+46 Soul 51 1
+47 Red Bone 0 0
+48 Ghoul 0 0
+49 Skull 0 0
+50 Revenant 0 0
+51 VampGirl 50 1
+52 CaveNaga 9 1
+53 D.Bone 20 1
+54 ElecFish 4 1
+55 Crocdile 19 1
+56 Hydra 9 1
+57 AquaWorm 17 1
+58 Guard 0 0
+59 Lamia 22 1
+60 StingRat 13 1
+61 Python 9 1
+62 Grudger 7 1
+63 Mage 59 1
+64 Naga 9 1
+65 Ogre 32 1
+66 Panther 54 1
+67 SwordMan 21 1
+68 Centaur 21 1
+69 VampLady 50 1
+70 Marion 34 1
+71 Puppet 33 1
+72 GlomWing 10 1
+73 FangShel 4 1
+74 Screamer 7 1
+75 Warrior 21 1
+76 Armadilo 12 1
+77 EpeeGirl 21 1
+78 BladeMan 21 1
+79 HugeNaga 9 1
+80 Medusa 55 1
+81 D.Fossil 20 1
+82 Tortoise 12 1
+83 Dummy 11 1
+84 Ghost 51 1
+85 Bomb 0 0
+86 GrayBomb 0 0
+87 Chimera 5 1
+88 Carapace 12 1
+89 Ironback 12 1
+90 FlameDog 5 1
+91 Gorgon 55 1
+92 Stoneman 29 1
+93 Lilith 39 1
+94 Q.Lamia 22 1
+95 TinyToad 14 1
+96 HugeCell 1 1
+97 Roc 18 1
+98 Sorcerer 34 1
+99 Mad Ogre 32 1
+100 EvilDoll 33 1
+101 GiantBat 16 1
+102 Arachne 53 1
+103 FlameMan 23 1
+104 Beamer 24 1
+105 Ballon 58 1
+106 Grenade 58 1
+107 Plague 0 0
+108 Last Arm 52 1
+109 BlackCat 54 1
+110 D.Machin 37 1
+111 Talantla 53 1
+112 Gremlin 11 1
+113 Centpede 53 1
+114 Red Worm 28 1
+115 Red Eye 3 1
+116 Crawler 16 1
+117 Ice Liz 6 1
+118 RockMoth 3 1
+119 Were Bat 16 1
+120 IceBeast 6 1
+121 Conjurer 34 1
+122 Witch 38 1
+123 TrapDoor 0 0
+124 ToadLady 48 1
+125 DarkTree 4 1
+126 Mantcore 5 1
+127 MoonCell 10 1
+128 Breath 0 0
+129 Tofu 1 1
+130 Pudding 10 1
+131 Mind 0 0
+132 Ironman 30 1
+133 Green D. 49 1
+134 PinkPuff 40 1
+135 Alert 52 1
+136 Machine 7 1
+137 MacGiant 25 1
+138 Kary 41 1
+139 Molbol 31 1
+140 Ging-Ryu 35 1
+141 Yellow D 49 1
+142 Fiend 11 1
+143 Juclyote 26 1
+144 EvilMask 15 1
+145 Horseman 21 2
+146 RedGiant 25 1
+147 Staleman 42 1
+148 FatalEye 43 1
+149 D. Lunar 0 0
+150 Searcher 52 1
+151 Warlock 48 1
+152 Wyvern 0 0
+153 Procyote 26 1
+154 Ogopogo 0 0
+155 Blue D. 44 1
+156 King-Ryu 36 1
+157 Clapper 37 1
+158 Pale Dim 0 0
+159 Red D. 46 1
+160 Behemoth 47 1
+161 D.Mist 0 0
+162 Octomamm 0 0
+163 Antlion 0 0
+164 MomBomb 0 0
+165 Milon 0 0
+166 Milon Z. 0 0
+167 Baigan 0 0
+168 RightArm 0 0
+169 Left Arm 0 0
+170 Kainazzo 0 0
+171 Dark Elf1 0 0
+172 Dark Elf2 0 0
+173 Sandy 0 0
+174 Cindy 0 0
+175 Mindy 0 0
+176 Golbez-zot 0 0
+177 Valvalis 0 0
+178 Cal 0 0
+179 Calbrena 0 0
+180 Golbez 0 0
+181 Shadow 0 0
+182 Dr.Lugae 0 0
+183 Balnab 0 0
+184 Dr.Lugae2 0 0
+185 K.Eblan 0 0
+186 Q.Eblan 0 0
+187 Rubicant 0 0
+188 Odin 0 0
+189 Leviatan 0 0
+190 Bahamut 0 0
+191 EvilWall 0 0
+192 Asura 0 0
+193 Elements1 0 0
+194 Elements2 0 0
+195 Dark Elf3 0 0
+196 WaterHagB 0 0
+197 CPU 0 0
+198 Defender 0 0
+199 Zemus 0 0
+200 Zeromus0 63 0
+201 Zeromus1 63 0
+202 Dragoon 0 0
+203 Bard 0 0
+204 Karate 0 0
+205 D.Knight 0 0
+206 Girl 0 0
+207 Titan 0 0
+208 FloatEye2 0 0
+209 Raven2 0 0
+210 Brena 0 0
+211 Ghast 0 0
+212 Balnab-Z 0 0
+213 Attacker 0 0
+214 Dummy2 0 0
+215 Dummy3 0 0
+216 Zeromus2 0 0
+217 Dummy4 0 0
+218 Dummy5 0 0
+219 Dummy6 0 0
+220 Dummy7 14 3
+221 Dummy8 0 0
+222 Dummy9 0 0

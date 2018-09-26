@@ -1,0 +1,150 @@
+weapon,effect,visual,power,chances
+Fire Claw,nothing,nothing,0,5
+Fire Claw,Fire1*,Fire1*,1,5
+Fire Claw,Fire1*,Fire1*,4,5
+Fire Claw,Fire1*,Fire1*,8,5
+Fire Claw,Fire2*,Fire2*,12,5
+Fire Claw,Fire3*,Fire3*,4,3
+Fire Claw,Fire3*,Fire3*,12,2
+Ice Claw,nothing,nothing,0,5
+Ice Claw,Ice-1*,Ice-1*,1,5
+Ice Claw,Ice-1*,Ice-1*,4,5
+Ice Claw,Ice-1*,Ice-1*,8,5
+Ice Claw,Ice-2*,Ice-2*,12,5
+Ice Claw,Ice-3*,Ice-3*,4,3
+Ice Claw,Ice-3*,Ice-3*,12,2
+Thunder Claw,nothing,nothing,0,5
+Thunder Claw,Lit-1*,Lit-1*,1,5
+Thunder Claw,Lit-1*,Lit-1*,4,5
+Thunder Claw,Lit-1*,Lit-1*,8,5
+Thunder Claw,Lit-2*,Lit-2*,12,5
+Thunder Claw,Lit-3*,Lit-3*,4,3
+Thunder Claw,Lit-3*,Lit-3*,12,2
+Charm Claw,nothing,nothing,0,5
+Charm Claw,Charm*,Glance,5,5
+Poison Claw,Virus*,Venom*,5,5
+Poison Claw,Virus*,Venom*,12,2
+Cat Claw,Sleep*,Sleep*,12,3
+Cat Claw,Needle,Needle,2,1
+Cat Claw,Needle,Needle,4,1
+Ice Rod,Ice-1*,Ice-1*,4,5
+Ice Rod,Ice-2*,Ice-2*,4,5
+Ice Rod,Ice-3*,Ice-3*,4,5
+Ice Rod,Flood*,Flood*,7,1
+Flame Rod,Fire1*,Fire1*,5,5
+Flame Rod,Fire2*,Fire2*,5,5
+Flame Rod,Fire3*,Fire3*,5,5
+Flame Rod,Flame*,Flame*,8,1
+Thunder Rod,Lit-1*,Lit-1*,6,5
+Thunder Rod,Lit-2*,Lit-2*,6,5
+Thunder Rod,Lit-3*,Lit-3*,6,5
+Thunder Rod,Blitz*,Blitz*,8,1
+Change Rod,Piggy*,Piggy*,5,4
+Change Rod,Toad*,Toad*,5,4
+Change Rod,Size*,Size*,5,1
+Change Rod,Stone*,Stone*,8,1
+Lilith Rod,Psych*,Psych*,8,1
+Lilith Rod,Drain*,Psych*,15,1
+Staff,Staff,Heal*,1,4
+Staff,Heal*,Heal*,1,1
+Cure Staff,Cure Staff,Cure1*,2,4
+Cure Staff,Cure Staff,Cure2*,10,4
+Cure Staff,Cure Staff,Cure3*,20,1
+Cure Staff,Cure Staff,Cure3*,35,1
+Cure Staff,Cure Staff,Cure4*,35,1
+Silver Staff,Silver Staff,Heal*,1,4
+Silver Staff,Heal*,Heal*,1,4
+Power Staff,EMPTY,Bersk*,0,0
+Power Staff,Bersk*,Bersk*,1,1
+Lunar Staff,EMPTY,Dispel*,1,0
+Lunar Staff,Dispel*,Dispel*,1,5
+Lunar Staff,Black Hole,Black Hole,1,3
+Lunar Staff,Shell*,Shell*,10,2
+Life Staff,Life1*,Life1*,1,4
+Life Staff,Life2*,Life2*,1,2
+Silence Staff,Mute*,Mute*,1,5
+Silence Staff,Sleep*,Sleep*,12,3
+Silence Staff,Stop*,Stop*,12,2
+Shadow Sword,EMPTY,EMPTY,0,5
+Shadow Sword,Drain*,Drain*,4,1
+Shadow Sword,Image*,Image*,1,5
+Darkness Sword,EMPTY,EMPTY,0,5
+Darkness Sword,Tornado,Tornado,1,5
+Darkness Sword,Virus*,D. Breath,2,4
+Darkness Sword,Weak*,Weak*,1,1
+Black Sword,EMPTY,EMPTY,0,5
+Black Sword,Comet*,Black Hole,2,5
+Black Sword,Comet*,Black Hole,10,2
+Black Sword,Black Hole,Black Hole,1,5
+Black Sword,Fatal*,Fatal*,200,10
+Black Sword,Disrupt,Disrupt,200,1
+Light Sword,Wall*,Wall*,20,5
+Light Sword,Cure3*,Cure3*,12,5
+Excalibur,Life1*,Life1*,1,5
+Excalibur,Comet*,Comet*,7,5
+Excalibur,Bomb4E,MegaNuke,1,2
+Fire Sword,Fire,Fire,4,5
+IceBrand,ColdMist,ColdMist,5,5
+Defense Sword,Armor*,Armor*,20,5
+Drain Sword,Drain*,Drain*,25,5
+Drain Sword,Drain*,Drain*,50,2
+Drain Sword,Drain*,Drain*,100,1
+Ancient Sword,Curse,Curse,20,4
+Ancient Sword,Count,Count,20,1
+Ancient Sword,Slow*,Slow*,8,2
+Slumber Sword,Sleep*,Sleep*,8,5
+Slumber Sword,Sleep*,Sleep*,20,5
+Medusa Sword,Stone*,Stone*,12,1
+Spear,Rod,Counter,1,1
+Wind Spear,Flood*,Flood*,2,3
+Wind Spear,Tornado,Tornado,2,10
+Wind Spear,Laser,Tornado,1,5
+Wind Spear,Weak*,Weak*,2,2
+Wind Spear,Storm,Storm,1,1
+Flame Spear,Fire2*,Fire2*,4,1
+Flame Spear,Fire2*,Fire3*,6,4
+Flame Spear,Fire2*,Glare,8,2
+Flame Spear,Glare,Glare,3,1
+Blizzard Spear,Ice-2*,Ice-2*,4,1
+Blizzard Spear,Ice-2*,Ice-3*,7,4
+Blizzard Spear,Shiva,Ice-3*,28,1
+Dragoon Spear,EMPTY,EMPTY,0,1
+Dragoon Spear,Float*,Float*,1,9
+Dragoon Spear,Ice-3*,Ice-3*,15,1
+Dragoon Spear,Globe199,Lit-3*,1,1
+White Spear,White*,White*,2,1
+White Spear,White*,White*,4,1
+White Spear,White*,White*,6,1
+White Spear,White*,White*,8,1
+White Spear,White*,White*,30,1
+Drain Spear,Drain*,Drain*,25,5
+Drain Spear,Drain*,Drain*,50,2
+Drain Spear,Drain*,Drain*,100,1
+Gungnir Spear,Quake*,Quake*,3,1
+Gungnir Spear,Quake*,Quake*,6,1
+Gungnir Spear,Lit-2*,Lit-2*,5,1
+Gungnir Spear,Lit-2*,Lit-3*,10,1
+Ninja Blade,Smoke*,Smoke*,1,1
+Murasame,Pin*,Pin*,75,1
+Assassin,Fatal*,Pin*,30,1
+Mute Dagger,Mute*,Mute*,5,1
+Whip,EMPTY,EMPTY,0,1
+Whip,Hold*,Hold*,5,1
+Chain Whip,EMPTY,EMPTY,0,1
+Chain Whip,Hold*,Hold*,5,1
+Blitz Whip,Blitz*,Blitz*,5,1
+Flame Whip,Flame*,Flame*,12,1
+Dragon Whip,MegaNuke,MegaNuke,1,1
+Crystal Sword,Nuke*,Nuke*,4,5
+Crystal Sword,Nuke*,Nuke*,5,4
+Crystal Sword,Nuke*,Nuke*,6,3
+Crystal Sword,Comet*,Fission,12,2
+Crystal Sword,Comet*,Fission,40,1
+Dreamer Harp,Sleep*,Sleep*,6,1
+Charm Harp,Charm*,Charm*,12,1
+Silver Hammer,Magnet,Magnet,50,5
+Silver Hammer,Dancing Knife,Magnet,10,5
+Earth Hammer,Quake*,Quake*,1,4
+Earth Hammer,Quake*,Quake*,2,3
+Earth Hammer,Quake*,Quake*,5,2
+Earth Hammer,Crush,Crush,50,1
