@@ -42,7 +42,13 @@ usage: ff4fe-post-randomizer [-h] [--seed SEED] [--output OUTPUT]
                              [--uptco-edward]
                              [rompath]
 
-Description
+Final Fantasy 4 Free Enterprise Post-Randomizer
+
+This tool dumps information or makes modifications to a specified smc file.
+Currently, the smc file must be a raw, uncompressed file.
+By default, no modifications are written to disk.  The --apply/-a flag
+will write a new file to disk.  The new file will be in the same location
+as the original rom, with the seed appended to the original filename.
 
 positional arguments:
   rompath
@@ -98,5 +104,4 @@ optional arguments:
   --test-drops          Test loading drop tables and dumping to rom with no changes.
   --test-spells         Test loading and writing spell stats with no changes.
   --tpassbuff           Add Bacchus, Silkweb, StarVeil, Elixir, and Spoon to Troia Pass Shop
-  --uptco-edward        ????
 ```
