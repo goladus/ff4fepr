@@ -268,8 +268,6 @@ monster-extra-order:
   - creature-type
   - counter
 
-#All these masks and shifts are probably wrong and need to
-# be reversed
 monster-extra:
   attack-traits:
     - elemental:
