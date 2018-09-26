@@ -16,4 +16,4 @@ Using hacks on the vanilla game is one option, but speaking personally I really 
 
 ### Using ff4fepr
 
-coming soon...
+Currently, this tool has no official distribution mechanism.  It's developed for Python 2.7 and has been tested on [Cygwin](http://www.cygwin.com) (but uses minimal libraries so probably works in any POSIX environment).
