@@ -1,7 +1,7 @@
 from ff4data import *
 from datatypes import getbytesfortype
 from resource import load
-from core import bytes2int, num2bytes
+from core import bytes2int, num2bytes, toint
 romoffsets=load('romoffsets')
 
 def dump2screen2(romdata):
@@ -85,8 +85,12 @@ def setdualwield(romdata, charname):
     modifystatval(romdata, charname, 'left-handed', True)
     modifystatval(romdata, charname, 'right-handed', True)
 
+def setdualwields(romdata, argstring):
+    for charname in argstring.split(','):
+        setdualwield(romdata, charname)
+
 def uptco_edward(romdata):
-    charname="UptCo Edward"
+    charname="upt CoEdward"
     modifystatval(romdata, charname, 'str', 70)
     modifystatval(romdata, charname, 'agi', 70)
     modifystatval(romdata, charname, 'wis', 70)
@@ -96,3 +100,11 @@ def uptco_edward(romdata):
     modifystatval(romdata, charname, 'mp', 9050)
     modifystatval(romdata, charname, 'maxmp', 9050)
     modifystatval(romdata, charname, 'level', 80)
+
+def setcharstats(romdata, argstring):
+    charspecs=argstring.split('.')
+    for charspec in charspecs:
+        charname, statmodstr=charspec.split(':')
+        for statmod in statmodstr.split(','):
+            statname, statval = statmod.split('=')
+            modifystatval(romdata, charname, statname, toint(statval))

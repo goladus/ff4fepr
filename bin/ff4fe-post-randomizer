@@ -26,22 +26,27 @@ def parse_string_args(longstring):
     return results
             
 string_of_args="""
+add-spells-to-weapons   Add spell to weapon Arg: WeaponName=Spell:Visual:Power,Weapon2=Spell:Visual:Power
 shuffle-weaponatk     Shuffles weapon attack power within specified weapon categories.
 vary-weaponatk        Varies weapon attack power by -5 to 15.
 rydia-random-calls    Rydia starts with additional call spells.  Arg: <1 to 4 spells to add>
 rydia-starting-calls  Add additional spells to Rydia's starting calls.  Arg: spells to add.
-replace-commandset    Replaces the commandset for specified character.  Arg: <CharnameJoin>=<cmd1>,<cmd2>,<cmd3>
+replace-commandset    Replaces the commandset for specified character.  Arg: <CharnameJoin>:<cmd1>,<cmd2>,<cmd3>
 dual-wield            Sets the character's handedness to R+L.  Arg: <Charname>
+set-char-stats  Sets starting stats for characters.  Example: KidRydia:hp=300,maxhp=300,maxmp=50.Rosa:agi=20
 add-bossbit    Add boss bit to comma-delimited list of spells
 remove-bossbit Removes boss bit from comma-delimited list of spells
+test-encoding  Prints the ff4 hex codes for provided string
 """
 
 sring_of_flags="""
+rydia-allrares        Rydia starts with all four rare call spells (also renames the Dummied cockatrice spell)
 randomize-drops Randomizes all drop tables.
 modup-weaponatk       Runs a preprogrammed set of various randomizations on weapon attack.
 uber-tellah    Tellah starts with some overpowered enemy abilities
 paladin-spells Add some higher-level white spells to Cecil's Paladin magic
-set-j-drops    Restore the monster drop tables from FF4j
+restore-j-drops    Restore the monster drop tables from FF4j
+bird           Rename Dummied Cockatrice spell to Bird
 dump-learned   Dump spell progressions from rom to screen.
 dump-starting-spells    Dump starting spells from rom to screen.
 dump-starting-stats  Dump starting stats from rom to screen.

@@ -43,8 +43,10 @@ spellstats-num: 192
 player-spellnames: 0x78900
 player-spellnames-size: 6
 other-spellnames: 0x78ab0
+#other-spellnames: 0x78a00
+#other-spellnames: 0x78900
 other-spellnames-size: 8
-player-spells: 48
+player-spells: 0x48
 #spells[:0x48] (player spells)
 #spells[0x48:a9] (Rod -> Counter)
 #spells[0x48:0xb8] (Rod -> Everything?)
@@ -53,9 +55,9 @@ charmenus: 0x9fd50
 charmenus-size: 5
 
 charjoin-order:
-  - Dk Cecil
+  - DkCecil
   - Kain
-  - Kid Rydia
+  - KidRydia
   - Tellah
   - Edward
   - Rosa
@@ -63,17 +65,17 @@ charjoin-order:
   - Palom
   - Porom
   - Tellah2
-  - Paladin Cecil
+  - PaladinCecil
   - Tellah3
-  - Baron Yang
+  - BaronYang
   - Cid
-  - Zot Kain
-  - Zot Rosa
+  - ZotKain
+  - ZotRosa
   - Rydia
   - Edge
   - FuSoYa
-  - Giant Kain
-  - UptCo Edward
+  - GiantKain
+  - upt CoEdward
 
 
 starting-stats: 0x7a900

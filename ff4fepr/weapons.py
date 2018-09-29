@@ -1,6 +1,6 @@
 from ff4data import *
 from resource import load
-from core import bytes2int, num2bytes, identity
+from core import bytes2int, num2bytes, identity, toint
 romoffsets=load('romoffsets')
 items=load('items')
 from collections import defaultdict
@@ -73,6 +73,31 @@ def dump2screen(romdata):
         sys.stdout.write(' '.join(["%s:%s" % (record, records[record])
                                    for record in records]))
         sys.stdout.write('\n')
+
+def addspell2weapon(romdata, weaponame, spellname, spellpower, spellvisual=None):
+    addspells2weapons(romdata, [(weaponname, spellname, spellvisual, spellpower)])
+
+def replaceweaponspell(romdata, weaponname, spellname):
+    wdata=loadweapons(romdata)
+    wdata[weaponname]['casts']=spells[spellname]
+    weapon2rom(romdata, wdata)
+
+def addspells2weapons(romdata, changes):
+    wdata=loadweapons(romdata)
+    for wname, spname, spvisual, sppower in changes:
+        wdata[wname]['casts']=spells.index(spname)
+        wdata[wname]['spellvisual']=spells.index(spvisual)
+        wdata[wname]['spellpower']=toint(sppower)
+    weapon2rom(romdata, wdata)
+
+def addspells2weapons_arg(romdata, arglist):
+    wspecs=arglist.split(',')
+    changes=[]
+    for wspec in wspecs:
+        wname, spdata = wspec.split('=')
+        spname, spvisual, sppower = spdata.split(':')
+        changes.append((wname, spname, spvisual, sppower))
+    addspells2weapons(romdata, changes)
 
 def hitcalc(atk, tohit, charbackrow=False, jump=False, stats=None,
             enemybackrow=False,

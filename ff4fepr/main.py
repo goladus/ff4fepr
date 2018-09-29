@@ -32,10 +32,13 @@ def main(args):
                        output_fname=output_fname,
                        verbose=verbose,
                        debug=debug)
+    if args.rydia_allrares:
+        magemods.rydiacalls(romdata, "Imp*,Bomb*,Cockatrice*,Mage*")
+        spelldata.birdcall(romdata)
     if args.rydia_starting_calls is not None:
         magemods.rydiacalls(romdata, args.rydia_starting_calls)
     if args.rydia_random_calls is not None:
-        magemods.rydiacalls_random(romdata, args.rydia_starting_calls)
+        magemods.rydiacalls_random(romdata, args.rydia_random_calls)
     if args.uber_tellah:
         magemods.addspellset(romdata, 'uber-tellah')
     if args.paladin_spells:
@@ -46,6 +49,8 @@ def main(args):
     if args.dump_starting_spells:
         for itm in groupspells(romdata):
             print itm
+    if args.set_char_stats:
+        starting_stats.setcharstats(romdata, args.set_char_stats)
     if args.dump_starting_stats:
         starting_stats.dumpstartingstats(romdata)
     if args.dump_menus:
@@ -53,11 +58,12 @@ def main(args):
     if args.dump_equip:
         starting_equip.dump2screen(romdata)
     if args.dual_wield is not None:
-        starting_stats.setdualwield(romdata, args.dual_wield)
+        starting_stats.setdualwields(romdata, args.dual_wield)
+    if args.add_spells_to_weapons is not None:
+        weapons.addspells2weapons_arg(romdata, args.add_spells_to_weapons)
     if args.replace_commandset is not None:
-        charname, menustr = args.replace_commandset.split('=')
-        menuset=menustr.split(',')
-        battlemenus.replace_commandset(romdata, charname, menuset)
+        battlemenus.replace_commandset_args(romdata,
+                                            args.replace_commandset)
     if args.uptco_edward:
         starting_equip.uptco_edward(romdata)
         starting_stats.uptco_edward(romdata)
@@ -90,7 +96,7 @@ def main(args):
         changes2dump=weapons.modup_weaponatk(romdata)
         for wname, oldval, newval in changes2dump:
             verbose("%s: %s->%s\n" % (wname, oldval, newval))
-    if args.set_j_drops:
+    if args.restore_j_drops:
         drops.setjdroptables(romdata)
     if args.test_weapons:
         weapons.weapon2rom(romdata, weapons.loadweapons(romdata))
@@ -112,6 +118,10 @@ def main(args):
         spelldata.dumpspellstats(romdata)
     if args.test_spells:
         spelldata.testspelldata(romdata)
+    if args.bird:
+        spelldata.birdcall(romdata)
+    if args.test_encoding is not None:
+        spelldata.testencode(args.test_encoding)
     if args.remove_bossbit is not None or args.add_bossbit is not None:
         addbossbit=args.add_bossbit.split(',') if args.add_bossbit is not None else []
         removebossbit=args.remove_bossbit.split(',') if args.remove_bossbit is not None else []

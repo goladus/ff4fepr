@@ -13,6 +13,13 @@ def dump2screen(romdata):
         offset=startoff+index*rsize
         print charname, [commands[x] if x < 0xff else 'x' for x in romdata[offset:offset+rsize]]
 
+def replace_commandset_args(romdata, stringarg):
+    charspecs=stringarg.split('.')
+    for charspec in charspecs:
+        charname, menustr = charspec.split('=')
+        menuset=menustr.split(',')
+        replace_commandset(romdata, charname, menuset)
+
 def replace_commandset(romdata, charname, menuset):
     startoff=romoffsets['charmenus']
     order = ['Blank'] + romoffsets['charjoin-order']
