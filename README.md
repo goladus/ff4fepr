@@ -16,22 +16,27 @@ Using hacks on the vanilla game is one option, but speaking personally I really 
 
 ### Using ff4fepr
 
-Currently, this tool has no official distribution mechanism.  It's developed for Python 2.7 and has been tested on [Cygwin](http://www.cygwin.com) (but uses minimal libraries so probably works in any POSIX environment).
+Currently, this tool has no official distribution mechanism.  It's developed for Python 2.7 and has been tested on [Cygwin](http://www.cygwin.com) (but uses minimal libraries so probably works in any POSIX environment).  To use this on windows, you'll need to set up a script that passes the script, `ff4fe-post-randomizer` to `python.exe`.
 
 ```
 usage: ff4fe-post-randomizer [-h] [--seed SEED] [--output OUTPUT]
+                             [--add-spells-to-weapons ADD_SPELLS_TO_WEAPONS]
                              [--shuffle-weaponatk SHUFFLE_WEAPONATK]
                              [--vary-weaponatk VARY_WEAPONATK]
                              [--rydia-random-calls RYDIA_RANDOM_CALLS]
                              [--rydia-starting-calls RYDIA_STARTING_CALLS]
                              [--replace-commandset REPLACE_COMMANDSET]
                              [--dual-wield DUAL_WIELD]
+                             [--set-char-stats SET_CHAR_STATS]
+                             [--set-cast-times SET_CAST_TIMES]
                              [--add-bossbit ADD_BOSSBIT]
-                             [--remove-bossbit REMOVE_BOSSBIT] [--apply]
+                             [--remove-bossbit REMOVE_BOSSBIT]
+                             [--test-encoding TEST_ENCODING] [--apply]
                              [--version] [--verbose] [--debug] [--jv]
-                             [--randomize-drops] [--modup-weaponatk]
-                             [--uber-tellah] [--paladin-spells]
-                             [--set-j-drops] [--dump-learned]
+                             [--rydia-allrares] [--randomize-drops]
+                             [--modup-weaponatk] [--uber-tellah]
+                             [--paladin-spells] [--restore-j-drops] [--bird]
+                             [--ct-rebalance] [--dump-learned]
                              [--dump-starting-spells] [--dump-starting-stats]
                              [--dump-menus] [--dump-equip] [--dump-weapons]
                              [--dump-drops] [--dump-monsters]
@@ -39,7 +44,7 @@ usage: ff4fe-post-randomizer [-h] [--seed SEED] [--output OUTPUT]
                              [--dump-monster-drops] [--dump-spells]
                              [--hitratings] [--test-monsters] [--test-weapons]
                              [--test-drops] [--test-spells] [--tpassbuff]
-                             [--uptco-edward]
+                             [--special]
                              [rompath]
 
 Final Fantasy 4 Free Enterprise Post-Randomizer
@@ -58,6 +63,8 @@ optional arguments:
   --seed SEED, -s SEED  specify a seed for random functions
   --output OUTPUT, -o OUTPUT
                         specify an output file
+  --add-spells-to-weapons ADD_SPELLS_TO_WEAPONS
+                        Add spell to weapon Arg: WeaponName=Spell:Visual:Power,Weapon2=Spell:Visual:Power
   --shuffle-weaponatk SHUFFLE_WEAPONATK
                         Shuffles weapon attack power within specified weapon categories.
   --vary-weaponatk VARY_WEAPONATK
@@ -67,23 +74,32 @@ optional arguments:
   --rydia-starting-calls RYDIA_STARTING_CALLS
                         Add additional spells to Rydia's starting calls.  Arg: spells to add.
   --replace-commandset REPLACE_COMMANDSET
-                        Replaces the commandset for specified character.  Arg: <CharnameJoin>=<cmd1>,<cmd2>,<cmd3>
+                        Replaces the commandset for specified character.  Arg: <CharnameJoin>:<cmd1>,<cmd2>,<cmd3>
   --dual-wield DUAL_WIELD
                         Sets the character's handedness to R+L.  Arg: <Charname>
+  --set-char-stats SET_CHAR_STATS
+                        Sets starting stats for characters.  Example: KidRydia:hp=300,maxhp=300,maxmp=50.Rosa:agi=20
+  --set-cast-times SET_CAST_TIMES
+                        Sets cast time for spells.  "Meteo*=5,Quake*=8"
   --add-bossbit ADD_BOSSBIT
                         Add boss bit to comma-delimited list of spells
   --remove-bossbit REMOVE_BOSSBIT
                         Removes boss bit from comma-delimited list of spells
+  --test-encoding TEST_ENCODING
+                        Prints the ff4 hex codes for provided string
   --apply, -a
   --version, -V
   --verbose, -v
   --debug, -d
   --jv, -j
+  --rydia-allrares      Rydia starts with all four rare call spells (also renames the Dummied cockatrice spell)
   --randomize-drops     Randomizes all drop tables.
   --modup-weaponatk     Runs a preprogrammed set of various randomizations on weapon attack.
   --uber-tellah         Tellah starts with some overpowered enemy abilities
   --paladin-spells      Add some higher-level white spells to Cecil's Paladin magic
-  --set-j-drops         Restore the monster drop tables from FF4j
+  --restore-j-drops     Restore the monster drop tables from FF4j
+  --bird                Rename Dummied Cockatrice spell to Bird
+  --ct-rebalance        Reduce cast delay on some Black and Summon magic (elementals and Meteo)
   --dump-learned        Dump spell progressions from rom to screen.
   --dump-starting-spells
                         Dump starting spells from rom to screen.
@@ -104,4 +120,5 @@ optional arguments:
   --test-drops          Test loading drop tables and dumping to rom with no changes.
   --test-spells         Test loading and writing spell stats with no changes.
   --tpassbuff           Add Bacchus, Silkweb, StarVeil, Elixir, and Spoon to Troia Pass Shop
+  --special             ????
 ```
