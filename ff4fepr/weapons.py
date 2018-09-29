@@ -6,6 +6,8 @@ items=load('items')
 from collections import defaultdict
 itemcats=load('item-categories')
 import random
+from ff4text import basicencode, encoding
+from allitems import changeitemname, dumpnames
 
 def weaponrecord(bytevalue, record):
     if record in romoffsets['split-weapondata']:
@@ -125,7 +127,7 @@ def hitrating(romdata):
     import sys
     wdata=loadweapons(romdata)
     for w, records in wdata.items():
-        hitest=int(100 * (records['attack'] * ((records['tohit']+13)/100.0)))
+        hitest=int(100 * (records['attack'] * ((records['tohit'])/100.0)))
         sys.stdout.write('%5d ' % hitest)
         sys.stdout.write("%15s " % w)
         sys.stdout.write(' '.join(["%s:%s" % (record, records[record])
@@ -192,3 +194,12 @@ def modup_weaponatk(romdata):
     changes += vwfn(['hammers', 'axes2h'], -10, 35)
     changes += vwfn(['boomerangs'], -20, 40)
     return changes
+
+def ancient2coral(romdata):
+    ## Still need to change attack visual to dragoon spear animation
+    wd=loadweapons(romdata)
+    wd['Ancient Sword']['element-index']=3
+    wd['Ancient Sword']['tohit']=80
+    wd['Ancient Sword']['attack']=39
+    weapon2rom(romdata, wd)
+    changeitemname(romdata, "Ancient Sword", "<sword>Coral")

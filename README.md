@@ -16,8 +16,13 @@ Using hacks on the vanilla game is one option, but speaking personally I really 
 
 ### Using ff4fepr
 
-Currently, this tool has no official distribution mechanism.  It's developed for Python 2.7 and has been tested on [Cygwin](http://www.cygwin.com) (but uses minimal libraries so probably works in any POSIX environment).  To use this on windows, you'll need to set up a script that passes the script, `ff4fe-post-randomizer` to `python.exe`.
+Currently, this tool has no official distribution mechanism.  It's developed for Python 2.7 and has been tested on [Cygwin](http://www.cygwin.com) (but uses minimal libraries so probably works in any POSIX environment).  To use this on windows, you'll need to set up a script that passes the script, `ff4fe-post-randomizer`, to `python.exe`.  It will look something like this:
 
+```
+.\Scripts\python.exe .\Scripts\ff4fe-post-randomizer %*
+```
+
+`ff4fe-post-randomizer -h`
 ```
 usage: ff4fe-post-randomizer [-h] [--seed SEED] [--output OUTPUT]
                              [--add-spells-to-weapons ADD_SPELLS_TO_WEAPONS]
@@ -33,17 +38,21 @@ usage: ff4fe-post-randomizer [-h] [--seed SEED] [--output OUTPUT]
                              [--remove-bossbit REMOVE_BOSSBIT]
                              [--test-encoding TEST_ENCODING] [--apply]
                              [--version] [--verbose] [--debug] [--jv]
-                             [--rydia-allrares] [--randomize-drops]
-                             [--modup-weaponatk] [--uber-tellah]
-                             [--paladin-spells] [--restore-j-drops] [--bird]
-                             [--ct-rebalance] [--dump-learned]
+                             [--rydia-allrares] [--dk-equip]
+                             [--randomize-drops] [--modup-weaponatk]
+                             [--uber-tellah] [--paladin-spells]
+                             [--restore-j-drops] [--bird] [--ct-rebalance]
+                             [--coral-sword] [--dump-learned]
                              [--dump-starting-spells] [--dump-starting-stats]
                              [--dump-menus] [--dump-equip] [--dump-weapons]
                              [--dump-drops] [--dump-monsters]
                              [--dump-monster-itemtables]
                              [--dump-monster-drops] [--dump-spells]
-                             [--hitratings] [--test-monsters] [--test-weapons]
-                             [--test-drops] [--test-spells] [--tpassbuff]
+                             [--dump-eqtables] [--dump-itemnames]
+                             [--dump-itemkeys] [--dump-spellkeys]
+                             [--generate-form] [--hitratings]
+                             [--test-monsters] [--test-weapons] [--test-drops]
+                             [--test-spells] [--test-eqtables] [--tpassbuff]
                              [--special]
                              [rompath]
 
@@ -93,6 +102,7 @@ optional arguments:
   --debug, -d
   --jv, -j
   --rydia-allrares      Rydia starts with all four rare call spells (also renames the Dummied cockatrice spell)
+  --dk-equip            Dark Knight Cecil gains access to most equipment shared by Kain and Paladin Cecil
   --randomize-drops     Randomizes all drop tables.
   --modup-weaponatk     Runs a preprogrammed set of various randomizations on weapon attack.
   --uber-tellah         Tellah starts with some overpowered enemy abilities
@@ -100,6 +110,7 @@ optional arguments:
   --restore-j-drops     Restore the monster drop tables from FF4j
   --bird                Rename Dummied Cockatrice spell to Bird
   --ct-rebalance        Reduce cast delay on some Black and Summon magic (elementals and Meteo)
+  --coral-sword         Replaces the Ancient Sword with a Lightning-elemental Coral Sword.
   --dump-learned        Dump spell progressions from rom to screen.
   --dump-starting-spells
                         Dump starting spells from rom to screen.
@@ -114,11 +125,17 @@ optional arguments:
                         Dump monster item table numbers and drop rates to screen.
   --dump-monster-drops  Dump monster drop data to screen. (resolves item-table)
   --dump-spells         Dump spell stats
+  --dump-eqtables       Dump class equip tables
+  --dump-itemnames      Dump item names from rom.
+  --dump-itemkeys       Dump item names used by ff4fepr
+  --dump-spellkeys      Dump spell names used by ff4feper
+  --generate-form       Generate web form from script options (doesn't do much atm)
   --hitratings          list attack * hitrate for each weapon
   --test-monsters       Test loading monsters and dumping to rom with no changes
   --test-weapons        Test loading weapons into memory and dumping to rom with no changes.
   --test-drops          Test loading drop tables and dumping to rom with no changes.
   --test-spells         Test loading and writing spell stats with no changes.
+  --test-eqtables       Test loading and writing equip tables with no changes.
   --tpassbuff           Add Bacchus, Silkweb, StarVeil, Elixir, and Spoon to Troia Pass Shop
   --special             ????
 ```

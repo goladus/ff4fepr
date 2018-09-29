@@ -25,6 +25,9 @@ dropdata: 0x71f00
 dropdata-size: 4
 dropdata-len: 64
 
+itemnames: 0x78000
+itemnames-size: 9
+
 numweapons: 96
 weapondata: 0x79101
 weapondata-size: 8
@@ -55,7 +58,7 @@ charmenus: 0x9fd50
 charmenus-size: 5
 
 charjoin-order:
-  - DkCecil
+  - DKCecil
   - Kain
   - KidRydia
   - Tellah
@@ -116,7 +119,7 @@ starting-stats-record-map:
   xpnext: 29
 
 starting-stats-order:
-  - DK Cecil
+  - DKCecil
   - Kain
   - Rydia
   - Tellah
@@ -125,7 +128,7 @@ starting-stats-order:
   - Yang
   - Palom
   - Porom
-  - Paladin Cecil
+  - PaladinCecil
   - Cid
   - Edge
   - FuSoYa
@@ -143,6 +146,47 @@ starting-equip-record:
   - rhno
   - lheq
   - lhno
+
+equip-tables: 0x7a550
+equip-tables-size: 2
+equip-tables-num: 32
+
+equip-classes:
+  - DKCecil
+  - Kain
+  - KidRydia
+  - Tellah
+  - Edward
+  - Rosa
+  - Yang
+  - Palom
+  - Porom
+  - PaladinCecil
+  - Cid
+  - AdultRydia
+  - Edge
+  - FuSoYa
+  - Extra1
+  - Extra2
+
+equip-table-record:
+  - [0, 0x1, 0]
+  - [0, 0x2, 1]
+  - [0, 0x4, 2]
+  - [0, 0x8, 3]
+  - [0, 0x10, 4]
+  - [0, 0x20, 5]
+  - [0, 0x40, 6]
+  - [0, 0x80, 7]
+  - [1, 0x1, 0]
+  - [1, 0x2, 1]
+  - [1, 0x4, 2]
+  - [1, 0x8, 3]
+  - [1, 0x10, 4]
+  - [1, 0x20, 5]
+  - [1, 0x40, 6]
+  - [1, 0x80, 7]
+
 
 monsteratk: 0x72380
 monsteratk-len: 671

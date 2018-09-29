@@ -112,7 +112,7 @@ class BinaryList(list):
             simple_write(list(self), output_fname)
             self.verbose('Wrote %s\n' % output_fname)
     def addmod(self, offset, value):
-        "Adds a modification to the list"
+        "Adds a modification to the list and updates the list value"
         self.modification_list.append((offset, value))
         self[offset]=value
     def addmods(self, *modlist):
@@ -210,5 +210,16 @@ def toint(astr):
     else:
         return int(astr)
 
+#Functions for extracting or writing to specific bits in a byte.
 def mergemaskedvalue(existing_byte, byte_to_merge, bitinfo):
-    return (existing_byte & ~ bitinfo[1]) | (byte_to_merge << bitinfo[2])
+    #index_in_record is ignored for this function
+    index_in_record, bitmask, bitshift = bitinfo
+    return (existing_byte & ~ bitmask) | (byte_to_merge << bitshift)
+
+def getmaskedvalue(intvalue, bitinfo):
+    #index_in_record is ignored for this function
+    index_in_record, bitmask, bitshift = bitinfo
+    return (intvalue & bitmask) >> bitshift
+
+mergebitvalue=mergemaskedvalue
+getbitvalue=getmaskedvalue

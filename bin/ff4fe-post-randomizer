@@ -9,22 +9,8 @@ will write a new file to disk.  The new file will be in the same location
 as the original rom, with the seed appended to the original filename."""
 
 from ff4fepr.output import error, warning, optional_output
+from ff4fepr.util import parse_string_args
 
-def parse_string_args(longstring):
-    lines=longstring.split('\n')
-    results=[]
-    for line in lines:
-        ln=line.strip()
-        if ln != '':
-            if ' ' in line:
-                firstspace=ln.index(' ')
-                arg = ln[:firstspace]
-                helptext = ln[firstspace+1:].strip()
-                results.append(("--%s" % arg, {'help':helptext}))
-            else:
-                results.append(("--%s" % ln, {}))
-    return results
-            
 string_of_args="""
 add-spells-to-weapons   Add spell to weapon Arg: WeaponName=Spell:Visual:Power,Weapon2=Spell:Visual:Power
 shuffle-weaponatk     Shuffles weapon attack power within specified weapon categories.
@@ -40,8 +26,9 @@ remove-bossbit Removes boss bit from comma-delimited list of spells
 test-encoding  Prints the ff4 hex codes for provided string
 """
 
-sring_of_flags="""
+string_of_flags="""
 rydia-allrares        Rydia starts with all four rare call spells (also renames the Dummied cockatrice spell)
+dk-equip              Dark Knight Cecil gains access to most equipment shared by Kain and Paladin Cecil
 randomize-drops Randomizes all drop tables.
 modup-weaponatk       Runs a preprogrammed set of various randomizations on weapon attack.
 uber-tellah    Tellah starts with some overpowered enemy abilities
@@ -49,6 +36,7 @@ paladin-spells Add some higher-level white spells to Cecil's Paladin magic
 restore-j-drops    Restore the monster drop tables from FF4j
 bird           Rename Dummied Cockatrice spell to Bird
 ct-rebalance   Reduce cast delay on some Black and Summon magic (elementals and Meteo)
+coral-sword    Replaces the Ancient Sword with a Lightning-elemental Coral Sword.
 dump-learned   Dump spell progressions from rom to screen.
 dump-starting-spells    Dump starting spells from rom to screen.
 dump-starting-stats  Dump starting stats from rom to screen.
@@ -60,11 +48,17 @@ dump-monsters  Dump monster data to screen.
 dump-monster-itemtables  Dump monster item table numbers and drop rates to screen.
 dump-monster-drops Dump monster drop data to screen. (resolves item-table)
 dump-spells    Dump spell stats
+dump-eqtables  Dump class equip tables
+dump-itemnames Dump item names from rom.
+dump-itemkeys  Dump item names used by ff4fepr
+dump-spellkeys Dump spell names used by ff4feper
+generate-form  Generate web form from script options (doesn't do much atm)
 hitratings     list attack * hitrate for each weapon
 test-monsters  Test loading monsters and dumping to rom with no changes
 test-weapons   Test loading weapons into memory and dumping to rom with no changes.
 test-drops     Test loading drop tables and dumping to rom with no changes.
 test-spells    Test loading and writing spell stats with no changes.
+test-eqtables  Test loading and writing equip tables with no changes.
 tpassbuff      Add Bacchus, Silkweb, StarVeil, Elixir, and Spoon to Troia Pass Shop
 special        ????
 """
@@ -81,7 +75,7 @@ if __name__ == '__main__':
         ('--debug', '-d'),
         ('--jv', '-j')
         ]
-    sflags=parse_string_args(sring_of_flags)
+    sflags=parse_string_args(string_of_flags)
     strargs=parse_string_args(string_of_args)
     parser=argparse.ArgumentParser(description=description, formatter_class=RawTextHelpFormatter)
     parser.add_argument('--seed', '-s', help='specify a seed for random functions')
@@ -94,6 +88,8 @@ if __name__ == '__main__':
     for flag, kwargs in sflags:
         parser.add_argument(flag, action='store_true', **kwargs)
     args=parser.parse_args()
+    args.string_of_args=string_of_args
+    args.string_of_flags=string_of_flags
     debug, verbose=optional_output(args)
     debug("Args:\n")
     debug("%s\n" % pformat(args))
