@@ -66,7 +66,7 @@ test-weapons   Test loading weapons into memory and dumping to rom with no chang
 test-drops     Test loading drop tables and dumping to rom with no changes.
 test-spells    Test loading and writing spell stats with no changes.
 tpassbuff      Add Bacchus, Silkweb, StarVeil, Elixir, and Spoon to Troia Pass Shop
-uptco-edward   ????
+special        ????
 """
 
 if __name__ == '__main__':

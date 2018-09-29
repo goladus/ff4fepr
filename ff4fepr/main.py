@@ -68,7 +68,7 @@ def main(args):
     if args.replace_commandset is not None:
         battlemenus.replace_commandset_args(romdata,
                                             args.replace_commandset)
-    if args.uptco_edward:
+    if args.special:
         starting_equip.uptco_edward(romdata)
         starting_stats.uptco_edward(romdata)
         battlemenus.uptco_edward(romdata)
