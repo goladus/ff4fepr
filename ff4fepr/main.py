@@ -56,6 +56,8 @@ def main(args):
         spelldata.setcasttimes(romdata, args.set_cast_times)
     if args.ct_rebalance:
         spelldata.ctrebalance(romdata)
+    if args.any_weapon:
+        weapons.anyweapon(romdata)
     if args.coral_sword:
         weapons.ancient2coral(romdata)
     if args.dump_learned:

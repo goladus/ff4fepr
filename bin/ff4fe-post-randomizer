@@ -37,6 +37,7 @@ restore-j-drops    Restore the monster drop tables from FF4j
 bird           Rename Dummied Cockatrice spell to Bird
 ct-rebalance   Reduce cast delay on some Black and Summon magic (elementals and Meteo)
 coral-sword    Replaces the Ancient Sword with a Lightning-elemental Coral Sword.
+any-weapon     Allows any character/class to use any weapon.
 dump-learned   Dump spell progressions from rom to screen.
 dump-starting-spells    Dump starting spells from rom to screen.
 dump-starting-stats  Dump starting stats from rom to screen.

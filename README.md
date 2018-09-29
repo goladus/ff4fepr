@@ -24,6 +24,7 @@ Currently, this tool has no official distribution mechanism.  It's developed for
 
 `ff4fe-post-randomizer -h`
 ```
+
 usage: ff4fe-post-randomizer [-h] [--seed SEED] [--output OUTPUT]
                              [--add-spells-to-weapons ADD_SPELLS_TO_WEAPONS]
                              [--shuffle-weaponatk SHUFFLE_WEAPONATK]
@@ -42,7 +43,7 @@ usage: ff4fe-post-randomizer [-h] [--seed SEED] [--output OUTPUT]
                              [--randomize-drops] [--modup-weaponatk]
                              [--uber-tellah] [--paladin-spells]
                              [--restore-j-drops] [--bird] [--ct-rebalance]
-                             [--coral-sword] [--dump-learned]
+                             [--coral-sword] [--any-weapon] [--dump-learned]
                              [--dump-starting-spells] [--dump-starting-stats]
                              [--dump-menus] [--dump-equip] [--dump-weapons]
                              [--dump-drops] [--dump-monsters]
@@ -111,6 +112,7 @@ optional arguments:
   --bird                Rename Dummied Cockatrice spell to Bird
   --ct-rebalance        Reduce cast delay on some Black and Summon magic (elementals and Meteo)
   --coral-sword         Replaces the Ancient Sword with a Lightning-elemental Coral Sword.
+  --any-weapon          Allows any character/class to use any weapon.
   --dump-learned        Dump spell progressions from rom to screen.
   --dump-starting-spells
                         Dump starting spells from rom to screen.

@@ -195,6 +195,12 @@ def modup_weaponatk(romdata):
     changes += vwfn(['boomerangs'], -20, 40)
     return changes
 
+def anyweapon(romdata):
+    wd=loadweapons(romdata)
+    for weapon in wd:
+        wd[weapon]['equip-index']=0
+    weapon2rom(romdata, wd)
+
 def ancient2coral(romdata):
     ## Still need to change attack visual to dragoon spear animation
     wd=loadweapons(romdata)
