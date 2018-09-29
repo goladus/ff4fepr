@@ -110,6 +110,7 @@ class BinaryList(list):
             gzip_write(list(self), output_fname)
         else:
             simple_write(list(self), output_fname)
+            self.verbose('Wrote %s\n' % output_fname)
     def addmod(self, offset, value):
         "Adds a modification to the list"
         self.modification_list.append((offset, value))
