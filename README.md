@@ -16,7 +16,7 @@ Using hacks on the vanilla game is one option, but speaking personally I really 
 
 ### Using ff4fepr
 
-Currently, this tool has no official distribution mechanism.  It's developed for Python 2.7 and has been tested on [Cygwin](http://www.cygwin.com) (but uses minimal libraries so probably works in any POSIX environment).  To use this on windows, you'll need to set up a script that passes the script, `ff4fe-post-randomizer`, to `python.exe`.  It will look something like this:
+Currently, this tool has no official distribution mechanism.  It's developed for Python 2.7 and has been tested on [Cygwin](http://www.cygwin.com) (but uses minimal libraries so probably works in any POSIX environment).  To use this on windows without Cygwin, you'll need to set up a batch file or powershell script that passes `ff4fe-post-randomizer` to `python.exe`.  It will look something like this:
 
 ```
 .\Scripts\python.exe .\Scripts\ff4fe-post-randomizer %*
