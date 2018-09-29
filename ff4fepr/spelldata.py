@@ -6,7 +6,7 @@ spnum=romoffsets['spellstats-num']
 spnames=romoffsets['player-spellnames']
 spothernames=romoffsets['other-spellnames']
 encoding=load('text-encoding')
-from core import mergemaskedvalue
+from core import mergemaskedvalue, toint
 from collections import defaultdict
 import re
 token=re.compile('(<.*>)')
@@ -110,7 +110,7 @@ def dumpspellstats(romdata):
     for index, spdata in spstats:
         spname="%s%s" % (spells[index], ' ' * (15 - len(spells[index])))
         
-        print "%2x" % index, spname, "|", spdata['text'], spdata['text-bytes'] #spdata
+        print "%2x" % index, spname, "|", spdata['text'], spdata['cast-time']
         #print "%2x" % index, spname, ' '.join(["%2x" % x for x in spdata['bytes']])
 
 def changebossbit(romdata, hasbossbit=None, nobossbit=None):
@@ -126,3 +126,28 @@ def changebossbit(romdata, hasbossbit=None, nobossbit=None):
         spellnum=spells.index(spellname)
         spellstats[spellnum]['boss-bit']=0
     sprecords2rom(romdata, spellstats)
+
+def setspstat(romdata, spstatname, changes):
+    spstats=loadspellstats(romdata)
+    for spellname, newvalue in changes:
+        spellnum=spells.index(spellname)
+        spstats[spellnum][spstatname]=newvalue
+    sprecords2rom(romdata, spstats)
+
+def setcasttimes(romdata, argstring):
+    changes=[]
+    for spec in argstring.split(','):
+        spellname, valstr = spec.split('=')
+        changes.append((spellname, toint(valstr)))
+    setspstat(romdata, 'cast-time', changes)
+
+def ctrebalance(romdata):
+    spstats=loadspellstats(romdata)
+    changes=[]
+    elementals='Fire2* Fire3* Ice-2* Ice-3* Lit-2* Lit-3* Shiva* Indra* Jinn*'.split(' ')
+    changes += [(spname, 2) for spname in elementals]
+    changes.append(('Titan*', 3))
+    changes.append(('Mist*', 1))
+    changes.append(('Meteo*', 5))
+    changes.append(('Psych*', 2))
+    setspstat(romdata, 'cast-time', changes)

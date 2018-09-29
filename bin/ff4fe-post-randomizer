@@ -34,6 +34,7 @@ rydia-starting-calls  Add additional spells to Rydia's starting calls.  Arg: spe
 replace-commandset    Replaces the commandset for specified character.  Arg: <CharnameJoin>:<cmd1>,<cmd2>,<cmd3>
 dual-wield            Sets the character's handedness to R+L.  Arg: <Charname>
 set-char-stats  Sets starting stats for characters.  Example: KidRydia:hp=300,maxhp=300,maxmp=50.Rosa:agi=20
+set-cast-times  Sets cast time for spells.  "Meteo*=5,Quake*=8"
 add-bossbit    Add boss bit to comma-delimited list of spells
 remove-bossbit Removes boss bit from comma-delimited list of spells
 test-encoding  Prints the ff4 hex codes for provided string
@@ -47,6 +48,7 @@ uber-tellah    Tellah starts with some overpowered enemy abilities
 paladin-spells Add some higher-level white spells to Cecil's Paladin magic
 restore-j-drops    Restore the monster drop tables from FF4j
 bird           Rename Dummied Cockatrice spell to Bird
+ct-rebalance   Reduce cast delay on some Black and Summon magic (elementals and Meteo)
 dump-learned   Dump spell progressions from rom to screen.
 dump-starting-spells    Dump starting spells from rom to screen.
 dump-starting-stats  Dump starting stats from rom to screen.

@@ -43,6 +43,10 @@ def main(args):
         magemods.addspellset(romdata, 'uber-tellah')
     if args.paladin_spells:
         magemods.replacelearnedsets(romdata, 'paladin-magic')
+    if args.set_cast_times:
+        spelldata.setcasttimes(romdata, args.set_cast_times)
+    if args.ct_rebalance:
+        spelldata.ctrebalance(romdata)
     if args.dump_learned:
         for lsp in learned_spells.loadlearnedspells(romdata).items():
             print lsp
