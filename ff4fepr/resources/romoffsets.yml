@@ -41,6 +41,7 @@ weapondata-size: 8
 weaponspellpower: 0x79070
 weaponspellvisual: 0x7d4e0
 
+#I don't know this data structure yet.
 levelupdata: 0x7b528
 levelupdata-size: 5
 
@@ -51,8 +52,6 @@ spellstats-num: 192
 player-spellnames: 0x78900
 player-spellnames-size: 6
 other-spellnames: 0x78ab0
-#other-spellnames: 0x78a00
-#other-spellnames: 0x78900
 other-spellnames-size: 8
 player-spells: 0x48
 #spells[:0x48] (player spells)
@@ -62,6 +61,9 @@ player-spells: 0x48
 charmenus: 0x9fd50
 charmenus-size: 5
 
+# List of instances where a character joins you, explicitly listing
+# subsequent rejoins of the same character, such as Tellah on Ordeals.
+# Used for starting equipment and battle menus. (but not starting stats) 
 charjoin-order:
   - DKCecil
   - Kain
@@ -89,9 +91,14 @@ charjoin-order:
 starting-stats: 0x7a900
 starting-stats-size: 0x20
 
-# [Byte in record, mask for relevant bits, shift]
-# (data[byte] & mask) >> shift
-# data[byte] = (data[byte] & ~ mask) | (value << shift)
+# Split byte values are notated in the following format:
+#   [Byte index in record, mask for relevant bits, shift]
+# Here's how using these values looks in Python:
+#   (record[byte_index] & mask) >> shift
+#   record[byte_index] = (record[byte_index] & ~ mask) | (value << shift)
+# For more on how to use these values, find documentation on
+#   "bitwise operators" in the language you are using.
+
 split-stats:
   charid: [0, 0x1f, 0]
   left-handed: [0, 0x40, 6]
@@ -123,6 +130,7 @@ starting-stats-record-map:
   xp: 23
   xpnext: 29
 
+# Ordered list of characters for initial stat records.
 starting-stats-order:
   - DKCecil
   - Kain
@@ -156,6 +164,8 @@ equip-tables: 0x7a550
 equip-tables-size: 2
 equip-tables-num: 32
 
+# List of characters in order
+# according to equip table bits
 equip-classes:
   - DKCecil
   - Kain
@@ -174,6 +184,7 @@ equip-classes:
   - Extra1
   - Extra2
 
+#use with equip-classes list.
 equip-table-record:
   - [0, 0x1, 0]
   - [0, 0x2, 1]
@@ -192,11 +203,12 @@ equip-table-record:
   - [1, 0x40, 6]
   - [1, 0x80, 7]
 
-
+#Monster attack tables.
 monsteratk: 0x72380
 monsteratk-len: 671
 monsteratk-size: 3
 
+#Each monter attack record is 3 bytes in the following format:
 monsteratk-record:
   - mult
   - percent
@@ -233,8 +245,7 @@ spells-order:
   - fusoya-black
   - edge-ninja
 
-# This is incomplete, I'm not 100% sure how to parse properly yet.
-# It appears as if these values are split on nibbles.
+# This is incomplete, I'm not yet sure how to split these properly.
 leveluprecord:
   stats: 0
   hp: 1
@@ -276,6 +287,14 @@ weapondata-record-dict:
   equip-index: 5
   statmod-index: 6
 
+# Monster records are variable length.
+# When additional bytes are used, 
+# The 9th byte specifies how many and the meaning of
+# the additional bytes.
+# The number of additional bytes depends on which
+# flags are enabled.  Specifically, attack-traits and
+# defense-traits add 3 additional bytes each, while
+# the others add one each.
 split-monster:
   boss: [0, 0x80, 7]
   level: [0, 0x7f, 0]
@@ -311,6 +330,10 @@ monster-record:
   has-counter: 9
   unused9: 9
 
+# The following data is used to split the proper
+# values from the extra bytes of the monster
+# record.
+# Each byte, if present, will adhere to this order.
 monster-extra-order:
   - attack-traits
   - defense-traits
@@ -319,6 +342,9 @@ monster-extra-order:
   - creature-type
   - counter
 
+#Spell power and counter values appear to have redundant data
+# for the sake of consistency in this data structure.
+# [0, 0xff, 0] means to just take the entire byte.
 monster-extra:
   attack-traits:
     - elemental:
@@ -401,7 +427,7 @@ monster-extra:
     - counter:
         counter: [0, 0xff, 0]
 
-#format is [byte, bitmask]
+#format is [byte, bitmask, shift]
 spellstats-record:
   cast-time: [0, 0x1f, 0]
   targeting: [0, 0xe0, 5]
