@@ -1,4 +1,9 @@
-# Mapping of rom offsets, record sizes, table lengths, and relative offsets for records.
+# Originally this file was just a mapping of rom offsets.
+# Now, it also has offsets, record sizes, table lengths,
+#  and relative offsets for records.
+# The filename is still "romoffsets" as I'm still in the
+# "romlayout" is more cumbersome to type, and I like
+# having most of this in a single file.
 
 #Shop data table.  The order of shops is in shops.yml
 shopdata: 0x108100
