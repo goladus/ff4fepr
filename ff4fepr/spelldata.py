@@ -91,8 +91,7 @@ def dumpspellstats(romdata):
     spstats=sorted(loadspellstats(romdata).items())
     for index, spdata in spstats:
         spname="%s%s" % (spells[index], ' ' * (15 - len(spells[index])))
-        
-        print "%2x" % index, spname, "|", spdata['text'], spdata['cast-time']
+        print "%2x" % index, spname, "|", spdata['text'], spdata['cast-time'], spdata['attack']
         #print "%2x" % index, spname, ' '.join(["%2x" % x for x in spdata['bytes']])
 
 def changebossbit(romdata, hasbossbit=None, nobossbit=None):

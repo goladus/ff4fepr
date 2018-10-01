@@ -127,6 +127,25 @@ class BinaryList(list):
                                                   self.original_state[offset],
                                                   value,
                                                   self[offset]))
+    def mdiff(self):
+        return [[offset, self.original_state[offset], self[offset]]
+                 for offset, value in self.modification_list]
+    def writeargs(self, args):
+        argspath="%s.args.yml" % self.output_fname
+        args.string_of_args=None
+        args.string_of_flags=None
+        with open(argspath) as fh:
+            fh.write(yaml.dump(args.__dict__, default_flow_style=False))
+    def writemdiff(self):
+        diffpath="%s.diff.yml" % self.output_fname
+        with open(diffpath) as fh:
+            fh.write(yaml.dump(self.mdiff()))
+    def showmods_diff(self, formatt='default'):
+        for offset, value in self.modification_list:
+            if formatt == 'default':
+                sys.stdout.write("%d %d %d\n" % (offset, self.original_state[offset], self[offset]))
+            elif formatt == 'yaml':
+                sys.stdout.write("- [%d, %d, %d]\n" % (offset, self.original_state[offset], self[offset]))
     def swrite(self):
         if self.verbose is not nullfunc:
             self.showmods()

@@ -1,4 +1,6 @@
 from ff4data import *
+import yaml
+import json
 
 def split_learnspell_list(lslist):
     results=[]
@@ -8,6 +10,14 @@ def split_learnspell_list(lslist):
         spellname=spells[spellnum]
         results.append([level, spellname])
     return results
+
+def dump2screen(romdata):
+    learned=loadlearnedspells(romdata)
+    data=[{chname: learned[chname]} for chname in romoffsets['spells-order']]
+    print yaml.dump(data)
+#    for chname, learned in data:
+#        for lvl, spname in learned:
+#            print "%s  %s %s" % (chname, lvl, spname)
 
 def loadlearnedspells(romdata):
     lsp=romoffsets['learned-spells']

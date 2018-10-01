@@ -16,6 +16,7 @@ import spelldata
 import ff4text
 import equip
 import webform
+import scriptgen
 from starting_spells import groupspells
 from pprint import pprint as pp
 
@@ -61,8 +62,7 @@ def main(args):
     if args.coral_sword:
         weapons.ancient2coral(romdata)
     if args.dump_learned:
-        for lsp in learned_spells.loadlearnedspells(romdata).items():
-            print lsp
+        learned_spells.dump2screen(romdata)
     if args.dump_starting_spells:
         for itm in groupspells(romdata):
             print itm
@@ -139,6 +139,8 @@ def main(args):
         drops.randomize_all
     if args.dump_monsters:
         monsters.dumpsplits(romdata, jadjust=args.jv)
+    if args.dump_monster_values is not None:
+        monsters.dumpkeys(romdata, args.dump_monster_values.split(','))
     if args.test_monsters:
         monsters.test_monsters(romdata, jadjust=args.jv)
     if args.dump_monster_itemtables:
@@ -161,6 +163,8 @@ def main(args):
                                 nobossbit=removebossbit)
     if args.generate_form:
         webform.genform1(args)
+    if args.dump_generator:
+        scriptgen.dumpall(romdata, args)
     if args.apply:
         romdata.swrite()
     else:

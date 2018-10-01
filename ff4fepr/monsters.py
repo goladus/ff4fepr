@@ -162,6 +162,14 @@ def dumpmonsterdrops(romdata, jadjust=False):
         itemstring=[paditm(x, 16) for x in droptables[droptable]]
         print paditm(results[monster]['name'], 10), ''.join(itemstring)
 
+def dumpkeys(romdata, keys, jadjust=False):
+    allm=splitmonsters(romdata, jadjust=jadjust)
+    print ' '.join(keys)
+    for monster in allm:
+        mname=monster_offsets[monster][0]
+        opstr=' '.join(["%s" % allm[monster][key] for key in keys])
+        print opstr, mname
+
 def dumpsplits(romdata, jadjust=False):
     results=splitmonsters(romdata, jadjust=jadjust)
     for monster in results:

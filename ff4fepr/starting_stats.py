@@ -79,7 +79,8 @@ def modifystatval(romdata, charname, stat, new_value):
     else:
         bytelist=num2bytes(newval, nbytes)
     for index, btval in enumerate(bytelist):
-        romdata.addmod(offset+index, btval)
+        if romdata[offset+index] != btval:
+            romdata.addmod(offset+index, btval)
 
 def setdualwield(romdata, charname):
     modifystatval(romdata, charname, 'left-handed', True)
