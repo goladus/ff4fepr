@@ -287,14 +287,13 @@ weapondata-record-dict:
   equip-index: 5
   statmod-index: 6
 
-# Monster records are variable length.
-# When additional bytes are used, 
-# The 9th byte specifies how many and the meaning of
-# the additional bytes.
+# Monster records are variable length. When additional
+#    bytes are needed, the 9th byte signals the number
+#    and the meaning of the additional bytes.
 # The number of additional bytes depends on which
-# flags are enabled.  Specifically, attack-traits and
-# defense-traits add 3 additional bytes each, while
-# the others add one each.
+#    flags are enabled.  There are 3 additional bytes
+#    for has-attack-traits and has-defense-traits, while
+#    the other values add one each.
 split-monster:
   boss: [0, 0x80, 7]
   level: [0, 0x7f, 0]
@@ -331,8 +330,7 @@ monster-record:
   unused9: 9
 
 # The following data is used to split the proper
-# values from the extra bytes of the monster
-# record.
+# values from the extra bytes of the monster record.
 # Each byte, if present, will adhere to this order.
 monster-extra-order:
   - attack-traits
