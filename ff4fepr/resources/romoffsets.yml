@@ -340,9 +340,6 @@ monster-extra-order:
   - creature-type
   - counter
 
-#Spell power and counter values appear to have redundant data
-# for the sake of consistency in this data structure.
-# [0, 0xff, 0] means to just take the entire byte.
 monster-extra:
   attack-traits:
     - elemental:
