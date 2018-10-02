@@ -4,13 +4,13 @@ This tool is designed to make additional modifications and randomizations to a s
 
 ### Current Status
 
-Ff4fepr is currently focused on implementing python libraries for extracting data from and modifing the Final Fantasy IV/Free Enterprise ROM.  Although much of this is replicating PinkPuff's work on ff4kster, that tool is designed as a manual editor.  This is intended to be a programmatic one, with feature more suitable to making a variety of large-scale changes based on rules and logic, which is what most randomizers do.  The included command-line tool is primarily developed for testing libraries, though it is still usable to make modifications and randomizations to Free Enterprise rom files.
+Ff4fepr is currently focused on implementing python libraries for extracting data from and modifing the Final Fantasy IV/Free Enterprise ROM.  Although much of this is replicating PinkPuff's work on ff4kster, that tool is designed as a manual editor and doesn't work with Free Enterprise.  This is intended to be a programmatic one, with feature more suitable to making a variety of large-scale changes based on rules and logic, which is what most randomizers do.  The included command-line tool is primarily developed for proof-of-concept and testing libraries, though it is still usable to make modifications and randomizations to Free Enterprise rom files.
 
 The API, such as it is, is still entirely in flux, largely undocumented and subject to change.
 
 ### Warning about Cheating
 
-Please note that this tool is (currently) intended only for casual and experimental use.  Use of this tool on an Free Enterprise race rom before or during a league race or any other official FF4FE race on SpeedRunsLive is considered cheating and will result in disqualification and a ban from SRL.
+Please note that this tool is (currently) intended only for casual and experimental use.  Because this tool scans and can reveals randomized information about the game, using it on a Free Enterprise race rom before or during a league race or any other official FF4FE race on SpeedRunsLive is considered cheating and will result in disqualification and a ban from SRL.
 
 ### Why a "Post-Randomizer"?
 
@@ -136,7 +136,7 @@ optional arguments:
   --dump-eqtables       Dump class equip tables
   --dump-itemnames      Dump item names from rom.
   --dump-itemkeys       Dump item names used by ff4fepr
-  --dump-spellkeys      Dump spell names used by ff4feper
+  --dump-spellkeys      Dump spell names used by ff4fepr
   --dump-generator      Dump generator.
   --generate-form       Generate web form from script options (doesn't do much atm)
   --hitratings          list attack * hitrate for each weapon

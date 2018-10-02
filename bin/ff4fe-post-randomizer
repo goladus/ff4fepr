@@ -3,7 +3,8 @@ description="""
 Final Fantasy 4 Free Enterprise Post-Randomizer
 
 This tool dumps information or makes modifications to a specified smc file.
-Currently, the smc file must be a raw, uncompressed file.
+Currently, the smc file must be a raw, uncompressed (unzipped) file.
+
 By default, no modifications are written to disk.  The --apply/-a flag
 will write a new file to disk.  The new file will be in the same location
 as the original rom, with the seed appended to the original filename."""
@@ -48,12 +49,12 @@ dump-weapons   Dump weapon data from rom to screen.
 dump-drops     Dump enemy stea/drop data from rom to screen.
 dump-monsters  Dump monster data to screen.
 dump-monster-itemtables  Dump monster item table numbers and drop rates to screen.
-dump-monster-drops Dump monster drop data to screen. (resolves item-table)
+dump-monster-drops Dump monster drop data to screen. (resolved item-tables)
 dump-spells    Dump spell stats
 dump-eqtables  Dump class equip tables
 dump-itemnames Dump item names from rom.
 dump-itemkeys  Dump item names used by ff4fepr
-dump-spellkeys Dump spell names used by ff4feper
+dump-spellkeys Dump spell names used by ff4fepr
 dump-generator Dump generator.
 generate-form  Generate web form from script options (doesn't do much atm)
 hitratings     list attack * hitrate for each weapon
