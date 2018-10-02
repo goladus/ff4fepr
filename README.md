@@ -10,7 +10,7 @@ The API, such as it is, is still entirely in flux, largely undocumented and subj
 
 ### Warning about Cheating
 
-Please note that this tool is (currently) intended only for casual and experimental use.  Because this tool scans and can reveals randomized information about the game, using it on a Free Enterprise race rom before or during a league race or any other official FF4FE race on SpeedRunsLive is considered cheating and will result in disqualification and a ban from SRL.
+Please note that this tool is (currently) intended only for casual and experimental use.  Because this tool scans and can reveal randomized information about the game, using it on a Free Enterprise race rom before or during a league race or any other official FF4FE race on SpeedRunsLive is considered cheating and will result in disqualification and a ban from SRL.
 
 ### Why a "Post-Randomizer"?
 
