@@ -4,7 +4,9 @@ This tool is designed to make additional modifications and randomizations to a s
 
 ### Current Status
 
-Ff4fepr is currently focused on implementing python libraries for extracting data from and modifing the Final Fantasy IV/Free Enterprise ROM.  Although much of this is replicating PinkPuff's work on ff4kster, that tool is designed as a manual editor.  This is intended to be a programmatic one, which can potentially power editors with various frontend designs.  The included command-line tool is primarily developed for testing libraries, though it is still usable to make modifications and randomizations to Free Enterprise rom files.
+Ff4fepr is currently focused on implementing python libraries for extracting data from and modifing the Final Fantasy IV/Free Enterprise ROM.  Although much of this is replicating PinkPuff's work on ff4kster, that tool is designed as a manual editor.  This is intended to be a programmatic one, with feature more suitable to making a variety of large-scale changes based on rules and logic, which is what most randomizers do.  The included command-line tool is primarily developed for testing libraries, though it is still usable to make modifications and randomizations to Free Enterprise rom files.
+
+The API, such as it is, is still entirely in flux, largely undocumented and subject to change.
 
 ### Warning about Cheating
 
