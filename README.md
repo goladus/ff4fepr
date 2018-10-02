@@ -12,7 +12,7 @@ The API, such as it is, is still entirely in flux, largely undocumented and subj
 
 Please note that this tool is (currently) intended only for casual and experimental use.  Use of this tool on an Free Enterprise race rom before or during a league race or any other official FF4FE race on SpeedRunsLive is considered cheating and will result in disqualification and a ban from SRL.
 
-### Why a Post-Randomizer?
+### Why a "Post-Randomizer"?
 
 Final Fantasy IV Free Enterprise is a truly excellent romhack, and is notable as much for what it doesn't do as what it does.  FF4FE has a distinct vision and mission.  It is an open world hack designed for speedrunning and racing.  While fixing bugs and making occasional tweaks here and there, ff4fe is very disciplined and deliberately preserves vanilla behavior whenever possible.  The original FF4 has a great deal of depth and Free Enterprise really enables that depth to shine through while keeping the hack familiar and accessible to players who loved the original game.  FF4FE is also highly polished, with many of great and subtle quality-of-life features.
 
@@ -28,7 +28,6 @@ Currently, this tool has no official distribution mechanism.  It's developed for
 
 `ff4fe-post-randomizer -h`
 ```
-
 usage: ff4fe-post-randomizer [-h] [--seed SEED] [--output OUTPUT]
                              [--add-spells-to-weapons ADD_SPELLS_TO_WEAPONS]
                              [--shuffle-weaponatk SHUFFLE_WEAPONATK]
@@ -41,6 +40,7 @@ usage: ff4fe-post-randomizer [-h] [--seed SEED] [--output OUTPUT]
                              [--set-cast-times SET_CAST_TIMES]
                              [--add-bossbit ADD_BOSSBIT]
                              [--remove-bossbit REMOVE_BOSSBIT]
+                             [--dump-monster-values DUMP_MONSTER_VALUES]
                              [--test-encoding TEST_ENCODING] [--apply]
                              [--version] [--verbose] [--debug] [--jv]
                              [--rydia-allrares] [--dk-equip]
@@ -55,10 +55,10 @@ usage: ff4fe-post-randomizer [-h] [--seed SEED] [--output OUTPUT]
                              [--dump-monster-drops] [--dump-spells]
                              [--dump-eqtables] [--dump-itemnames]
                              [--dump-itemkeys] [--dump-spellkeys]
-                             [--generate-form] [--hitratings]
-                             [--test-monsters] [--test-weapons] [--test-drops]
-                             [--test-spells] [--test-eqtables] [--tpassbuff]
-                             [--special]
+                             [--dump-generator] [--generate-form]
+                             [--hitratings] [--test-monsters] [--test-weapons]
+                             [--test-drops] [--test-spells] [--test-eqtables]
+                             [--tpassbuff] [--special]
                              [rompath]
 
 Final Fantasy 4 Free Enterprise Post-Randomizer
@@ -96,9 +96,11 @@ optional arguments:
   --set-cast-times SET_CAST_TIMES
                         Sets cast time for spells.  "Meteo*=5,Quake*=8"
   --add-bossbit ADD_BOSSBIT
-                        Add boss bit to comma-delimited list of spells
+                        Add boss bit to comma-delimited list of spells (spells won't hit bosses)
   --remove-bossbit REMOVE_BOSSBIT
-                        Removes boss bit from comma-delimited list of spells
+                        Removes boss bit from comma-delimited list of spells (allows spells to hit bosses)
+  --dump-monster-values DUMP_MONSTER_VALUES
+                        Arg: keys to dump with each monster
   --test-encoding TEST_ENCODING
                         Prints the ff4 hex codes for provided string
   --apply, -a
@@ -135,6 +137,7 @@ optional arguments:
   --dump-itemnames      Dump item names from rom.
   --dump-itemkeys       Dump item names used by ff4fepr
   --dump-spellkeys      Dump spell names used by ff4feper
+  --dump-generator      Dump generator.
   --generate-form       Generate web form from script options (doesn't do much atm)
   --hitratings          list attack * hitrate for each weapon
   --test-monsters       Test loading monsters and dumping to rom with no changes
