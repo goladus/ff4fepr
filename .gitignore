@@ -5,6 +5,7 @@
 
 # local stuff
 *.sfc
+*.smc
 *WEAP556.txt
 
 # Byte-compiled / optimized / DLL files
