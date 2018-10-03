@@ -164,11 +164,21 @@ def dumpmonsterdrops(romdata, jadjust=False):
 
 def dumpkeys(romdata, keys, jadjust=False):
     allm=splitmonsters(romdata, jadjust=jadjust)
-    print ' '.join(keys)
     for monster in allm:
         mname=monster_offsets[monster][0]
         opstr=' '.join(["%s" % allm[monster][key] for key in keys])
         print opstr, mname
+
+fieldpads=dict(level=3,
+               hp=6,
+               xp=6,
+               gp=5)
+
+def monvalstr(results, monster, key):
+    value="%s" % results[monster][key]
+    padding = ' ' * (fieldpads[key] - len(value))
+    prefix='lv' if key=='level' else key
+    return "(%s:%s)%s" % (prefix, value, padding)
 
 def dumpsplits(romdata, jadjust=False):
     results=splitmonsters(romdata, jadjust=jadjust)
@@ -180,17 +190,13 @@ def dumpsplits(romdata, jadjust=False):
         print "%3d" % monster, hex(results[monster]['offset']), "%10s" % mname,
         #print "%2d" % len(results[monster]['bytes']), results[monster]['bytes'],
         key='defense-traits'
-        defense="[%s]" % '|'.join([x for x, y
-                                   in results[monster].get(key, {}).items()
-                                   if y==1])
-        defense=bkeysstr(results[monster], 'defense-traits', '[%s]')
+        defense=bkeysstr(results[monster], 'defense-traits', '(immune:%s)')
         attacks=bkeysstr(results[monster], 'attack-traits', '<%s>')
-        weakness=bkeysstr(results[monster], 'element-weakness', '{%s}')
-        spower=results[monster].get('spell-power', {}).get('spell-power', None)
-        print "Boss" if results[monster]['boss']==1 else "Underling",
-        print results[monster]['level'],
-        print "(hp:%s)" % results[monster]['hp'],
-        print "(xp:%s)" % results[monster]['xp'],
-        print "(gp:%s)" % results[monster]['gp'],
-        print "[%s]" % results[monster]['item-table'],
-        print spower, attacks, defense, weakness
+        weakness=bkeysstr(results[monster], 'element-weakness', '(weak:%s)')
+        spower="(sp:%s)" % results[monster].get('spell-power', {}).get('spell-power', None)
+        print "Boss     " if results[monster]['boss']==1 else "Underling",
+        print "%s%s%s%s" % (monvalstr(results, monster, 'level'),
+                            monvalstr(results, monster, 'hp'),
+                            monvalstr(results, monster, 'xp'),
+                            monvalstr(results, monster, 'gp')),
+        print spower, defense, weakness
