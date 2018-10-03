@@ -30,6 +30,14 @@ def int_ints(strng):
 def intify(row):
     return [int_ints(x) for x in row]
 
+def csv_dumper(file_handle, data, header_row=True):
+    header=data['header']
+    rows=data['rows']
+    writer=csv.writer(file_handle)
+    writer.writerow(header)
+    for row in rows:
+        writer.writerow(row)
+
 def csv_loader(file_handle, header_row=True):
     data=list(csv.reader(file_handle))
     if data[0][0]=='TABLE':

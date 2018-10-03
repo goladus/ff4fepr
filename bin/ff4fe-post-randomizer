@@ -49,6 +49,7 @@ dump-equip     Dump character starting equipment from rom to screen.
 dump-weapons   Dump weapon data from rom to screen.
 dump-drops     Dump enemy stea/drop data from rom to screen.
 dump-monsters  Dump monster data to screen.
+dump-monsters-csv Dump monster data to screen in csv format.
 dump-monster-itemtables  Dump monster item table numbers and drop rates to screen.
 dump-monster-drops Dump monster drop data to screen. (resolved item-tables)
 dump-spells    Dump spell stats

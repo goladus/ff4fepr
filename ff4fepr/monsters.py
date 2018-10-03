@@ -162,6 +162,14 @@ def dumpmonsterdrops(romdata, jadjust=False):
         itemstring=[paditm(x, 16) for x in droptables[droptable]]
         print paditm(results[monster]['name'], 10), ''.join(itemstring)
 
+def flattenkeys(mondict):
+    pass
+
+def dump2csv(romdata, jadjust=False):
+    allm=splitmonsters(romdata, jadjust=jadjust)
+    from pprint import pprint as pp
+    pp(allm)
+
 def dumpkeys(romdata, keys, jadjust=False):
     allm=splitmonsters(romdata, jadjust=jadjust)
     for monster in allm:

@@ -142,6 +142,8 @@ def main(args):
         magemods.randomize_learned_spells1(romdata, spellsets)
     if args.dump_monsters:
         monsters.dumpsplits(romdata, jadjust=args.jv)
+    if args.dump_monsters_csv:
+        monsters.dump2csv(romdata, jadjust=args.jv)
     if args.dump_monster_values is not None:
         monsters.dumpkeys(romdata, args.dump_monster_values.split(','))
     if args.test_monsters:
