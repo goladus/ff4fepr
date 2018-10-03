@@ -18,7 +18,7 @@ shuffle-weaponatk     Shuffles weapon attack power within specified weapon categ
 vary-weaponatk        Varies weapon attack power by -5 to 15.
 rydia-random-calls    Rydia starts with additional call spells.  Arg: <1 to 4 spells to add>
 rydia-starting-calls  Add additional spells to Rydia's starting calls.  Arg: spells to add.
-randomize-learned     Randomizes learned spells, chance to learn a spell is 1 in twice the normal level spell is learned.  So Palom has a 0.9% chance to learn Nuke each level.  (The actual progression is fixed for each seed)
+randomize-learned     Randomizes learned spells, chance to learn a spell is 1 in 1.5 times the normal level spell is learned.  So Palom has a 1.2 percepnt chance to learn Nuke each level.  The actual progression is fixed for each seed
 replace-commandset    Replaces the commandset for specified character.  Arg: <CharnameJoin>:<cmd1>,<cmd2>,<cmd3>
 dual-wield            Sets the character's handedness to R+L.  Arg: <Charname>
 set-char-stats  Sets starting stats for characters.  Example: KidRydia:hp=300,maxhp=300,maxmp=50.Rosa:agi=20

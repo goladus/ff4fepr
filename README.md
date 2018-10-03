@@ -34,6 +34,7 @@ usage: ff4fe-post-randomizer [-h] [--seed SEED] [--output OUTPUT]
                              [--vary-weaponatk VARY_WEAPONATK]
                              [--rydia-random-calls RYDIA_RANDOM_CALLS]
                              [--rydia-starting-calls RYDIA_STARTING_CALLS]
+                             [--randomize-learned RANDOMIZE_LEARNED]
                              [--replace-commandset REPLACE_COMMANDSET]
                              [--dual-wield DUAL_WIELD]
                              [--set-char-stats SET_CHAR_STATS]
@@ -64,7 +65,8 @@ usage: ff4fe-post-randomizer [-h] [--seed SEED] [--output OUTPUT]
 Final Fantasy 4 Free Enterprise Post-Randomizer
 
 This tool dumps information or makes modifications to a specified smc file.
-Currently, the smc file must be a raw, uncompressed file.
+Currently, the smc file must be a raw, uncompressed (unzipped) file.
+
 By default, no modifications are written to disk.  The --apply/-a flag
 will write a new file to disk.  The new file will be in the same location
 as the original rom, with the seed appended to the original filename.
@@ -87,6 +89,8 @@ optional arguments:
                         Rydia starts with additional call spells.  Arg: <1 to 4 spells to add>
   --rydia-starting-calls RYDIA_STARTING_CALLS
                         Add additional spells to Rydia's starting calls.  Arg: spells to add.
+  --randomize-learned RANDOMIZE_LEARNED
+                        Randomizes learned spells, chance to learn a spell is 1 in 1.5 times the normal level spell is learned.  So Palom has a 1.2 percepnt chance to learn Nuke each level.  The actual progression is fixed for each seed
   --replace-commandset REPLACE_COMMANDSET
                         Replaces the commandset for specified character.  Arg: <CharnameJoin>:<cmd1>,<cmd2>,<cmd3>
   --dual-wield DUAL_WIELD
@@ -131,7 +135,7 @@ optional arguments:
   --dump-monsters       Dump monster data to screen.
   --dump-monster-itemtables
                         Dump monster item table numbers and drop rates to screen.
-  --dump-monster-drops  Dump monster drop data to screen. (resolves item-table)
+  --dump-monster-drops  Dump monster drop data to screen. (resolved item-tables)
   --dump-spells         Dump spell stats
   --dump-eqtables       Dump class equip tables
   --dump-itemnames      Dump item names from rom.
