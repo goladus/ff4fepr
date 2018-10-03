@@ -40,6 +40,6 @@ def randomize_learned_spells1(romdata, spellsetnames, fn=randomlevelfunc1):
         for level, spname in learned[spellsetname]:
             newlevel = fn(level, minlev, extra={'spellname': spname})
             newset.append([newlevel, spname])
-        learned[spellsetname]=newset
+        learned[spellsetname]=sorted(newset)
     update_learned_spells(romdata, learned)
 
