@@ -59,4 +59,3 @@ def replace_learned_spells(romdata, learnedsets):
     for spellset, learninglist in learnedsets.items():
         learnedspells[spellset]=learninglist
     update_learned_spells(romdata, learnedspells)
-

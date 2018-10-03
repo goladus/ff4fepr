@@ -137,6 +137,9 @@ def main(args):
         drops.dump2screen(romdata)
     if args.randomize_drops:
         drops.randomize_all
+    if args.randomize_learned is not None:
+        spellsets=args.randomize_learned.split(',')
+        magemods.randomize_learned_spells1(romdata, spellsets)
     if args.dump_monsters:
         monsters.dumpsplits(romdata, jadjust=args.jv)
     if args.dump_monster_values is not None:
