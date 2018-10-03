@@ -90,7 +90,7 @@ optional arguments:
   --rydia-starting-calls RYDIA_STARTING_CALLS
                         Add additional spells to Rydia's starting calls.  Arg: spells to add.
   --randomize-learned RANDOMIZE_LEARNED
-                        Randomizes learned spells, chance to learn a spell is 1 in 1.5 times the normal level spell is learned.  So Palom has a 1.2 percepnt chance to learn Nuke each level.  The actual progression is fixed for each seed
+                        Randomizes learned spells, chance to learn a spell is 1 in 1.5 times the normal level spell is learned.
   --replace-commandset REPLACE_COMMANDSET
                         Replaces the commandset for specified character.  Arg: <CharnameJoin>:<cmd1>,<cmd2>,<cmd3>
   --dual-wield DUAL_WIELD
