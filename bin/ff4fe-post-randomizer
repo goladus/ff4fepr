@@ -15,10 +15,11 @@ from ff4fepr.util import parse_string_args
 string_of_args="""
 add-spells-to-weapons   Add spell to weapon Arg: WeaponName=Spell:Visual:Power,Weapon2=Spell:Visual:Power
 shuffle-weaponatk     Shuffles weapon attack power within specified weapon categories.
-vary-weaponatk        Varies weapon attack power by -5 to 15.
+vary-weaponatk        Varies weapon attack power (default is -5 to 15, see documentation for details)
 rydia-random-calls    Rydia starts with additional call spells.  Arg: <1 to 4 spells to add>
 rydia-starting-calls  Add additional spells to Rydia's starting calls.  Arg: spells to add.
-randomize-learned     Randomizes learned spells, chance to learn a spell is 1 in 1.5 times the normal level spell is learned.
+randomize-learned     Randomizes learned spells, chance to learn a spell is 1 in 1.5 times the normal level spell is learned. Arg: list of spellsets to randomize.
+randomize-spell-progression Randomizes all learned spells.  Arg is factor for chance per level to learn spell. 
 replace-commandset    Replaces the commandset for specified character.  Arg: <CharnameJoin>:<cmd1>,<cmd2>,<cmd3>
 dual-wield            Sets the character's handedness to R+L.  Arg: <Charname>
 set-char-stats  Sets starting stats for characters.  Example: KidRydia:hp=300,maxhp=300,maxmp=50.Rosa:agi=20
@@ -49,7 +50,8 @@ dump-equip     Dump character starting equipment from rom to screen.
 dump-weapons   Dump weapon data from rom to screen.
 dump-drops     Dump enemy stea/drop data from rom to screen.
 dump-monsters  Dump monster data to screen.
-dump-monsters-csv Dump monster data to screen in csv format.
+dump-monsters-csv Dump monster data to screen in csv format. (no bosses)
+dump-monsters-and-bosses-csv Dump monster data to screen in csv format.
 dump-monster-itemtables  Dump monster item table numbers and drop rates to screen.
 dump-monster-drops Dump monster drop data to screen. (resolved item-tables)
 dump-spells    Dump spell stats

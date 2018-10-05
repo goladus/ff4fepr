@@ -1,7 +1,8 @@
 from ff4data import *
 from core import num2bytes, bytes2int
 from datatypes import getbytesfortype
-from resource import load
+from resource import load, csv_dumper
+import sys
 import drops
 from collections import defaultdict
 monster_offsets=load('monster-offsets')
@@ -9,8 +10,10 @@ monster_names=[name for name, offset in monster_offsets]
 nummonsters=romoffsets['number-of-monsters']
 varbytekeys=[key for key in romoffsets['monster-record'] if key.startswith('has-')]
 extrakeys=romoffsets['monster-extra-order']
+febosses=load('fe-bosses')
 
 def checkmonrecord(abyte):
+    """Populat the 'has-*' values from the 'extra' byte in the monster record"""
     results={}
     for key in varbytekeys:
         x, mask, rshift = romoffsets['split-monster'][key]
@@ -162,13 +165,24 @@ def dumpmonsterdrops(romdata, jadjust=False):
         itemstring=[paditm(x, 16) for x in droptables[droptable]]
         print paditm(results[monster]['name'], 10), ''.join(itemstring)
 
-def flattenkeys(mondict):
-    pass
+def statperstat(mrecord, divkey):
+    k1, k2 = divkey.split('/')
+    return (mrecord[k1]*1.0)/mrecord[k2]
 
-def dump2csv(romdata, jadjust=False):
+def dump2csv(romdata, jadjust=False, bosses=False):
     allm=splitmonsters(romdata, jadjust=jadjust)
     from pprint import pprint as pp
-    pp(allm)
+    keys='name boss level hp xp gp'.split()
+    additional_keys='xp/hp gp/hp xp/level gp/level'.split()
+    outputdata={'header': ['index'] + keys + additional_keys,
+                'rows' : []}
+    for monster in allm:
+        if not allm[monster]['name'].startswith('Dummy'):
+            if (bosses or allm[monster]['name'] not in febosses):
+                dat1=[allm[monster][key] for key in keys]
+                dat2=[statperstat(allm[monster], key) for key in additional_keys]
+                outputdata['rows'].append([monster] + dat1+dat2)
+    csv_dumper(sys.stdout, outputdata)
 
 def dumpkeys(romdata, keys, jadjust=False):
     allm=splitmonsters(romdata, jadjust=jadjust)

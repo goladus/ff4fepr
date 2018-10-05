@@ -61,6 +61,13 @@ def main(args):
         weapons.anyweapon(romdata)
     if args.coral_sword:
         weapons.ancient2coral(romdata)
+    if args.randomize_spell_progression is not None:
+        level_modifier=toint(args.randomize_spell_progression)
+        magemods.randomize_learned_spells2(romdata,
+                                           level_modifier=level_modifier)
+    if args.randomize_learned is not None:
+        spellsets=args.randomize_learned.split(',')
+        magemods.randomize_learned_spells1(romdata, spellsets)
     if args.dump_learned:
         learned_spells.dump2screen(romdata)
     if args.dump_starting_spells:
@@ -137,13 +144,12 @@ def main(args):
         drops.dump2screen(romdata)
     if args.randomize_drops:
         drops.randomize_all
-    if args.randomize_learned is not None:
-        spellsets=args.randomize_learned.split(',')
-        magemods.randomize_learned_spells1(romdata, spellsets)
     if args.dump_monsters:
         monsters.dumpsplits(romdata, jadjust=args.jv)
     if args.dump_monsters_csv:
         monsters.dump2csv(romdata, jadjust=args.jv)
+    if args.dump_monsters_and_bosses_csv:
+        monsters.dump2csv(romdata, bosses=True, jadjust=args.jv)
     if args.dump_monster_values is not None:
         monsters.dumpkeys(romdata, args.dump_monster_values.split(','))
     if args.test_monsters:
