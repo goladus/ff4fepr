@@ -146,6 +146,10 @@ def bkeysstr(adict, key, astringtmp="%s"):
 def test_monsters(romdata, jadjust=False):
     mondict2rom(romdata, splitmonsters(romdata, jadjust=jadjust))
 
+def monsearch(mondict, key, query_value):
+    return [k for k, value in mondict.items()
+            if value[key]==query_value]
+
 def dumpitemtables(romdata, jadjust=False):
     results=splitmonsters(romdata, jadjust=jadjust)
     for monster in results:

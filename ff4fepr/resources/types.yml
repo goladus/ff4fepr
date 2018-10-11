@@ -6,6 +6,7 @@ int2:
   - mp
   - maxmp
   - xpnext
+  - tnl
 
 int3:
   - xp

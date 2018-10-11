@@ -58,3 +58,27 @@ def randomize_learned_spells2(romdata, level_modifier=100):
     randomize_learned_spells1(romdata, romoffsets['spells-order'],
                               fn=randomlevelfunc2,
                               level_modifier=level_modifier)
+
+def randomize_learned_spells3(romdata, difficulty_ratio=None):
+    randomize_learned_spells1(romdata, romoffsets['spells-order'],
+                              fn=randomlevelfunc3,
+                              difficulty_ratio=difficulty_ratio)
+
+oddslst=[(0, 5) for x in range(1,101) if x<=50]
+oddslst+=[(6, 10) for x in range(1,101) if 50<x<=75]
+oddslst+=[(11, 20) for x in range(1,101) if 75<x<=91]
+oddslst+=[(21, 40) for x in range(1,101) if 91<x<=99]
+oddslst+=[(41, 60) for x in range(1,101) if x==100] #could just write [(41,60)]
+
+def randomlevelfunc3(splev, minlevel, difficulty_ratio=None, extra=None):
+    if difficulty_ratio is None:
+        negative_adjust=1
+        positive_adjust=1
+    else:
+        if isinstance(difficulty_ratio, str):
+            negative_adjust, positive_adjust=map(toint, difficulty_ratio.split(':'))
+        else:
+            negative_adjust, positive_adjust=difficulty_ratio
+    absdiff=random.randint(*random.choice(oddslst))
+    sign=random.choice([-1] * negative_adjust + [1] * positive_adjust)
+    return max(splev + (sign * absdiff), minlevel)

@@ -19,13 +19,15 @@ vary-weaponatk        Varies weapon attack power (default is -5 to 15, see docum
 rydia-random-calls    Rydia starts with additional call spells.  Arg: <1 to 4 spells to add>
 rydia-starting-calls  Add additional spells to Rydia's starting calls.  Arg: spells to add.
 randomize-learned     Randomizes learned spells, chance to learn a spell is 1 in 1.5 times the normal level spell is learned. Arg: list of spellsets to randomize.
-randomize-spell-progression Randomizes all learned spells.  Arg is factor for chance per level to learn spell. 
+randomize-spell-progression Randomizes all learned spells.  Arg is factor for chance per level to learn spell.
+randomize-spell-progression-3 Randomizes all learned spells.  Arg is ratio between decreasing or increasing the level of the spell.  4:1 means an 80pct chance to lower level requirement and 20pct chance to raise requirement.
 replace-commandset    Replaces the commandset for specified character.  Arg: <CharnameJoin>:<cmd1>,<cmd2>,<cmd3>
 dual-wield            Sets the character's handedness to R+L.  Arg: <Charname>
 set-char-stats  Sets starting stats for characters.  Example: KidRydia:hp=300,maxhp=300,maxmp=50.Rosa:agi=20
 set-cast-times  Sets cast time for spells.  "Meteo*=5,Quake*=8"
 add-bossbit    Add boss bit to comma-delimited list of spells (spells won't hit bosses)
 remove-bossbit Removes boss bit from comma-delimited list of spells (allows spells to hit bosses)
+xp-imp                Set xp value for imp enemy
 dump-monster-values   Arg: keys to dump with each monster
 test-encoding  Prints the ff4 hex codes for provided string
 """
@@ -42,6 +44,7 @@ bird           Rename Dummied Cockatrice spell to Bird
 ct-rebalance   Reduce cast delay on some Black and Summon magic (elementals and Meteo)
 coral-sword    Replaces the Ancient Sword with a Lightning-elemental Coral Sword.
 any-weapon     Allows any character/class to use any weapon.
+yang-post60hp  Give Yang post-60 hp progression.
 dump-learned   Dump spell progressions from rom to screen.
 dump-starting-spells    Dump starting spells from rom to screen.
 dump-starting-stats  Dump starting stats from rom to screen.
@@ -59,9 +62,11 @@ dump-eqtables  Dump class equip tables
 dump-itemnames Dump item names from rom.
 dump-itemkeys  Dump item names used by ff4fepr
 dump-spellkeys Dump spell names used by ff4fepr
+dump-levelup   Dump levelup data
 dump-generator Dump generator.
 generate-form  Generate web form from script options (doesn't do much atm)
 hitratings     list attack * hitrate for each weapon
+test-levelup   Test loading levelup tables and dumping to rom with no changes
 test-monsters  Test loading monsters and dumping to rom with no changes
 test-weapons   Test loading weapons into memory and dumping to rom with no changes.
 test-drops     Test loading drop tables and dumping to rom with no changes.
@@ -107,7 +112,7 @@ if __name__ == '__main__':
         sys.exit(0)
     if args.rompath == 'test':
         from ff4fepr import core
-        print dir(core)
+        sys.stdout.write("%s" % dir(core))
     else:
         from ff4fepr.main import main
         main(args)

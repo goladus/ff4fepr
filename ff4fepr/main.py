@@ -17,6 +17,8 @@ import ff4text
 import equip
 import webform
 import scriptgen
+import leveldata
+import monstermods
 from starting_spells import groupspells
 from pprint import pprint as pp
 
@@ -57,6 +59,10 @@ def main(args):
         spelldata.setcasttimes(romdata, args.set_cast_times)
     if args.ct_rebalance:
         spelldata.ctrebalance(romdata)
+    if args.xp_imp is not None:
+        monstermods.xpimps(romdata, toint(args.xp_imp))
+    if args.yang_post60hp:
+        leveldata.yangpost60hp(romdata)
     if args.any_weapon:
         weapons.anyweapon(romdata)
     if args.coral_sword:
@@ -65,6 +71,10 @@ def main(args):
         level_modifier=toint(args.randomize_spell_progression)
         magemods.randomize_learned_spells2(romdata,
                                            level_modifier=level_modifier)
+    if args.randomize_spell_progression_3 is not None:
+        dr=args.randomize_spell_progression_3
+        magemods.randomize_learned_spells3(romdata,
+                                           difficulty_ratio=dr)
     if args.randomize_learned is not None:
         spellsets=args.randomize_learned.split(',')
         magemods.randomize_learned_spells1(romdata, spellsets)
@@ -134,6 +144,8 @@ def main(args):
         drops.setjdroptables(romdata)
     if args.dk_equip:
         equip.darkknight_equip(romdata)
+    if args.test_levelup:
+        leveldata.testludata(romdata)
     if args.test_eqtables:
         equip.testeq(romdata)
     if args.test_weapons:
@@ -160,6 +172,8 @@ def main(args):
         monsters.dumpmonsterdrops(romdata, jadjust=args.jv)
     if args.dump_spells:
         spelldata.dumpspellstats(romdata)
+    if args.dump_levelup:
+        leveldata.dump2screen(romdata)
     if args.test_spells:
         spelldata.testspelldata(romdata)
     if args.bird:

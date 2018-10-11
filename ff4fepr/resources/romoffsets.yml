@@ -43,6 +43,7 @@ weaponspellvisual: 0x7d4e0
 
 #I don't know this data structure yet.
 levelupdata: 0x7b528
+#levelupdata: 0x7b500
 levelupdata-size: 5
 
 spellstats: 0x797a0
@@ -245,12 +246,38 @@ spells-order:
   - fusoya-black
   - edge-ninja
 
-# This is incomplete, I'm not yet sure how to split these properly.
+# Level up record is a little complicated.
+# The actual value of the bonus is ((bonus+1) mod 8) - 1
+# alternately 'bonus if 0 <= bonus < 7 else -1'
+# The tnl value (to next level) is a 19 bit value
+#   where the 3 most significant bits are shared with
+#   the byte for the mpup.
 leveluprecord:
-  stats: 0
-  hp: 1
-  mp: 2
-  tnl: 3
+  bonus: [0, 0x7, 0]
+  wil: [0, 0x8, 3]
+  wis: [0, 0x10, 4]
+  vit: [0, 0x20, 5]
+  agi: [0, 0x40, 6]
+  str: [0, 0x80, 7]
+  hpup: [1, 0xff, 0]
+  mpup: [2, 0xf, 0]
+  tnl: [2, 0xe0, 5]
+#  tnl: [3, 0xff, 0]
+
+starting-level:
+  DKCecil: 10
+  Kain: 10
+  Rydia: 1
+  Tellah: 20
+  Edward: 5
+  Rosa: 10
+  Yang: 10
+  Palom: 10
+  Porom: 10
+  PaladinCecil: 1
+  Cid: 20
+  Edge: 25
+  FuSoYa: 50
 
 # notes on the stat record
 leveluprecord-notes:
