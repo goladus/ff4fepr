@@ -35,12 +35,15 @@ usage: ff4fe-post-randomizer [-h] [--seed SEED] [--output OUTPUT]
                              [--rydia-random-calls RYDIA_RANDOM_CALLS]
                              [--rydia-starting-calls RYDIA_STARTING_CALLS]
                              [--randomize-learned RANDOMIZE_LEARNED]
+                             [--randomize-spell-progression RANDOMIZE_SPELL_PROGRESSION]
+                             [--randomize-spell-progression-3 RANDOMIZE_SPELL_PROGRESSION_3]
                              [--replace-commandset REPLACE_COMMANDSET]
                              [--dual-wield DUAL_WIELD]
                              [--set-char-stats SET_CHAR_STATS]
                              [--set-cast-times SET_CAST_TIMES]
                              [--add-bossbit ADD_BOSSBIT]
                              [--remove-bossbit REMOVE_BOSSBIT]
+                             [--xp-imp XP_IMP]
                              [--dump-monster-values DUMP_MONSTER_VALUES]
                              [--test-encoding TEST_ENCODING] [--apply]
                              [--version] [--verbose] [--debug] [--jv]
@@ -48,18 +51,21 @@ usage: ff4fe-post-randomizer [-h] [--seed SEED] [--output OUTPUT]
                              [--randomize-drops] [--modup-weaponatk]
                              [--uber-tellah] [--paladin-spells]
                              [--restore-j-drops] [--bird] [--ct-rebalance]
-                             [--coral-sword] [--any-weapon] [--dump-learned]
-                             [--dump-starting-spells] [--dump-starting-stats]
-                             [--dump-menus] [--dump-equip] [--dump-weapons]
-                             [--dump-drops] [--dump-monsters]
+                             [--coral-sword] [--any-weapon] [--yang-post60hp]
+                             [--dump-learned] [--dump-starting-spells]
+                             [--dump-starting-stats] [--dump-menus]
+                             [--dump-equip] [--dump-weapons] [--dump-drops]
+                             [--dump-monsters] [--dump-monsters-csv]
+                             [--dump-monsters-and-bosses-csv]
                              [--dump-monster-itemtables]
                              [--dump-monster-drops] [--dump-spells]
                              [--dump-eqtables] [--dump-itemnames]
                              [--dump-itemkeys] [--dump-spellkeys]
-                             [--dump-generator] [--generate-form]
-                             [--hitratings] [--test-monsters] [--test-weapons]
-                             [--test-drops] [--test-spells] [--test-eqtables]
-                             [--tpassbuff] [--special]
+                             [--dump-levelup] [--dump-generator]
+                             [--generate-form] [--hitratings] [--test-levelup]
+                             [--test-monsters] [--test-weapons] [--test-drops]
+                             [--test-spells] [--test-eqtables] [--tpassbuff]
+                             [--special]
                              [rompath]
 
 Final Fantasy 4 Free Enterprise Post-Randomizer
@@ -84,13 +90,17 @@ optional arguments:
   --shuffle-weaponatk SHUFFLE_WEAPONATK
                         Shuffles weapon attack power within specified weapon categories.
   --vary-weaponatk VARY_WEAPONATK
-                        Varies weapon attack power by -5 to 15.
+                        Varies weapon attack power (default is -5 to 15, see documentation for details)
   --rydia-random-calls RYDIA_RANDOM_CALLS
                         Rydia starts with additional call spells.  Arg: <1 to 4 spells to add>
   --rydia-starting-calls RYDIA_STARTING_CALLS
                         Add additional spells to Rydia's starting calls.  Arg: spells to add.
   --randomize-learned RANDOMIZE_LEARNED
-                        Randomizes learned spells, chance to learn a spell is 1 in 1.5 times the normal level spell is learned.
+                        Randomizes learned spells, chance to learn a spell is 1 in 1.5 times the normal level spell is learned. Arg: list of spellsets to randomize.
+  --randomize-spell-progression RANDOMIZE_SPELL_PROGRESSION
+                        Randomizes all learned spells.  Arg is factor for chance per level to learn spell.
+  --randomize-spell-progression-3 RANDOMIZE_SPELL_PROGRESSION_3
+                        Randomizes all learned spells.  Arg is ratio between decreasing or increasing the level of the spell.  4:1 means an 80pct chance to lower level requirement and 20pct chance to raise requirement.
   --replace-commandset REPLACE_COMMANDSET
                         Replaces the commandset for specified character.  Arg: <CharnameJoin>:<cmd1>,<cmd2>,<cmd3>
   --dual-wield DUAL_WIELD
@@ -103,6 +113,7 @@ optional arguments:
                         Add boss bit to comma-delimited list of spells (spells won't hit bosses)
   --remove-bossbit REMOVE_BOSSBIT
                         Removes boss bit from comma-delimited list of spells (allows spells to hit bosses)
+  --xp-imp XP_IMP       Set xp value for imp enemy
   --dump-monster-values DUMP_MONSTER_VALUES
                         Arg: keys to dump with each monster
   --test-encoding TEST_ENCODING
@@ -123,6 +134,7 @@ optional arguments:
   --ct-rebalance        Reduce cast delay on some Black and Summon magic (elementals and Meteo)
   --coral-sword         Replaces the Ancient Sword with a Lightning-elemental Coral Sword.
   --any-weapon          Allows any character/class to use any weapon.
+  --yang-post60hp       Give Yang post-60 hp progression.
   --dump-learned        Dump spell progressions from rom to screen.
   --dump-starting-spells
                         Dump starting spells from rom to screen.
@@ -133,6 +145,9 @@ optional arguments:
   --dump-weapons        Dump weapon data from rom to screen.
   --dump-drops          Dump enemy stea/drop data from rom to screen.
   --dump-monsters       Dump monster data to screen.
+  --dump-monsters-csv   Dump monster data to screen in csv format. (no bosses)
+  --dump-monsters-and-bosses-csv
+                        Dump monster data to screen in csv format.
   --dump-monster-itemtables
                         Dump monster item table numbers and drop rates to screen.
   --dump-monster-drops  Dump monster drop data to screen. (resolved item-tables)
@@ -141,9 +156,11 @@ optional arguments:
   --dump-itemnames      Dump item names from rom.
   --dump-itemkeys       Dump item names used by ff4fepr
   --dump-spellkeys      Dump spell names used by ff4fepr
+  --dump-levelup        Dump levelup data
   --dump-generator      Dump generator.
   --generate-form       Generate web form from script options (doesn't do much atm)
   --hitratings          list attack * hitrate for each weapon
+  --test-levelup        Test loading levelup tables and dumping to rom with no changes
   --test-monsters       Test loading monsters and dumping to rom with no changes
   --test-weapons        Test loading weapons into memory and dumping to rom with no changes.
   --test-drops          Test loading drop tables and dumping to rom with no changes.
