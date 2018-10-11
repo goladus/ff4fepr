@@ -155,7 +155,7 @@ def main(args):
     if args.dump_drops:
         drops.dump2screen(romdata)
     if args.randomize_drops:
-        drops.randomize_all
+        drops.randomize_all()
     if args.dump_monsters:
         monsters.dumpsplits(romdata, jadjust=args.jv)
     if args.dump_monsters_csv:
