@@ -1,0 +1,318 @@
+DKCecil:
+  overworld:
+    - Black Sword
+    - Black Shield
+    - Black Helm
+    - Black Armor
+    - Black Gauntlet
+  underworld:
+    - Black Sword
+    - Black Shield
+    - Black Helm
+    - Black Armor
+    - Black Gauntlet
+  moon:
+    - Black Sword
+    - Black Shield
+    - Black Helm
+    - Black Armor
+    - Black Gauntlet
+  zero:
+    - Black Sword
+    - Black Shield
+    - Black Helm
+    - Black Armor
+    - Black Gauntlet
+Kain:
+  overworld:
+    - Wind Spear
+    - Silver Shield
+    - Silver Helm
+    - Silver Armor
+    - Silver Gauntlet
+  underworld:
+    - Gungnir Spear
+    - Aegis Shield
+    - Diamond Helm
+    - Diamond Armor
+    - Diamond Gauntlet
+  moon:
+    - Defense Sword
+    - Samurai Shield
+    - Samurai Helm
+    - Samurai Armor
+    - Samurai Gauntlet
+  zero:
+    - White Spear
+    - Dragoon Shield
+    - Dragoon Helm
+    - Dragoon Armor
+    - Zeus Gauntlet
+Rydia:
+  overworld:
+    - Change Rod
+    - EMPTY
+    - Tiara
+    - Wizard Robes
+    - Silver Ring
+  underworld:
+    - Mute Dagger
+    - EMPTY
+    - Tiara
+    - Black Robes
+    - Rune Ring
+  moon:
+    - Charm Rod
+    - EMPTY
+    - Tiara
+    - Sorcerer Robes
+    - Protect Ring
+  zero:
+    - Stardust Rod
+    - EMPTY
+    - Ribbon
+    - Sorcerer Robes
+    - Crystal Ring
+  offense-underworld:
+    - Blitz Whip
+    - EMPTY
+    - Bandanna
+    - Black Belt
+    - Strength Ring
+  offense-moon:
+    - Flame Whip
+    - EMPTY
+    - Bandanna
+    - Minerva
+    - Zeus Gauntlet
+  offense-moon:
+    - Dragon Whip
+    - EMPTY
+    - Ninja Mask
+    - Minerva
+    - Zeus Gauntlet
+Edward:
+  overworld:
+    - Dancing Dagger
+    - EMPTY
+    - Headband
+    - Karate Gi
+    - Silver Ring
+  underworld:
+    - Mute Dagger
+    - EMPTY
+    - Bandanna
+    - Black Belt
+    - Rune Ring
+  moon:
+    - "Samurai Arrows:50"
+    - Elven Bow
+    - Ninja Mask
+    - Black Belt
+    - Protect Ring
+  moon:
+    - "Artemis Arrows:50"
+    - Elven Bow
+    - Ribbon
+    - Black Belt
+    - Crystal Ring
+Rosa:
+  overworld:
+    - "Poison Arrows:50"
+    - Great Bow
+    - Wizard Hat
+    - Wizard Robes
+    - Silver Ring
+  underworld:
+    - "Charm Arrows:50"
+    - Samurai Bow
+    - Tiara
+    - Wizard Robes
+    - Rune Ring
+  moon:
+    - "Samurai Arrows:50"
+    - Samurai Bow
+    - Tiara
+    - White Robes
+    - Protect Ring
+  zero:
+    - "Artemis Arrows:50"
+    - Artemis Bow
+    - Ribbon
+    - White Robes
+    - Crystal Ring
+Yang:
+  overworld:
+    - Thunder Claw
+    - Poison Claw
+    - Headband
+    - Karate Gi
+    - Silver Ring
+  underworld:
+    - Poison Claw
+    - Cat Claw
+    - Bandanna
+    - Black Belt
+    - Strength Ring
+  moon:
+    - Cat Claw
+    - Cat Claw
+    - Ninja Mask
+    - Power Suit
+    - Zeus Gauntlet
+  zero:
+    - Cat Claw
+    - Cat Claw
+    - Glass Helm
+    - Power Suit
+    - Crystal Ring
+Tellah:
+  overworld:
+    - Change Rod
+    - EMPTY
+    - Wizard Hat
+    - Wizard Robes
+    - Silver Ring
+  underworld:
+    - Charm Rod
+    - EMPTY
+    - Wizard Hat
+    - Sorcerer Robes
+    - Rune Ring
+  moon:
+    - Silence Staff
+    - EMPTY
+    - Ribbon
+    - Sorcerer Robes
+    - Protect Ring
+  zero:
+    - Stardust Rod
+    - EMPTY
+    - Ribbon
+    - White Robes
+    - Crystal Ring
+Palom:
+  overworld:
+    - Dancing Dagger
+    - EMPTY
+    - Gaea Helm
+    - Wizard Robes
+    - Silver Ring
+  underworld:
+    - Charm Rod
+    - EMPTY
+    - Gaea Helm
+    - Sorcerer Robes
+    - Rune Ring
+  moon:
+    - Charm Rod
+    - EMPTY
+    - Ninja Mask
+    - Sorcerer Robes
+    - Protect Ring
+  zero:
+    - Stardust Rod
+    - EMPTY
+    - Ribbon
+    - Sorcerer Robes
+    - Crystal Ring
+Porom:
+  overworld:
+    - Cure Staff
+    - EMPTY
+    - Wizard Hat
+    - Wizard Robes
+    - Silver Ring
+  underworld:
+    - Power Staff
+    - EMPTY
+    - Tiara
+    - Wizard Robes
+    - Rune Ring
+  moon:
+    - Lunar Staff
+    - EMPTY
+    - Tiara
+    - White Robes
+    - Protect Ring
+  zero:
+    - Life Staff
+    - EMPTY
+    - Ribbon
+    - White Robes
+    - Crystal Ring
+PaladinCecil:
+  overworld:
+    - Silver Sword
+    - Paladin Shield
+    - Paladin Helm
+    - Paladin Armor
+    - Paladin Gauntlet
+  underworld:
+    - Light Sword
+    - Aegis Shield
+    - Diamond Helm
+    - Diamond Armor
+    - Diamond Gauntlet
+  moon:
+    - Excalibur
+    - Aegis Shield
+    - Samurai Helm
+    - Samurai Armor
+    - Samurai Gauntlet
+  zero:
+    - Crystal Sword
+    - Crystal Shield
+    - Crystal Helm
+    - Dragoon Armor
+    - Crystal Gauntlet
+Cid:
+  overworld:
+    - Earth Hammer
+    - EMPTY
+    - Silver Helm
+    - Silver Armor
+    - Silver Gauntlet
+  underworld:
+    - Ogre Axe
+    - Diamond Shield
+    - Diamond Helm
+    - Diamond Armor
+    - Diamond Gauntlet
+  moon:
+    - Rune Axe
+    - EMPTY
+    - Samurai Helm
+    - Samurai Armor
+    - Samurai Gauntlet
+  zero:
+    - "Artemis Arrows:50"
+    - Artemis Bow
+    - Ribbon
+    - Dragoon Armor
+    - Zeus Gauntlet
+Edge:
+  overworld:
+    - Short Blade
+    - Short Blade
+    - Bandanna
+    - Black Belt
+    - Silver Gauntlet
+  underworld:
+    - Long Blade
+    - Full Moon
+    - Ninja Mask
+    - Black Belt
+    - Strength Ring
+  moon:
+    - Ninja Blade
+    - Ninja Blade
+    - Ninja Mask
+    - Ninja Garb
+    - Samurai Gauntlet
+  zero:
+    - Masamune
+    - Murasame
+    - Ribbon
+    - Ninja Garb
+    - Zeus Gauntlet

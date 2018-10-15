@@ -19,6 +19,7 @@ vary-weaponatk        Varies weapon attack power (default is -5 to 15, see docum
 rydia-random-calls    Rydia starts with additional call spells.  Arg: <1 to 4 spells to add>
 rydia-starting-calls  Add additional spells to Rydia's starting calls.  Arg: spells to add.
 randomize-learned     Randomizes learned spells, chance to learn a spell is 1 in 1.5 times the normal level spell is learned. Arg: list of spellsets to randomize.
+buff-starting-equip   Improves starting equipment for all characters.  Arg: overworld, underworld, or moon.
 randomize-spell-progression Randomizes all learned spells.  Arg is factor for chance per level to learn spell.
 randomize-spell-progression-3 Randomizes all learned spells.  Arg is ratio between decreasing or increasing the level of the spell.  4:1 means an 80pct chance to lower level requirement and 20pct chance to raise requirement.
 replace-commandset    Replaces the commandset for specified character.  Arg: <CharnameJoin>:<cmd1>,<cmd2>,<cmd3>

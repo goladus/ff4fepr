@@ -41,9 +41,39 @@ weapondata-size: 8
 weaponspellpower: 0x79070
 weaponspellvisual: 0x7d4e0
 
-#I don't know this data structure yet.
+numarmors: 80
+armorstart: 97
+armordata: 0x79401
+armordata-size: 8
+
+armordata-record:
+  mevade: [0, 0xff, 0]
+  defense: [1, 0xff, 0]
+  evade: [2, 0xff, 0]
+  mdef: [3, 0xff, 0]
+  status1: [4, 0x1, 0]
+  status2: [4, 0x2, 1]
+  status3: [4, 0x4, 2]
+  status4: [4, 0x8, 3]
+  status5: [4, 0x10, 4]
+  status6: [4, 0x20, 5]
+  status7: [4, 0x40, 6]
+  status8: [4, 0x80, 7]
+  status9: [5, 0x1, 0]
+  status10: [5, 0x2, 1]
+  status11: [5, 0x4, 2]
+  status12: [5, 0x8, 3]
+  status13: [5, 0x10, 4]
+  status14: [5, 0x20, 5]
+  status15: [5, 0x40, 6]
+  status16: [5, 0x80, 7]
+  equip-index: [6, 0xff, 0]
+  statmod-index: [7,0xff, 0]
+
+numconsumables: 61
+consumables_start: 176
+  
 levelupdata: 0x7b528
-#levelupdata: 0x7b500
 levelupdata-size: 5
 
 spellstats: 0x797a0
