@@ -155,7 +155,7 @@ def main(args):
     if args.dump_drops:
         drops.dump2screen(romdata)
     if args.randomize_drops:
-        drops.randomize_all()
+        drops.randomize_all(romdata)
     if args.buff_starting_equip is not None:
         starting_equip.setall_eqlevel(romdata, args.buff_starting_equip)
     if args.dump_monsters:
