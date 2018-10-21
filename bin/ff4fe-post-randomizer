@@ -42,6 +42,7 @@ uber-tellah    Tellah starts with some overpowered enemy abilities
 paladin-spells Add some higher-level white spells to Cecil's Paladin magic
 restore-j-drops    Restore the monster drop tables from FF4j
 bird           Rename Dummied Cockatrice spell to Bird
+edtest         flag for testing purposes
 ct-rebalance   Reduce cast delay on some Black and Summon magic (elementals and Meteo)
 coral-sword    Replaces the Ancient Sword with a Lightning-elemental Coral Sword.
 any-weapon     Allows any character/class to use any weapon.

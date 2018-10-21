@@ -1,4 +1,5 @@
 from ff4data import *
+import ff4data
 from resource import load
 from core import bytes2int, num2bytes, identity, toint
 romoffsets=load('romoffsets')
@@ -205,6 +206,34 @@ def anyweapon(romdata):
     for weapon in wd:
         wd[weapon]['equip-index']=0
     weapon2rom(romdata, wd)
+
+def edspoon(romdata):
+    wd=loadweapons(romdata)
+    wd['Spoon']['equip-index']=ff4data.eqindexes['harps']
+    #wd['Spoon']['attack']=235
+    weapon2rom(romdata, wd)
+
+def edweaponbuff(romdata):
+    wd=loadweapons(romdata)
+    charmharp=232
+    dreamerharp=231
+    silverdagger=230
+    dancingdagger=240
+    wd['Charm Harp']['attack']=charmharp
+    wd['Dreamer Harp']['attack']=dreamerharp
+    wd['Silver Dagger']['attack']=silverdagger
+    wd['Dancing Dagger']['attack']=dancingdagger
+    weapon2rom(romdata, wd)
+    changeitemname(romdata, "Charm Harp",    "<harp>Charm%s" % charmharp)
+    changeitemname(romdata, "Dreamer Harp",  "<harp>Dream%s" % dreamerharp)
+    changeitemname(romdata, "Silver Dagger", "<knife>Silv%s" % silverdagger)
+    changeitemname(romdata, "Dancing Dagger", "<knife>Danc%s" % dancingdagger)
+
+def staffcheat(romdata):
+    addspells2weapons(romdata, [('Staff', 'Comet*', "Shell*", 200),
+                                ('Silver Staff', 'MegaNuke', 'Bersk*', 100),
+                                ('Silver Dagger', 'Storm', 'Storm', 10),
+                                ('Assassin', 'Disrupt', 'Venom*', 10)])
 
 def ancient2coral(romdata):
     ## Still need to change attack visual to dragoon spear animation

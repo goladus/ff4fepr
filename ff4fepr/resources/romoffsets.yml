@@ -309,17 +309,6 @@ starting-level:
   Edge: 25
   FuSoYa: 50
 
-# notes on the stat record
-leveluprecord-notes:
-  stats:
-    - "high nibble: bits(str,agi,vit,wis,will,?,?)"
-    - "Low nibble: mod amount?"
-  hp: "One full byte"
-  mp:
-    - "High nibble: tnl large byte"
-    - "Low nibble: mp"
-  tnl: "2 bytes + high nibble from mp byte"
-
 split-weapondata:
   tohit: [1, 0x7f, 0]
   uktohit: [1, 0x80, 7]

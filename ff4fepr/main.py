@@ -53,6 +53,10 @@ def main(args):
         magemods.rydiacalls_random(romdata, args.rydia_random_calls)
     if args.uber_tellah:
         magemods.addspellset(romdata, 'uber-tellah')
+    if args.edtest:
+        weapons.edweaponbuff(romdata)
+        weapons.edspoon(romdata)
+        weapons.staffcheat(romdata)
     if args.paladin_spells:
         magemods.replacelearnedsets(romdata, 'paladin-magic')
     if args.set_cast_times:
