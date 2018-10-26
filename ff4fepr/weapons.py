@@ -235,6 +235,11 @@ def staffcheat(romdata):
                                 ('Silver Dagger', 'Storm', 'Storm', 10),
                                 ('Assassin', 'Disrupt', 'Venom*', 10)])
 
+def spoonjoke(romdata):
+    wd=loadweapons(romdata)
+    changeitemname(romdata, 'Spoon', '<ring>Spoon')
+    weapon2rom(romdata, wd)
+
 def ancient2coral(romdata):
     ## Still need to change attack visual to dragoon spear animation
     wd=loadweapons(romdata)

@@ -57,6 +57,8 @@ def main(args):
         weapons.edweaponbuff(romdata)
         weapons.edspoon(romdata)
         weapons.staffcheat(romdata)
+    if args.spoonjoke:
+        weapons.spoonjoke(romdata)
     if args.paladin_spells:
         magemods.replacelearnedsets(romdata, 'paladin-magic')
     if args.set_cast_times:
