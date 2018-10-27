@@ -95,6 +95,10 @@ def main(args):
         starting_stats.dumpstartingstats(romdata)
     if args.dump_menus:
         battlemenus.dump2screen(romdata)
+    if args.dump_weapon_by is not None:
+        weapons.dumpby(romdata, args.dump_weapon_by)
+    if args.dump_weapon_racial:
+        weapons.dumpracial(romdata)
     if args.dump_equip:
         starting_equip.dump2screen(romdata)
     if args.dump_eqtables:

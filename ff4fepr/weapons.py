@@ -77,6 +77,27 @@ def dump2screen(romdata):
                                    for record in records]))
         sys.stdout.write('\n')
 
+def bytypeindex(romdata, keytype):
+    wd=loadweapons(romdata)
+    byindex=defaultdict(list)
+    key='%s-index' % keytype
+    for w, records in wd.items():
+        if records[key] != 0:
+            byindex[records[key]].append(w)
+    return dict(byindex)
+
+def dumpby(romdata, keytype):
+    bei=bytypeindex(romdata, keytype)
+    for thing in bei:
+        print thing, bei[thing]
+
+def dumpracial(romdata):
+    wd=loadweapons(romdata)
+    key='racial-bit'
+    for w, records in wd.items():
+        if records[key]:
+            print w, bin(records[key])
+
 def addspell2weapon(romdata, weaponame, spellname, spellpower, spellvisual=None):
     addspells2weapons(romdata, [(weaponname, spellname, spellvisual, spellpower)])
 

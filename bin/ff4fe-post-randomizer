@@ -30,6 +30,7 @@ add-bossbit    Add boss bit to comma-delimited list of spells (spells won't hit 
 remove-bossbit Removes boss bit from comma-delimited list of spells (allows spells to hit bosses)
 xp-imp                Set xp value for imp enemy
 dump-monster-values   Arg: keys to dump with each monster
+dump-weapon-by Dump weapons by element-index
 test-encoding  Prints the ff4 hex codes for provided string
 """
 
@@ -54,6 +55,7 @@ dump-starting-stats  Dump starting stats from rom to screen.
 dump-menus     Dump character battle menus from rom to screen.
 dump-equip     Dump character starting equipment from rom to screen.
 dump-weapons   Dump weapon data from rom to screen.
+dump-weapon-racial   Dump weapon data from rom to screen.
 dump-drops     Dump enemy stea/drop data from rom to screen.
 dump-monsters  Dump monster data to screen.
 dump-monsters-csv Dump monster data to screen in csv format. (no bosses)
