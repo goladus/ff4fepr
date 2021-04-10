@@ -51,7 +51,7 @@ def csv_loader(file_handle, header_row=True):
             return data
 
 def yml_loader(file_handle):
-    return yaml.load(file_handle)
+    return yaml.safe_load(file_handle)
 
 def json_loader(file_handle):
     return json.load(file_handle)

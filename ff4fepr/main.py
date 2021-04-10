@@ -44,6 +44,7 @@ def main(args):
                            debug=debug)
     else:
         romdata=None
+    debug("romdata: %s\n" % type(romdata))
     if args.rydia_allrares:
         magemods.rydiacalls(romdata, "Imp*,Bomb*,Cockatrice*,Mage*")
         spelldata.birdcall(romdata)
@@ -53,6 +54,8 @@ def main(args):
         magemods.rydiacalls_random(romdata, args.rydia_random_calls)
     if args.uber_tellah:
         magemods.addspellset(romdata, 'uber-tellah')
+    if args.medusa:
+        weapons.medusa2x(romdata)
     if args.edtest:
         weapons.edweaponbuff(romdata)
         weapons.edspoon(romdata)

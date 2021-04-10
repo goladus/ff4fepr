@@ -49,6 +49,7 @@ ct-rebalance   Reduce cast delay on some Black and Summon magic (elementals and 
 coral-sword    Replaces the Ancient Sword with a Lightning-elemental Coral Sword.
 any-weapon     Allows any character/class to use any weapon.
 yang-post60hp  Give Yang post-60 hp progression.
+medusa         Replace the Medusa Sword with a randomly created weapon
 dump-learned   Dump spell progressions from rom to screen.
 dump-starting-spells    Dump starting spells from rom to screen.
 dump-starting-stats  Dump starting stats from rom to screen.

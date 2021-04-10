@@ -5,7 +5,7 @@ element-types:
   Lit: 3 #['Thunder Rod', 'Lit Arrows', 'Thunder Claw']
   Dark: 4 #['Shadow Sword', 'Darkness Sword']
   Holy: 5 #['Legend Sword', 'Light Sword', 'White Arrows', 'Excalibur', 'SPARE', 'Crystal Sword']
-  Air: 6 #['Great Bow', 'Full Moon', 'Shuriken', 'Elven Bow', 'Dragoon Spear', 'Samurai Bow', 'Short Bow', 'Artemis Bow', 'Spear', 'Gungnir Spear', 'Ninja Star', 'Crossbow', 'Boomerang', 'Archer Bow', 'Wind Spear']
+  Wind: 6 #['Great Bow', 'Full Moon', 'Shuriken', 'Elven Bow', 'Dragoon Spear', 'Samurai Bow', 'Short Bow', 'Artemis Bow', 'Spear', 'Gungnir Spear', 'Ninja Star', 'Crossbow', 'Boomerang', 'Archer Bow', 'Wind Spear']
   Drain: 7 #['Drain Sword', 'Drain Spear', 'Lilith Rod']
   Medusa: 9 #['Medusa Sword']
   Power: 10 #['Power Staff']
@@ -22,5 +22,66 @@ element-types:
   Fire-Whip: 48 #['Flame Whip']
   Fire-Air: 52 #['Flame Spear']
   Holy-Air: 53 #['White Spear']
-  Stone-Air: 54 #['Medusa Arrows']
+  Stone: 54 #['Medusa Arrows']
   Lit-Whip: 58 #['Blitz Whip']
+
+race-matchups:
+  Ice: race-reptile
+  Lit: race-robot
+  Mute: race-mage
+  Charm: race-giant
+
+equipset:
+  Cloth: 1
+  Zeus: 3
+  Shield: 4
+  Samurai: 5
+  Armor: 6
+  Caster: 8
+  Axe: 6 #['Dwarf Axe', 'Ogre Axe', 'HandAxe']
+  Sword: 7 #['Fire Sword', 'Medusa Sword', 'Drain Sword', 'Ancient Sword', 'Slumber Sword', 'Silver Sword', 'IceBrand', 'Defense Sword']
+  PallyStaff: 10 #['Staff', 'Cure Staff', 'Silver Staff']
+  WhiteStaff: 11 #['Life Staff', 'Lunar Staff', 'Power Staff', 'Silence Staff']
+  Rod: 12 #['Ice Rod', 'Thunder Rod', 'Lilith Rod', 'Rod', 'Stardust Rod', 'Change Rod', 'Charm Rod', 'Flame Rod']
+  Female: 14
+  Dagger: 19 #['Assassin', 'Dancing Dagger', 'Mute Dagger', 'Silver Dagger']
+  Ring: 20
+  Darksword: 21 #['Shadow Sword', 'Black Sword', 'Darkness Sword']
+  Spear: 22 #['White Spear', 'Dragoon Spear', 'Flame Spear', 'Drain Spear', 'Blizzard Spear', 'Spear', 'Gungnir Spear', 'Wind Spear']
+  Whip: 23 #['Dragon Whip', 'Flame Whip', 'Chain Whip', 'Whip', 'Blitz Whip']
+  Claw: 27 #['Cat Claw', 'Ice Claw', 'Fire Claw', 'Poison Claw', 'Thunder Claw', 'Charm Claw']
+  Paladin: 28 #['Legend Sword', 'Light Sword', 'Excalibur', 'Crystal Sword']
+  Ninja: 30 #['Full Moon', 'Long Blade', 'Murasame', 'Masamune', 'Boomerang', 'Middle Blade', 'Ninja Blade', 'Short Blade']
+  Stars: 31 #['Shuriken', 'Ninja Star', 'Spoon']
+  Axe2h: 38 #['Rune Axe', 'Poison Axe']
+  Sword2h: 39 #['Avenger']
+  Harps: 57 #['Charm Harp', 'Dreamer Harp']
+  Hammers: 61 #['Wooden Hammer', 'Earth Hammer', 'Silver Hammer']
+  Arrows: 66 #['Artemis Arrows', 'Charm Arrows', 'White Arrows', 'Darkness Arrows', 'Ice Arrows', 'Lit Arrows', 'Fire Arrows', 'Samurai Arrows', 'Poison Arrows', 'Medusa Arrows', 'Mute Arrows', 'Iron Arrows']
+  Bows: 130 #['Great Bow', 'Elven Bow', 'Samurai Bow', 'Short Bow', 'Artemis Bow', 'Crossbow', 'Archer Bow']
+
+
+statmods:
+  - 4 #['Drain Sword']
+  - 5 #['Drain Spear']
+  - 8 #['Legend Sword', 'Silver Staff']
+  - 10 #['Lunar Staff', 'Silence Staff']
+  - 11 #['Life Staff']
+  - 16 #['Thunder Rod', 'Flame Rod']
+  - 17 #['Elven Bow', 'Lilith Rod', 'Change Rod', 'Mute Dagger']
+  - 18 #['Charm Rod']
+  - 19 #['Stardust Rod']
+  - 35 #['Gungnir Spear', 'Defense Sword']
+  - 64 #['Masamune', 'Charm Claw']
+  - 128 #['Great Bow', 'Poison Claw', 'HandAxe']
+  - 129 #['Earth Hammer', 'Archer Bow', 'Ninja Blade']
+  - 130 #['Samurai Bow', 'Power Staff', 'Excalibur']
+  - 136 #['Light Sword']
+  - 164 #['Dwarf Axe']
+  - 171 #['SPARE', 'Crystal Sword']
+  - 180 #['Murasame']
+  - 193 #['Cat Claw']
+  - 228 #['Dragon Whip', 'Flame Whip']
+  - 229 #['Artemis Bow', 'Avenger']
+  - 231 #['Assassin']
+  - 247 #['Black Sword']

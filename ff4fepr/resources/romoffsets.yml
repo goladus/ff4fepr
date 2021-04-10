@@ -312,6 +312,14 @@ starting-level:
 split-weapondata:
   tohit: [1, 0x7f, 0]
   uktohit: [1, 0x80, 7]
+  race-dragon: [4, 0x1, 0]
+  race-robot: [4, 0x2, 1]
+  race-reptile: [4, 0x4, 2]
+  race-spirit: [4, 0x8, 3]
+  race-giant: [4, 0x10, 4]
+  race-slime: [4, 0x20, 5]
+  race-mage: [4, 0x40, 6]
+  race-zombie: [4, 0x80, 7]
 
 weapondata-record:
   - attack
@@ -319,6 +327,14 @@ weapondata-record:
   - casts
   - element-index
   - racial-bit
+  - race-dragon
+  - race-robot
+  - race-reptile
+  - race-spirit
+  - race-giant
+  - race-slime
+  - race-mage
+  - race-zombie
   - equip-index
   - statmod-index
   - unknown
@@ -330,8 +346,17 @@ weapondata-record-dict:
   casts: 2
   element-index: 3
   racial-bit: 4
+  race-dragon: 4
+  race-robot: 4
+  race-reptile: 4
+  race-spirit: 4
+  race-giant: 4
+  race-slime: 4
+  race-mage: 4
+  race-zombie: 4
   equip-index: 5
   statmod-index: 6
+  unknown: 7
 
 # Monster records are variable length. When additional
 #    bytes are needed, the 9th byte signals the number

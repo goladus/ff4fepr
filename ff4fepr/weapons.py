@@ -10,6 +10,8 @@ import random
 from ff4text import basicencode, encoding
 from allitems import changeitemname, dumpnames
 
+rando_element=load('rando-weapon-element')
+
 def weaponrecord(bytevalue, record):
     if record in romoffsets['split-weapondata']:
         x, mask, rshift = romoffsets['split-weapondata'][record]
@@ -40,7 +42,8 @@ def loadweapons(romdata):
         spvoff=weaponspellvisual + windex
         weaponname=items[windex]
         results.setdefault(weaponname, {})
-        for index, record in enumerate(romoffsets['weapondata-record']):
+        for record in romoffsets['weapondata-record']:
+            index=romoffsets['weapondata-record-dict'][record]
             record_offset=dataoff+index
             value=weaponrecord(romdata[record_offset], record)
             results[weaponname].setdefault(record, value)
@@ -255,6 +258,28 @@ def staffcheat(romdata):
                                 ('Silver Staff', 'MegaNuke', 'Bersk*', 100),
                                 ('Silver Dagger', 'Storm', 'Storm', 10),
                                 ('Assassin', 'Disrupt', 'Venom*', 10)])
+
+def medusa2x(romdata):
+    wd=loadweapons(romdata)
+    etypes=[x for x in rando_element['element-types'].keys()
+            if ((x != 'Medusa') and
+                (x != 'Curse') and
+                ('-Air' not in x) and
+                ('-Whip' not in x))]
+    special1=random.choice(etypes)
+    atk=random.randint(20, 150)
+    tohit=random.randint(75, 95)
+    wname='Medusa Sword'
+    wd[wname]['equip-index']=6 #Axes
+    wd[wname]['element-index']=rando_element['element-types'][special1]
+    wd[wname]['attack']=atk
+    wd[wname]['tohit']=tohit
+    weapon2rom(romdata, wd)
+    newtag=special1 + (5-len(special1)) * ' '
+    atkstr="%s" % atk
+    newname="<sword>%s%s" % (newtag[:5], atkstr)
+    print "Medusa Sword -> %s" % newname
+    changeitemname(romdata, "Medusa Sword", newname)
 
 def spoonjoke(romdata):
     wd=loadweapons(romdata)
