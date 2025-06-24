@@ -82,7 +82,7 @@ def load_file(resource_file_name, resource_name=None):
         return None
 
 def loadable(fname):
-    return True in [fname.endswith(extension) for extension in loaders.keys()]
+    return True in [fname.endswith(extension) for extension in list(loaders.keys())]
 
 def dirlist(dirpath):
     return [x for x in os.listdir(os.path.abspath(dirpath)) if loadable(x)]
