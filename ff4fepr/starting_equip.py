@@ -18,14 +18,14 @@ def dump2screen(romdata):
     startoff=romoffsets['starting-equip']
     for charindex, charname in enumerate(romoffsets['charjoin-order']):
         offset=startoff+charindex*len(romoffsets['starting-equip-record'])
-        print "%20s" % charname, 
+        print("%20s" % charname, end=' ')
         for index, eqr in enumerate(romoffsets['starting-equip-record']):
             itemeq=romdata[offset+index]
             if eqr not in ['rhno', 'lhno']:
-                print "%15s" % items[itemeq],
+                print("%15s" % items[itemeq], end=' ')
             else:
-                print "%2d" % itemeq,
-        print
+                print("%2d" % itemeq, end=' ')
+        print()
 
 def setslot(romdata, charname, slot, itemname, quantity=1):
     offset=getoffset(charname, slot)

@@ -91,7 +91,7 @@ def main(args):
         learned_spells.dump2screen(romdata)
     if args.dump_starting_spells:
         for itm in groupspells(romdata):
-            print itm
+            print(itm)
     if args.set_char_stats:
         starting_stats.setcharstats(romdata, args.set_char_stats)
     if args.dump_starting_stats:

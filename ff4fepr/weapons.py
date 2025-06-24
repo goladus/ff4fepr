@@ -92,14 +92,14 @@ def bytypeindex(romdata, keytype):
 def dumpby(romdata, keytype):
     bei=bytypeindex(romdata, keytype)
     for thing in bei:
-        print thing, bei[thing]
+        print(thing, bei[thing])
 
 def dumpracial(romdata):
     wd=loadweapons(romdata)
     key='racial-bit'
     for w, records in wd.items():
         if records[key]:
-            print w, bin(records[key])
+            print(w, bin(records[key]))
 
 def addspell2weapon(romdata, weaponame, spellname, spellpower, spellvisual=None):
     addspells2weapons(romdata, [(weaponname, spellname, spellvisual, spellpower)])
@@ -278,7 +278,7 @@ def medusa2x(romdata):
     newtag=special1 + (5-len(special1)) * ' '
     atkstr="%s" % atk
     newname="<sword>%s%s" % (newtag[:5], atkstr)
-    print "Medusa Sword -> %s" % newname
+    print("Medusa Sword -> %s" % newname)
     changeitemname(romdata, "Medusa Sword", newname)
 
 def spoonjoke(romdata):

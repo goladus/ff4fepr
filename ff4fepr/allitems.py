@@ -18,4 +18,4 @@ def dumpnames(romdata):
     for index in range(len(items)):
         offset=startoff+index*romoffsets['itemnames-size']
         txtlst=romdata[offset:offset+romoffsets['itemnames-size']]
-        print ''.join([encoding[x] for x in txtlst]), txtlst
+        print(''.join([encoding[x] for x in txtlst]), txtlst)

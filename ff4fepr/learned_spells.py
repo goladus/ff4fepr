@@ -14,7 +14,7 @@ def split_learnspell_list(lslist):
 def dump2screen(romdata):
     learned=loadlearnedspells(romdata)
     data=[{chname: learned[chname]} for chname in romoffsets['spells-order']]
-    print yaml.dump(data)
+    print(yaml.dump(data))
 #    for chname, learned in data:
 #        for lvl, spname in learned:
 #            print "%s  %s %s" % (chname, lvl, spname)

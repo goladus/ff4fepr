@@ -32,8 +32,8 @@ def dump2screen(romdata):
         for x in range(numlevels(charname)):
             offset=charoffset + x * lusize
             level=romoffsets['starting-level'][charname]+x
-            print charname, level, renderluentry(
-                parseluentry(romdata[offset:offset+lusize]))
+            print(charname, level, renderluentry(
+                parseluentry(romdata[offset:offset+lusize])))
 
 def renderluentry(rec):
     lustat=' '.join([stat if rec[stat] == 1 else '   ' for stat in stats])
@@ -110,14 +110,14 @@ def dump2screenx(romdata):
         sts='.'.join([stat for stat in stats
                       if getbitvalue(romdata[offset],
                                      romoffsets['leveluprecord'][stat]) == 1])
-        print x+10, hex(offset), sts, romdata[offset+1], t1
+        print(x+10, hex(offset), sts, romdata[offset+1], t1)
     for y in range(61, 121):
         offset=ludata + y*lusize + 3
-        print y, hex(offset), romdata[offset:offset+lusize]
-    print "----"
+        print(y, hex(offset), romdata[offset:offset+lusize])
+    print("----")
     for y in range(122, 194):
         offset=ludata + y*lusize + 6
-        print y, hex(offset), romdata[offset:offset+lusize]
+        print(y, hex(offset), romdata[offset:offset+lusize])
 
 def yangpost60hp(romdata):
     lud=loadlevelupdata(romdata)

@@ -17,5 +17,5 @@ def basicencode(astring):
 
 def testencode(astring):
     encoded=basicencode(astring)
-    print encoded,
-    print ''.join([encoding[x] for x in encoded])
+    print(encoded, end=' ')
+    print(''.join([encoding[x] for x in encoded]))

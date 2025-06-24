@@ -154,9 +154,9 @@ def dumpitemtables(romdata, jadjust=False):
     results=splitmonsters(romdata, jadjust=jadjust)
     for monster in results:
         #print monster, results[monster]['name'], results[monster]['item-table'],
-        print "- [%s, %s] #%s" % (results[monster]['item-table'],
+        print("- [%s, %s] #%s" % (results[monster]['item-table'],
                                   results[monster]['item-rate'],
-                                  results[monster]['name'])
+                                  results[monster]['name']))
 
 def paditm(astr, fw):
     return "%s%s" % (astr, ' ' * (fw - len(astr)))
@@ -167,7 +167,7 @@ def dumpmonsterdrops(romdata, jadjust=False):
     for monster in results:
         droptable=results[monster]['item-table']
         itemstring=[paditm(x, 16) for x in droptables[droptable]]
-        print paditm(results[monster]['name'], 10), ''.join(itemstring)
+        print(paditm(results[monster]['name'], 10), ''.join(itemstring))
 
 def statperstat(mrecord, divkey):
     k1, k2 = divkey.split('/')
@@ -193,7 +193,7 @@ def dumpkeys(romdata, keys, jadjust=False):
     for monster in allm:
         mname=monster_offsets[monster][0]
         opstr=' '.join(["%s" % allm[monster][key] for key in keys])
-        print opstr, mname
+        print(opstr, mname)
 
 fieldpads=dict(level=3,
                hp=6,
@@ -213,16 +213,16 @@ def dumpsplits(romdata, jadjust=False):
         mname=monster_offsets[monster][0]
         moff=monster_offsets[monster][1]
         #print monster, results[monster]['local-offset'], test, mname, moff,
-        print "%3d" % monster, hex(results[monster]['offset']), "%10s" % mname,
+        print("%3d" % monster, hex(results[monster]['offset']), "%10s" % mname, end=' ')
         #print "%2d" % len(results[monster]['bytes']), results[monster]['bytes'],
         key='defense-traits'
         defense=bkeysstr(results[monster], 'defense-traits', '(immune:%s)')
         attacks=bkeysstr(results[monster], 'attack-traits', '<%s>')
         weakness=bkeysstr(results[monster], 'element-weakness', '(weak:%s)')
         spower="(sp:%s)" % results[monster].get('spell-power', {}).get('spell-power', None)
-        print "Boss     " if results[monster]['boss']==1 else "Underling",
-        print "%s%s%s%s" % (monvalstr(results, monster, 'level'),
+        print("Boss     " if results[monster]['boss']==1 else "Underling", end=' ')
+        print("%s%s%s%s" % (monvalstr(results, monster, 'level'),
                             monvalstr(results, monster, 'hp'),
                             monvalstr(results, monster, 'xp'),
-                            monvalstr(results, monster, 'gp')),
-        print spower, defense, weakness
+                            monvalstr(results, monster, 'gp')), end=' ')
+        print(spower, defense, weakness)

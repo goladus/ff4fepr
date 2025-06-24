@@ -11,8 +11,8 @@ def dump2screen(romdata):
     startoff=romoffsets['dropdata']
     for index in range(romoffsets['dropdata-len']):
         offset=startoff+index*4
-        print index, [items[x]
-                      for x in romdata[offset:offset+4]]
+        print(index, [items[x]
+                      for x in romdata[offset:offset+4]])
 
 def loaddroptables(romdata):
     startoff=romoffsets['dropdata']

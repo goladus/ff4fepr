@@ -11,7 +11,7 @@ def dump2screen(romdata):
     rsize=romoffsets['charmenus-size']
     for index, charname in enumerate(order):
         offset=startoff+index*rsize
-        print charname, [commands[x] if x < 0xff else 'x' for x in romdata[offset:offset+rsize]]
+        print(charname, [commands[x] if x < 0xff else 'x' for x in romdata[offset:offset+rsize]])
 
 def replace_commandset_args(romdata, stringarg):
     charspecs=stringarg.split('.')

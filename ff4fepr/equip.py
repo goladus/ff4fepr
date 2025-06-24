@@ -56,7 +56,7 @@ def testeq(romdata):
 def dumpindexes(romdata):
     for eqindex in range(romoffsets['equip-tables-num']):
         offset=eqtoff+eqindex*eqrsize
-        print eqindex, showeqtable(spliteqtable(romdata[offset:offset+eqrsize]))
+        print(eqindex, showeqtable(spliteqtable(romdata[offset:offset+eqrsize])))
 
 #3, 4, 5, 6, 7, 19(daggers) 
 def darkknight_equip(romdata):

@@ -8,7 +8,7 @@ def dump2screen2(romdata):
     startoff=romoffsets['starting-stats']
     sssize=romoffsets['starting-stats-size']
     for offset in range(startoff, startoff+0x200, sssize):
-        print romdata[offset:offset+0x20]
+        print(romdata[offset:offset+0x20])
 
 def dump2screen(romdata):
     startoff=romoffsets['starting-stats']
@@ -16,7 +16,7 @@ def dump2screen(romdata):
     ssorder=romoffsets['starting-stats-order']
     for index, name in enumerate(ssorder):
         offset=startoff+(index*sssize)
-        print name, romdata[offset:offset+sssize]
+        print(name, romdata[offset:offset+sssize])
 
 def getstatoff(charname, stat):
     charindex=romoffsets['starting-stats-order'].index(charname)
@@ -55,7 +55,7 @@ def dumpcharstats(romdata, charname):
                  'xpnext']:
         results.setdefault(stat, getstatval(romdata, charname, stat))
     results.setdefault('charname', charname)
-    print "{charname}: {charid} {sprite} {level} {hp} {mp} {xp} {wis} {wil} [{left-handed}{right-handed}]".format(**results)
+    print("{charname}: {charid} {sprite} {level} {hp} {mp} {xp} {wis} {wil} [{left-handed}{right-handed}]".format(**results))
 
 def dumpstartingstats(romdata):
     for charname in romoffsets['starting-stats-order']:

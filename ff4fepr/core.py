@@ -200,7 +200,7 @@ def num2bytes(number, number_of_bytes):
         bytes = [0]
     if isinstance(number_of_bytes, int):
         if len(bytes)>number_of_bytes:
-            print "%s %s %s" % (bytes, number_of_bytes, num)
+            print("%s %s %s" % (bytes, number_of_bytes, num))
             raise ValueError
         else:
             return bytes + [0] * (number_of_bytes-len(bytes))
