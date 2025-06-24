@@ -1,7 +1,7 @@
-from ff4data import *
-from datatypes import getbytesfortype
-from resource import load
-from core import bytes2int, num2bytes, toint
+from .ff4data import *
+from .datatypes import getbytesfortype
+from .resource import load
+from .core import bytes2int, num2bytes, toint
 romoffsets=load('romoffsets')
 
 def dump2screen2(romdata):

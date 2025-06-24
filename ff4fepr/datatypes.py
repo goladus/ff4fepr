@@ -1,4 +1,4 @@
-from resource import load
+from .resource import load
 types=load('types')
 
 def getbytesfortype(stat):

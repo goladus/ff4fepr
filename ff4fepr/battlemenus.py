@@ -1,7 +1,7 @@
-from ff4data import *
-from datatypes import getbytesfortype
-from resource import load
-from core import bytes2int, num2bytes
+from .ff4data import *
+from .datatypes import getbytesfortype
+from .resource import load
+from .core import bytes2int, num2bytes
 romoffsets=load('romoffsets')
 commands=load('battle-commands')
 

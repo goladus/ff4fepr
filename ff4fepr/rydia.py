@@ -1,5 +1,5 @@
-import ff4data
-from starting_spells import addspells2rom
+from . import ff4data
+from .starting_spells import addspells2rom
 
 def rydiacalls(romdata, args):
     n=toint(args.rydia_starting_calls)

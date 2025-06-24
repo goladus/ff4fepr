@@ -1,4 +1,4 @@
-from resource import load
+from .resource import load
 from pprint import pprint as pp
 
 items=load('items')

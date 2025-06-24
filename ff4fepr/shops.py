@@ -1,6 +1,6 @@
-from ff4data import *
-from resource import load
-from core import bytes2int, num2bytes, identity
+from .ff4data import *
+from .resource import load
+from .core import bytes2int, num2bytes, identity
 romoffsets=load('romoffsets')
 items=load('items')
 from collections import defaultdict
@@ -8,7 +8,7 @@ itemcats=load('item-categories')
 shoplist=load('shops')['order']
 import random
 shopsoff=romoffsets['shopdata']
-from output import stderr as errormsg
+from .output import stderr as errormsg
 
 def getshopoff(shopname):
     shopnum=shoplist.index(shopname)

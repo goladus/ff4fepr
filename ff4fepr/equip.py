@@ -1,7 +1,7 @@
-from ff4data import *
-from resource import load
-from core import bytes2int, num2bytes, identity
-from core import getmaskedvalue, mergemaskedvalue
+from .ff4data import *
+from .resource import load
+from .core import bytes2int, num2bytes, identity
+from .core import getmaskedvalue, mergemaskedvalue
 romoffsets=load('romoffsets')
 items=load('items')
 from collections import defaultdict

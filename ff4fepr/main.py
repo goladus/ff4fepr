@@ -1,25 +1,25 @@
 import sys
-from core import BinaryList, toint
-from output import error, warning, optional_output
+from .core import BinaryList, toint
+from .output import error, warning, optional_output
 from datetime import datetime
 import random
-import magemods
-import learned_spells
-import starting_stats
-import starting_equip
-import battlemenus
-import weapons
-import drops
-import monsters
-import shops
-import spelldata
-import ff4text
-import equip
-import webform
-import scriptgen
-import leveldata
-import monstermods
-from starting_spells import groupspells
+from . import magemods
+from . import learned_spells
+from . import starting_stats
+from . import starting_equip
+from . import battlemenus
+from . import weapons
+from . import drops
+from . import monsters
+from . import shops
+from . import spelldata
+from . import ff4text
+from . import equip
+from . import webform
+from . import scriptgen
+from . import leveldata
+from . import monstermods
+from .starting_spells import groupspells
 from pprint import pprint as pp
 
 def render_opfilename(infname, seed):

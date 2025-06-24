@@ -1,5 +1,5 @@
-from ff4data import *
-from ff4text import basicencode, encoding
+from .ff4data import *
+from .ff4text import basicencode, encoding
 
 def changeitemname(romdata, itemname, newtext):
     itemnum=items.index(itemname)

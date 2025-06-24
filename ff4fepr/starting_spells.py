@@ -1,4 +1,4 @@
-from ff4data import *
+from .ff4data import *
 
 def groupspells(romdata):
     index=0

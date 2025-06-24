@@ -1,6 +1,6 @@
-from ff4data import *
-from core import getbitvalue, mergebitvalue, bytes2int, num2bytes
-from datatypes import getbytesfortype
+from .ff4data import *
+from .core import getbitvalue, mergebitvalue, bytes2int, num2bytes
+from .datatypes import getbytesfortype
 from collections import defaultdict
 
 ludata=romoffsets['levelupdata']

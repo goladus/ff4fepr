@@ -1,9 +1,9 @@
-import ff4data
-from starting_spells import addspells2rom
-from learned_spells import replace_learned_spells
-from learned_spells import loadlearnedspells, update_learned_spells
-from resource import load
-from core import toint
+from . import ff4data
+from .starting_spells import addspells2rom
+from .learned_spells import replace_learned_spells
+from .learned_spells import loadlearnedspells, update_learned_spells
+from .resource import load
+from .core import toint
 import random
 romoffsets=load('romoffsets')
 

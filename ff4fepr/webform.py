@@ -1,5 +1,5 @@
-from util import parse_string_args_nodashes as psa
-from ff4data import *
+from .util import parse_string_args_nodashes as psa
+from .ff4data import *
 
 def checkbox(flagname, helptext):
     return '<input type="checkbox" name="%s">%s' % (flagname, helptext)

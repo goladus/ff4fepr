@@ -1,12 +1,12 @@
-from ff4data import *
+from .ff4data import *
 spelldataoff=romoffsets['spellstats']
 sprecord=romoffsets['spellstats-record']
 spsize=romoffsets['spellstats-size']
 spnum=romoffsets['spellstats-num']
 spnames=romoffsets['player-spellnames']
 spothernames=romoffsets['other-spellnames']
-from ff4text import basicencode, encoding, testencode
-from core import mergemaskedvalue, toint
+from .ff4text import basicencode, encoding, testencode
+from .core import mergemaskedvalue, toint
 from collections import defaultdict
 import re
 

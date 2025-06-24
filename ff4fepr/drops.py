@@ -1,11 +1,11 @@
-from ff4data import *
-from resource import load
+from .ff4data import *
+from .resource import load
 drop_tables=load('drop-tables')
 jdrop_table=load('j-drop-table')
 dropitems_rando=load('rando-dropitems')
 almost_everything=dropitems_rando['almost-everything']
 import random
-import monsters
+from . import monsters
 
 def dump2screen(romdata):
     startoff=romoffsets['dropdata']

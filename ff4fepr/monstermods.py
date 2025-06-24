@@ -1,5 +1,5 @@
-from ff4data import *
-from monsters import splitmonsters, monsearch, mondict2rom
+from .ff4data import *
+from .monsters import splitmonsters, monsearch, mondict2rom
 
 def xpimps(romdata, newvalue):
     mondata=splitmonsters(romdata)

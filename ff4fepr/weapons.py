@@ -1,14 +1,14 @@
-from ff4data import *
-import ff4data
-from resource import load
-from core import bytes2int, num2bytes, identity, toint
+from .ff4data import *
+from . import ff4data
+from .resource import load
+from .core import bytes2int, num2bytes, identity, toint
 romoffsets=load('romoffsets')
 items=load('items')
 from collections import defaultdict
 itemcats=load('item-categories')
 import random
-from ff4text import basicencode, encoding
-from allitems import changeitemname, dumpnames
+from .ff4text import basicencode, encoding
+from .allitems import changeitemname, dumpnames
 
 rando_element=load('rando-weapon-element')
 
