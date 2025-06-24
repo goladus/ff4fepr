@@ -2,6 +2,7 @@ from .ff4data import *
 from . import ff4data
 from .resource import load
 from .core import bytes2int, num2bytes, identity, toint
+from functools import reduce
 romoffsets=load('romoffsets')
 items=load('items')
 from collections import defaultdict
