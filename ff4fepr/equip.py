@@ -10,7 +10,7 @@ import random
 eqtoff=romoffsets['equip-tables']
 eqrsize=romoffsets['equip-tables-size']
 
-eqclassmap=dict(zip(romoffsets['equip-classes'], romoffsets['equip-table-record']))
+eqclassmap=dict(list(zip(romoffsets['equip-classes'], romoffsets['equip-table-record'])))
 
 def loadequiptables(romdata):
     results={}

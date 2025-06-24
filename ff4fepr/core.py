@@ -214,7 +214,7 @@ def bytes2int(bytelist):
     """the reverse of the previous functions. (little endian)
     >>> bytes2int([0xff, 10])
     2815"""
-    _intermediate=zip(bytelist, range(len(bytelist)))
+    _intermediate=list(zip(bytelist, range(len(bytelist))))
     return sum([t[0]*256**t[1] for t in _intermediate])
 
 def toint(astr):

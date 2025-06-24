@@ -174,7 +174,7 @@ def shuffle_weaponstat(romdata, weaponstat, categories=None):
     oldvalues=[weapondict[weapon][weaponstat] for weapon in weapon_list]
     values=[weapondict[weapon][weaponstat] for weapon in weapon_list]
     random.shuffle(values)
-    changes=zip(weapon_list, oldvalues, values)
+    changes=list(zip(weapon_list, oldvalues, values))
     for weapon, value in zip(weapon_list, values):
         weapondict[weapon][weaponstat]=value
     weapon2rom(romdata, weapondict)
@@ -200,7 +200,7 @@ def modify_weaponstat(romdata, weaponstat, categories=None, modfunc=identity):
     weapon_list=combine_categories(categories)
     oldvalues=[weapondict[weapon][weaponstat] for weapon in weapon_list]
     values=[modfunc(weapondict[weapon][weaponstat]) for weapon in weapon_list]
-    changes=zip(weapon_list, oldvalues, values)
+    changes=list(zip(weapon_list, oldvalues, values))
     for weapon, value in zip(weapon_list, values):
         weapondict[weapon][weaponstat]=value
     weapon2rom(romdata, weapondict)
