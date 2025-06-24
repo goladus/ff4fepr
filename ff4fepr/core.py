@@ -29,7 +29,7 @@ def simple_load(fname):
     and returns the list.  This is not intended for very large
     files or when memory is limited."""
     with open(fname, 'rb') as file_handle:    # Open file for binary reading
-        integer_list=map(ord, file_handle.read())   # Read the file and convert each byte to an integer value
+        integer_list=list(map(ord, file_handle.read()))   # Read the file and convert each byte to an integer value
     return integer_list
 
 def gzip_load(fname):
@@ -37,7 +37,7 @@ def gzip_load(fname):
     and returns the list.  This is not intended for very large
     files or when memory is limited."""
     with open(fname, 'rb') as file_handle:    # Open file for binary reading
-        file_contents=map(ord, file_handle.read())   # Read the file and convert each byte to an integer value
+        file_contents=list(map(ord, file_handle.read()))   # Read the file and convert each byte to an integer value
     return file_contents
 
 def simple_write(integer_list, fname):

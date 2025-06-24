@@ -76,7 +76,7 @@ def randomlevelfunc3(splev, minlevel, difficulty_ratio=None, extra=None):
         positive_adjust=1
     else:
         if isinstance(difficulty_ratio, str):
-            negative_adjust, positive_adjust=map(toint, difficulty_ratio.split(':'))
+            negative_adjust, positive_adjust=list(map(toint, difficulty_ratio.split(':')))
         else:
             negative_adjust, positive_adjust=difficulty_ratio
     absdiff=random.randint(*random.choice(oddslst))

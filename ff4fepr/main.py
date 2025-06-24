@@ -144,7 +144,7 @@ def main(args):
             changeset=tokens[0]
             variance=(-5, 15)
         else:
-            variance=map(toint, tokens[0].split(','))
+            variance=list(map(toint, tokens[0].split(',')))
             changeset=tokens[1]
         changes2dump = weapons.vary_weaponstat(romdata, 'attack', variance, categories=changeset.split(','))
         for wname, oldval, newval in changes2dump:
