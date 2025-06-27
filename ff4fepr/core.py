@@ -29,15 +29,16 @@ def simple_load(fname):
     and returns the list.  This is not intended for very large
     files or when memory is limited."""
     with open(fname, 'rb') as file_handle:    # Open file for binary reading
-        integer_list=list(file_handle.read())   # Read the file and convert each byte to an integer value
+        #integer_list=map(ord, file_handle.read())   # Read the file and convert each byte to an integer value
+        integer_list=file_handle.read()   # Read the file and convert each byte to an integer value
     return integer_list
 
 def gzip_load(fname):
     """Reads a gzip-compressed binary file into a list of integers
     and returns the list.  This is not intended for very large
     files or when memory is limited."""
-    with open(fname, 'rb') as file_handle:    # Open file for binary reading
-        file_contents=list(map(ord, file_handle.read()))   # Read the file and convert each byte to an integer value
+    with gzip.open(fname, 'rb') as file_handle:    # Open file for binary reading
+        file_contents=file_handle.read()   # Read the file and convert each byte to an integer value
     return file_contents
 
 def simple_write(integer_list, fname):
@@ -45,12 +46,12 @@ def simple_write(integer_list, fname):
     specified by the second argument.
     """
     with open(fname, 'wb') as file_handle:
-        file_handle.write(''.join(map(chr, integer_list)))
+        file_handle.write(bytes(integer_list))
 
 def gzip_write(integer_list, fname):
     "simple write, but writes a gzip-compressed file"
     with gzip.open(fname, 'wb') as file_handle:
-        file_handle.write(''.join(map(chr, integer_list)))
+        file_handle.write(bytes(integer_list))
 
 def findfirstsublist(any_list, sublist):
     "Returns the index of the first sublist in a list"
@@ -63,7 +64,7 @@ def findallsublists(any_list, sublist):
     This can be used to find simple byte patters in a binary file."""
     results=[]
     for index, item in enumerate(any_list):
-        if list1[index:index+(len(sublist))] == sublist:
+        if any_list[index:index+(len(sublist))] == sublist:
             results.append(index)
     return results
 
@@ -111,15 +112,22 @@ class BinaryList(list):
         else:
             simple_write(list(self), output_fname)
             self.verbose('Wrote %s\n' % output_fname)
+    def add_number_mods(self, offset, amt, nbytes=2):
+        for index, byte_value in enumerate(num2bytes(amt, nbytes)):
+            self.addmod(offset+index, byte_value)
     def addmod(self, offset, value):
         "Adds a modification to the list and updates the list value"
-        self.modification_list.append((offset, value))
-        self[offset]=value
+        if self[offset] != value:
+            if (offset, value) not in self.modification_list:
+                self.modification_list.append((offset, value))
+                self[offset]=value
     def addmods(self, *modlist):
         "Adds a list of modifications"
         self.modification_list += modlist
         for offset, value in modlist:
             self[offset]=value
+    def getint(self, offset, count):
+        return bytes2int(self[offset:offset+count])
     def showmods(self):
         for offset, value in self.modification_list:
             sys.stdout.write("0x%x 0x%x (%d) -> 0x%x (%s)\n" % (offset,
@@ -214,8 +222,15 @@ def bytes2int(bytelist):
     """the reverse of the previous functions. (little endian)
     >>> bytes2int([0xff, 10])
     2815"""
-    _intermediate=list(zip(bytelist, range(len(bytelist))))
+    _intermediate=zip(bytelist, range(len(bytelist)))
     return sum([t[0]*256**t[1] for t in _intermediate])
+
+def ishexstr(astr):
+    try:
+        int(astr, 16)
+        return True
+    except ValueError:
+        return False
 
 def toint(astr):
     """converts a decimal or hexidecimal string to integer,
