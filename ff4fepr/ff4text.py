@@ -1,4 +1,4 @@
-from ff4data import *
+from .ff4data import *
 encoding=load('text-encoding')
 import re
 token=re.compile('(<.*>)')

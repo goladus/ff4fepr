@@ -1,9 +1,9 @@
-from ff4data import *
-from core import num2bytes, bytes2int
-from datatypes import getbytesfortype
-from resource import load, csv_dumper
+from .ff4data import *
+from .core import num2bytes, bytes2int
+from .datatypes import getbytesfortype
+from .resource import load, csv_dumper
 import sys
-import drops
+from . import drops
 from collections import defaultdict
 monster_offsets=load('monster-offsets')
 monster_names=[name for name, offset in monster_offsets]

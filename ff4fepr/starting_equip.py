@@ -1,8 +1,8 @@
-from ff4data import *
-from datatypes import getbytesfortype
-from resource import load
-from core import bytes2int, num2bytes, toint
-from output import warning
+from .ff4data import *
+from .datatypes import getbytesfortype
+from .resource import load
+from .core import bytes2int, num2bytes, toint
+from .output import warning
 romoffsets=load('romoffsets')
 items=load('items')
 eqsets=load('eqsets')
