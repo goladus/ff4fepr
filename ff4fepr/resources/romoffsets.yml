@@ -30,6 +30,10 @@ dropdata: 0x71f00
 dropdata-size: 4
 dropdata-len: 64
 
+chestdata: 0xa8303
+chestdata-size: 5
+chestdata-len: 1081 # not 342??
+
 itemnames: 0x78000
 itemnames-size: 9
 

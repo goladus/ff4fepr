@@ -32,6 +32,8 @@ xp-imp                Set xp value for imp enemy
 dump-monster-values   Arg: keys to dump with each monster
 dump-weapon-by Dump weapons by element-index
 test-encoding  Prints the ff4 hex codes for provided string
+modify-offset  Modify an arbitrary byte by offset <offset>=<value>
+modify-monster modifies a monster value <num>:<key>=<value>,<key>=<value>
 """
 
 string_of_flags="""
@@ -59,17 +61,20 @@ dump-weapons   Dump weapon data from rom to screen.
 dump-weapon-racial   Dump weapon data from rom to screen.
 dump-drops     Dump enemy stea/drop data from rom to screen.
 dump-monsters  Dump monster data to screen.
+dump-monsters-raw Pretty print the python dictionary of monsters
 dump-monsters-csv Dump monster data to screen in csv format. (no bosses)
 dump-monsters-and-bosses-csv Dump monster data to screen in csv format.
 dump-monster-itemtables  Dump monster item table numbers and drop rates to screen.
 dump-monster-drops Dump monster drop data to screen. (resolved item-tables)
 dump-spells    Dump spell stats
+dump-chests    Dump chests
 dump-eqtables  Dump class equip tables
 dump-itemnames Dump item names from rom.
 dump-itemkeys  Dump item names used by ff4fepr
 dump-spellkeys Dump spell names used by ff4fepr
 dump-levelup   Dump levelup data
 dump-generator Dump generator.
+search-chests  Run a preconfigured search of chests on rom
 generate-form  Generate web form from script options (doesn't do much atm)
 hitratings     list attack * hitrate for each weapon
 test-levelup   Test loading levelup tables and dumping to rom with no changes
@@ -79,6 +84,7 @@ test-drops     Test loading drop tables and dumping to rom with no changes.
 test-spells    Test loading and writing spell stats with no changes.
 test-eqtables  Test loading and writing equip tables with no changes.
 tpassbuff      Add Bacchus, Silkweb, StarVeil, Elixir, and Spoon to Troia Pass Shop
+vanilla-chest-search  Do a pre-programmed searchdump of all chest offsets found that match vanilla chest contents
 special        ????
 """
 

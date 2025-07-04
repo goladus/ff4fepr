@@ -1,5 +1,5 @@
 from .ff4data import *
-from .core import num2bytes, bytes2int
+from .core import num2bytes, bytes2int, toint
 from .datatypes import getbytesfortype
 from .resource import load, csv_dumper
 import sys
@@ -33,6 +33,11 @@ def getmaskedvalue(abyte, bitinfo):
 def mergemaskedvalue(existing_byte, byte_to_merge, bitinfo):
     return (existing_byte & ~ bitinfo[1]) | (byte_to_merge << bitinfo[2])
 
+# for ff4fe_qol.sfc, the Red D. seems to have a counter byte present,
+# but the script is not detecting 'has-counter'.  This makes the script
+# start reading Behemoth a byte early.
+# My solution was to manually edit byte 0x73134 from 0x78 -> 0x7c, enabling
+# the 'has-counter' bit for Red D.
 def parsemonrecord(mondict, monbytes):
     monoffs=romoffsets['monster-record']
     monextra=romoffsets['monster-extra']
@@ -52,7 +57,7 @@ def parsemonrecord(mondict, monbytes):
             mondict.setdefault(ebyte, {})
             for bdata in monextra[ebyte]:
                 index += 1
-                for bitname, bitinfo in bdata.values()[0].items():
+                for bitname, bitinfo in list(bdata.values())[0].items():
                     mondict[ebyte][bitname]=getmaskedvalue(monbytes[index],
                                                            bitinfo)
     return mondict
@@ -107,7 +112,7 @@ def monrecord2bytes(monrecord):
         if monrecord['flags']['has-%s' % extrakey]:
             for bdata in romoffsets['monster-extra'][extrakey]:
                 extra_index += 1
-                for bitname, bitinfo in bdata.values()[0].items():
+                for bitname, bitinfo in list(bdata.values())[0].items():
                     bytesd[extra_index]=mergemaskedvalue(bytesd[extra_index],
                                                          monrecord[extrakey][bitname],
                                                          bitinfo)
@@ -145,6 +150,22 @@ def bkeysstr(adict, key, astringtmp="%s"):
 
 def test_monsters(romdata, jadjust=False):
     mondict2rom(romdata, splitmonsters(romdata, jadjust=jadjust))
+
+
+def modify_monster(romdata, arg, jadjust=False):
+    mondict = splitmonsters(romdata, jadjust=jadjust)
+    smonnum, remainder = arg.split(':')
+    monnum = toint(smonnum)
+    for pair in remainder.split(','):
+        key, svalue = pair.split('=')
+        value = toint(svalue)
+        if key not in ['bytes', 'flags']:
+            mondict[monnum][key] = value
+        else:
+            # bytes is a list and flags is a dict
+            pass
+    mondict2rom(romdata, mondict)
+
 
 def monsearch(mondict, key, query_value):
     return [k for k, value in mondict.items()
@@ -206,6 +227,7 @@ def monvalstr(results, monster, key):
     prefix='lv' if key=='level' else key
     return "(%s:%s)%s" % (prefix, value, padding)
 
+
 def dumpsplits(romdata, jadjust=False):
     results=splitmonsters(romdata, jadjust=jadjust)
     for monster in results:
@@ -226,3 +248,8 @@ def dumpsplits(romdata, jadjust=False):
                             monvalstr(results, monster, 'xp'),
                             monvalstr(results, monster, 'gp')), end=' ')
         print(spower, defense, weakness)
+
+
+def dumpmondict(romdata, jadjust=False):
+    from pprint import pprint as pp
+    pp(splitmonsters(romdata, jadjust=jadjust))

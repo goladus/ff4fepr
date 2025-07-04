@@ -19,6 +19,7 @@ from . import webform
 from . import scriptgen
 from . import leveldata
 from . import monstermods
+from . import chests
 from .starting_spells import groupspells
 from pprint import pprint as pp
 
@@ -119,6 +120,12 @@ def main(args):
         battlemenus.uptco_edward(romdata)
     if args.dump_weapons:
         weapons.dump2screen(romdata)
+    if args.dump_chests:
+        chests.dumpchests(romdata)
+    if args.vanilla_chest_search:
+        chests.vanilla_search(romdata)
+    if args.search_chests:
+        chests.chestsearch(romdata)
     if args.dump_itemnames:
         weapons.dumpnames(romdata)
     if args.dump_itemkeys:
@@ -127,6 +134,11 @@ def main(args):
     if args.dump_spellkeys:
         for itm in weapons.spells:
             sys.stdout.write("%s\n" % itm)
+    if args.modify_offset is not None:
+        offset_string, value_string = args.modify_offset.split('=')
+        offset_to_change = toint(offset_string)
+        value = toint(value_string)
+        romdata.addmod(offset_to_change, value)
     if args.hitratings:
         weapons.hitrating(romdata)
     if args.tpassbuff:
@@ -172,7 +184,12 @@ def main(args):
     if args.buff_starting_equip is not None:
         starting_equip.setall_eqlevel(romdata, args.buff_starting_equip)
     if args.dump_monsters:
-        monsters.dumpsplits(romdata, jadjust=args.jv)
+        try:
+            monsters.dumpsplits(romdata, jadjust=args.jv)
+        except BrokenPipeError:
+            sys.exit(32)
+    if args.dump_monsters_raw:
+        monsters.dumpmondict(romdata, jadjust=args.jv)
     if args.dump_monsters_csv:
         monsters.dump2csv(romdata, jadjust=args.jv)
     if args.dump_monsters_and_bosses_csv:
@@ -191,6 +208,8 @@ def main(args):
         leveldata.dump2screen(romdata)
     if args.test_spells:
         spelldata.testspelldata(romdata)
+    if args.modify_monster is not None:
+        monsters.modify_monster(romdata, args.modify_monster, jadjust=args.jv)
     if args.bird:
         spelldata.birdcall(romdata)
     if args.test_encoding is not None:

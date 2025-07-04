@@ -8,6 +8,7 @@ shops=load('shops')
 types=load('types')
 monsters=load('monster-offsets')
 eqindexes=load('equip-indexes')
+chests = load('chests')
 
 modding={
     'weapon-spell': load('rando-weapon-spells'),
@@ -23,4 +24,5 @@ if __name__ == '__main__':
     pp(types)
     pp(monsters)
     pp(eqindexes)
+    pp(chests)
     pp(modding)
