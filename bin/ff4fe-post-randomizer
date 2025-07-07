@@ -74,6 +74,7 @@ dump-itemkeys  Dump item names used by ff4fepr
 dump-spellkeys Dump spell names used by ff4fepr
 dump-levelup   Dump levelup data
 dump-generator Dump generator.
+fix-dummies    For a vanilla FF2US rom, fix the dummied item names
 search-chests  Run a preconfigured search of chests on rom
 generate-form  Generate web form from script options (doesn't do much atm)
 hitratings     list attack * hitrate for each weapon

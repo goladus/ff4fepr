@@ -20,6 +20,7 @@ from . import scriptgen
 from . import leveldata
 from . import monstermods
 from . import chests
+from . import allitems
 from .starting_spells import groupspells
 from pprint import pprint as pp
 
@@ -128,6 +129,8 @@ def main(args):
         chests.chestsearch(romdata)
     if args.dump_itemnames:
         weapons.dumpnames(romdata)
+    if args.fix_dummies:
+        allitems.fix_dummies(romdata)
     if args.dump_itemkeys:
         for itm in weapons.items:
             sys.stdout.write("%s\n" % itm)

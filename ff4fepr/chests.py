@@ -24,6 +24,7 @@ def loadchests(romdata):
         for chestname, offset in zonedata.items():
             results[chestname] = {}
             chestkey = romdata[offset-1]
+            results[chestname]['offset'] = offset
             results[chestname]['_key'] = chestkey
             results[chestname]['trapped'] = (chestkey & 0xc0) == 0xc0
             results[chestname]['gp'] = chestkey == 0
@@ -49,7 +50,7 @@ def write_chest_contents(romdata, chestdict):
                 else:
                     print("Error: tried to change item chest to gp (not yet implemented)")
 
-def dumpchests(romdata):
+def xdumpchests(romdata):
     loaded_chests = loadchests(romdata)
     try:
         for chestname in loaded_chests:
@@ -58,6 +59,21 @@ def dumpchests(romdata):
     except BrokenPipeError:
         import sys
         sys.exit(32)
+
+
+def dumpchests(romdata):
+    loaded_chests = loadchests(romdata)
+    try:
+        for chestname in loaded_chests:
+            offset = loaded_chests[chestname]['offset']
+            allbytes_string = ', '.join(['0x%x' % x for x in loaded_chests[chestname]['allbytes']])
+            contents = loaded_chests[chestname]['contents']
+            print("- [%s, %x, %s, [%s]]" % (chestname,  offset, contents, allbytes_string))
+        #print(chestname, loaded_chests[chestname]['contents'], '[%s]' % ', '.join(['0x%x' % x for x in loaded_chests[chestname]['allbytes']]))
+    except BrokenPipeError:
+        import sys
+        sys.exit(32)
+    
 
 
 def sparse_compare(lst1, lst2, indices):
