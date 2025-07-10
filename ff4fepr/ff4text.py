@@ -1,4 +1,5 @@
 from .ff4data import *
+from .core import toint
 encoding=load('text-encoding')
 import re
 token=re.compile('(<.*>)')
@@ -19,3 +20,16 @@ def testencode(astring):
     encoded=basicencode(astring)
     print(encoded, end=' ')
     print(''.join([encoding[x] for x in encoded]))
+
+
+def encode(arg):
+    encoded = basicencode(arg)
+    print(','.join([hex(x) for x in encoded]))
+
+
+def decode(arg):
+    print(dodecode([toint(x) for x in arg.split(',')]))
+
+
+def dodecode(lst):
+    return ''.join([encoding[x] for x in lst])

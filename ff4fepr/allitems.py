@@ -26,7 +26,7 @@ def checkdummy(romdata, itemname):
     offset = romoffsets['itemnames']+itemnum*romoffsets['itemnames-size']
     txtlst = romdata[offset:offset+romoffsets['itemnames-size']]
     itemtxt = ''.join([encoding[x] for x in txtlst])
-    return itemtxt == '<blank>Dummy'
+    return itemtxt.startswith('<blank>Dummy')
 
 def fix_dummies(romdata):
     vanillamap = load('vanilla-item-namemap')
@@ -34,3 +34,4 @@ def fix_dummies(romdata):
         if vanillaname is not None:
             if checkdummy(romdata, fullname):
                 changeitemname(romdata, fullname, vanillaname)
+

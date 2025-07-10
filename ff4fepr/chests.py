@@ -1,5 +1,6 @@
 from .ff4data import *
 from collections import defaultdict
+from .core import toint
 
 def togp(intbyte):
     if intbyte < 0x80:
@@ -73,7 +74,20 @@ def dumpchests(romdata):
     except BrokenPipeError:
         import sys
         sys.exit(32)
-    
+
+
+def dumpchests2(romdata):
+    loaded_chests = loadchests(romdata)
+    try:
+        for chestname in loaded_chests:
+            offset = loaded_chests[chestname]['offset']
+            allbytes_string = ', '.join(['0x%x' % x for x in loaded_chests[chestname]['allbytes']])
+            contents = loaded_chests[chestname]['contents']
+            print("%s: 0x%x, # %s, %s" % (chestname,  offset-1, contents, allbytes_string))
+        #print(chestname, loaded_chests[chestname]['contents'], '[%s]' % ', '.join(['0x%x' % x for x in loaded_chests[chestname]['allbytes']]))
+    except BrokenPipeError:
+        import sys
+        sys.exit(32)
 
 
 def sparse_compare(lst1, lst2, indices):
@@ -134,3 +148,27 @@ def chestsearch(romdata):
     results = sparsefind(romdata, baron2pots, baronpot_indices2check)
     for x in results:
         print("%x" % x)
+
+def vanichest_edit(romdata, arg):
+    chestoffsets = load('ff2us_manual_chests')
+    chestname, newitem = arg.split('=')
+    if newitem.isdigit():
+        newgp = gp2intbyte(toint(newitem))
+    else:
+        newgp = False
+    eventoff = chestoffsets[chestname]
+    oldgp_flag = (romdata[eventoff] & 0x80) == 0
+    if oldgp_flag:
+        contents = togp(romdata[eventoff+1])
+    else:
+        contents = items[romdata[eventoff+1]]
+    if newgp is False:
+        print(contents, '->', newitem)
+        if oldgp_flag:
+            romdata.addmod(eventoff, romdata[eventoff] | 0x80)
+        romdata.addmod(eventoff+1, items.index(newitem))
+    else:
+        print(contents, '->', toint(newitem))
+        if not oldgp_flag:
+            romdata.addmod(eventoff, romdata[eventoff] & ~(0x80))
+        romdata.addmod(eventoff+1, newgp)

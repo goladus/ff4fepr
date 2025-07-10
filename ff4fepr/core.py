@@ -68,6 +68,25 @@ def findallsublists(any_list, sublist):
             results.append(index)
     return results
 
+
+
+def findallsublists_skips(any_list, sublist, skip_token=None):
+    """returns a list of all starting offsets for the given sublist.
+    Simple 'any' match on skip_token."""
+    results=[]
+    for index, _ in enumerate(any_list):
+        test_val = True
+        for anylist_item, sublist_item in zip(any_list[index:index+(len(sublist))], sublist):
+            if sublist_item == skip_token:
+                continue
+            else:
+                if anylist_item != sublist_item:
+                    test_val = False
+        if test_val:
+            results.append(index)
+    return results    
+
+
 def snes9x_offset(integer_list, adjust=0):
     """Snes9x save states include the full path to the
     related rom in the file header.  This is a huge pain if you're trying to
@@ -78,6 +97,7 @@ def snes9x_offset(integer_list, adjust=0):
     # snes9x save state and then 
     MAGIC=[67, 80, 85, 58, 48, 48, 48] #'CPU:000'
     return firstsublist(integer_list, MAGIC) + adjust #I use 0xff60 for compatibility with zsnes
+
 
 class BinaryList(list):
     """Extends the basic python list object with methods
@@ -162,6 +182,9 @@ class BinaryList(list):
 
     def find(self, sequence):
         return findallsublists(self, sequence)
+
+    def find2(self, sequence, skip_token=None):
+        return findallsublists_skips(self, sequence, skip_token=skip_token)
 
 def firstbyte(lst):
     for byt in lst:

@@ -28,6 +28,9 @@ def render_opfilename(infname, seed):
     if infname.endswith('.smc'):
         return '%s-pr%s.smc' % (infname[:-4], seed)
 
+def hexjoin(numlst):
+    return ','.join([hex(x) for x in numlst])
+
 def main(args):
     """string_of_args and string_of_flags are only used
     for generating html form when that option is enabled."""
@@ -100,6 +103,8 @@ def main(args):
         starting_stats.dumpstartingstats(romdata)
     if args.dump_menus:
         battlemenus.dump2screen(romdata)
+    if args.dump_monster_names:
+        monsters.dumpnames(romdata)
     if args.dump_weapon_by is not None:
         weapons.dumpby(romdata, args.dump_weapon_by)
     if args.dump_weapon_racial:
@@ -123,14 +128,19 @@ def main(args):
         weapons.dump2screen(romdata)
     if args.dump_chests:
         chests.dumpchests(romdata)
+    if args.dump_chests2:
+        chests.dumpchests2(romdata)
     if args.vanilla_chest_search:
         chests.vanilla_search(romdata)
     if args.search_chests:
         chests.chestsearch(romdata)
+    if args.dump_menu_text:
+        battlemenus.dump_menu_text(romdata)
     if args.dump_itemnames:
         weapons.dumpnames(romdata)
     if args.fix_dummies:
         allitems.fix_dummies(romdata)
+        battlemenus.fix_dummy_menus(romdata)
     if args.dump_itemkeys:
         for itm in weapons.items:
             sys.stdout.write("%s\n" % itm)
@@ -168,10 +178,14 @@ def main(args):
         changes2dump=weapons.modup_weaponatk(romdata)
         for wname, oldval, newval in changes2dump:
             verbose("%s: %s->%s\n" % (wname, oldval, newval))
+    if args.modify_shop is not None:
+        shops.modify_shop(romdata, args.modify_shop)
     if args.restore_j_drops:
         drops.setjdroptables(romdata)
     if args.dk_equip:
         equip.darkknight_equip(romdata)
+    if args.edit_vchest is not None:
+        chests.vanichest_edit(romdata, args.edit_vchest)
     if args.test_levelup:
         leveldata.testludata(romdata)
     if args.test_eqtables:
@@ -180,6 +194,16 @@ def main(args):
         weapons.weapon2rom(romdata, weapons.loadweapons(romdata))
     if args.test_drops:
         drops.testdroptables(romdata)
+    if args.test_shops:
+        shops.testshops(romdata)
+    if args.test_menus:
+        battlemenus.testcommands(romdata)
+    if args.modify_menu is not None:
+        battlemenus.modify_menu(romdata, args.modify_menu)
+    if args.replace_menu is not None:
+        battlemenus.replace_menu(romdata, args.replace_menu)
+    if args.dump_shops:
+        shops.dumpshops(romdata)
     if args.dump_drops:
         drops.dump2screen(romdata)
     if args.randomize_drops:
@@ -217,6 +241,10 @@ def main(args):
         spelldata.birdcall(romdata)
     if args.test_encoding is not None:
         ff4text.testencode(args.test_encoding)
+    if args.encode is not None:
+        ff4text.encode(args.encode)
+    if args.decode is not None:
+        ff4text.decode(args.decode)
     if args.remove_bossbit is not None or args.add_bossbit is not None:
         addbossbit=args.add_bossbit.split(',') if args.add_bossbit is not None else []
         removebossbit=args.remove_bossbit.split(',') if args.remove_bossbit is not None else []
@@ -227,6 +255,23 @@ def main(args):
         webform.genform1(args)
     if args.dump_generator:
         scriptgen.dumpall(romdata, args)
+    if args.find_bytes is not None:
+        bytes2find = [toint(x) if x != 'X' else None for x in args.find_bytes.split(',')]
+        for xoffset in romdata.find2(bytes2find):
+            print(xoffset, hex(xoffset), hexjoin(romdata[xoffset:xoffset+len(bytes2find)]))
+            #print(xoffset, hex(xoffset), romdata[xoffset:xoffset+len(bytes2find)])
+    if args.find_bytes10 is not None:
+        bytes2find = [toint(x) for x in args.find_bytes10.split(',')]
+        for xoffset in romdata.find(bytes2find):
+            before = romdata[xoffset-10:xoffset]
+            after = romdata[xoffset+1:xoffset+10]
+            outputstr = '%s|%s|%s' % (','.join([hex(x) for x in before]), romdata[xoffset], ','.join([hex(x) for x in after]))
+            print(xoffset, hex(xoffset), outputstr)
+    if args.dump_offsets is not None:
+        _startoff, _nbytes = (args.dump_offsets.split('+') + [1])[:2]
+        startoff = toint(_startoff)
+        nbytes = toint(_nbytes)
+        print(','.join([hex(x) for x in romdata[startoff:startoff+nbytes]]))
     if args.apply:
         romdata.swrite()
     else:

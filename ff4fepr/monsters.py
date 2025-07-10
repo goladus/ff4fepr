@@ -1,4 +1,5 @@
 from .ff4data import *
+from . import ff4text
 from .core import num2bytes, bytes2int, toint
 from .datatypes import getbytesfortype
 from .resource import load, csv_dumper
@@ -253,3 +254,12 @@ def dumpsplits(romdata, jadjust=False):
 def dumpmondict(romdata, jadjust=False):
     from pprint import pprint as pp
     pp(splitmonsters(romdata, jadjust=jadjust))
+
+
+def dumpnames(romdata):
+    startoff = romoffsets['monstertext']
+    namesize = romoffsets['monstertext-size']
+    for index, uniqname in enumerate(monster_names):
+        offset = startoff + (namesize * index)
+        gamename = ff4text.dodecode(romdata[offset:offset+namesize])
+        print(index, uniqname, gamename)

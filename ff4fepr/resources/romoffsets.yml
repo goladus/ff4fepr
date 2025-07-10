@@ -9,6 +9,8 @@
 shopdata: 0x108100
 shopsize: 8
 
+shopdata-vanilla-qol: 0x9a300
+
 monsterdata: 0x72860
 number-of-monsters: 223
 # Monster records have variable lengths.
@@ -25,6 +27,9 @@ monsteratk-size: 3
 
 monsterspd: 0x72620
 monsterspd-size: 2
+
+monstertext: 0x71800
+monstertext-size: 8
 
 dropdata: 0x71f00
 dropdata-size: 4
@@ -95,6 +100,9 @@ player-spells: 0x48
 
 charmenus: 0x9fd50
 charmenus-size: 5
+
+charmenu-text: 0x7a7c6
+charmenu-text-size: 5
 
 # List of instances where a character joins you, explicitly listing
 # subsequent rejoins of the same character, such as Tellah on Ordeals.
