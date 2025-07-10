@@ -79,6 +79,7 @@ dump-spells    Dump spell stats
 dump-shops     Dump shops
 dump-chests    Dump chests
 dump-chests2   Dump chests2
+dump-vanichests Dump Vanilla Chests (ff2us_manual_chests.yml)
 dump-eqtables  Dump class equip tables
 dump-itemnames Dump item names from rom.
 dump-itemkeys  Dump item names used by ff4fepr

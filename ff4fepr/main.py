@@ -130,6 +130,8 @@ def main(args):
         chests.dumpchests(romdata)
     if args.dump_chests2:
         chests.dumpchests2(romdata)
+    if args.dump_vanichests:
+        chests.dump_vanichests(romdata)
     if args.vanilla_chest_search:
         chests.vanilla_search(romdata)
     if args.search_chests:

@@ -1,22 +1,7 @@
 from .ff4data import *
 from collections import defaultdict
 from .core import toint
-
-def togp(intbyte):
-    if intbyte < 0x80:
-        small=(intbyte & 0x7f) * 10
-        large = 0
-    else:
-        small = 0#(intbyte & 0x80) * 10
-        large = (intbyte - 0x80) * 1000
-    return (large + small)
-
-
-def gp2intbyte(gp):
-    if gp <= 1270:
-        return gp // 10
-    else:
-        return (0x80 | (gp // 1000))
+from .util import togp, gp2intbyte
 
 
 def loadchests(romdata):
@@ -172,3 +157,13 @@ def vanichest_edit(romdata, arg):
         if not oldgp_flag:
             romdata.addmod(eventoff, romdata[eventoff] & ~(0x80))
         romdata.addmod(eventoff+1, newgp)
+
+
+def dump_vanichests(romdata):
+    chestoffsets = load('ff2us_manual_chests')
+    for chestname, offset in sorted(chestoffsets.items()):
+        if (romdata[offset] & 0x80) == 0:
+            contents = "%s GP" % togp(romdata[offset+1])
+        else:
+            contents = items[romdata[offset+1]]
+        print(chestname, hex(offset), '#', contents)
