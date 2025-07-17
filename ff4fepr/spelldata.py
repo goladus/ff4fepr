@@ -94,6 +94,7 @@ def dumpspellstats(romdata):
         print("%2x" % index, spname, "|", spdata['text'], spdata['cast-time'], spdata['attack'])
         #print "%2x" % index, spname, ' '.join(["%2x" % x for x in spdata['bytes']])
 
+
 def dumpspellstats_csv(romdata):
     spstats=sorted(loadspellstats(romdata).items())
     for index, spdata in spstats:
@@ -101,13 +102,14 @@ def dumpspellstats_csv(romdata):
         fields=['cast-time', 'attack', 'effect', 'targeting', 'boss-bit', 'hitrate', 'damage-flag', 'impact-flag', 'element', 'mp-cost', 'ignore-wall']
         print(','.join([hex(index), spname] +  ["%s" % spdata[x] for x in fields]))
 
-def dumpspell(romdata, spellname):
+
+def dumpspell(romdata, spellnames):
     spstats=sorted(loadspellstats(romdata).items())
-    spindex = spells.index(spellname)
-    spdata = spstats[spindex]
-    for field, fdata in spdata.items():
-        ff = "%s%s" % (field, ' ' * (15 - len(field)))
-        print(ff, fdata)
+    for spindex, spdata in spstats:
+        if spells[spindex] in spellnames:
+            for field, fdata in spdata.items():
+                ff = "%s%s" % (field, ' ' * (15 - len(field)))
+                print(ff, fdata)
 
 def changebossbit(romdata, hasbossbit=None, nobossbit=None):
     if hasbossbit is None:
@@ -123,12 +125,28 @@ def changebossbit(romdata, hasbossbit=None, nobossbit=None):
         spellstats[spellnum]['boss-bit']=0
     sprecords2rom(romdata, spellstats)
 
+
+def modify_spell(romdata, arg):
+    spstats=loadspellstats(romdata)
+    valid_fields=['cast-time', 'attack', 'effect', 'targeting', 'boss-bit', 'hitrate', 'damage-flag', 'impact-flag', 'element', 'mp-cost', 'ignore-wall']
+    spellname, remain = arg.split(':')
+    spellnum=spells.index(spellname)
+    changelst = remain.split(',')
+    for change in changelst:
+        key, valstr = change.split('=')
+        if key in valid_fields:
+            value = toint(valstr)
+            spstats[spellnum][key]=value
+    sprecords2rom(romdata, spstats)
+
+
 def setspstat(romdata, spstatname, changes):
     spstats=loadspellstats(romdata)
     for spellname, newvalue in changes:
         spellnum=spells.index(spellname)
         spstats[spellnum][spstatname]=newvalue
     sprecords2rom(romdata, spstats)
+
 
 def setcasttimes(romdata, argstring):
     changes=[]

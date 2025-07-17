@@ -141,7 +141,7 @@ def main(args):
     if args.dump_itemnames:
         weapons.dumpnames(romdata)
     if args.dump_spell is not None:
-        spelldata.dumpspell(romdata, args.dump_spell)
+        spelldata.dumpspell(romdata, args.dump_spell.split(','))
     if args.fix_dummies:
         allitems.fix_dummies(romdata)
         battlemenus.fix_dummy_menus(romdata)
@@ -184,6 +184,8 @@ def main(args):
             verbose("%s: %s->%s\n" % (wname, oldval, newval))
     if args.modify_shop is not None:
         shops.modify_shop(romdata, args.modify_shop)
+    if args.modify_spell is not None:
+        spelldata.modify_spell(romdata, args.modify_spell)
     if args.restore_j_drops:
         drops.setjdroptables(romdata)
     if args.dk_equip:
