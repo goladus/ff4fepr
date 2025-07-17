@@ -140,6 +140,8 @@ def main(args):
         battlemenus.dump_menu_text(romdata)
     if args.dump_itemnames:
         weapons.dumpnames(romdata)
+    if args.dump_spell is not None:
+        spelldata.dumpspell(romdata, args.dump_spell)
     if args.fix_dummies:
         allitems.fix_dummies(romdata)
         battlemenus.fix_dummy_menus(romdata)

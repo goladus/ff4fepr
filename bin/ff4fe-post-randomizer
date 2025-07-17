@@ -31,6 +31,7 @@ remove-bossbit Removes boss bit from comma-delimited list of spells (allows spel
 xp-imp                Set xp value for imp enemy
 dump-monster-values   Arg: keys to dump with each monster
 dump-weapon-by Dump weapons by element-index
+dump-spell     Dump spell stats for one spell
 test-encoding  Prints the ff4 hex codes for provided string
 modify-offset  Modify an arbitrary byte by offset <offset>=<value>
 modify-monster modifies a monster value <num>:<key>=<value>,<key>=<value>
