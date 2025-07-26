@@ -186,6 +186,8 @@ def main(args):
         shops.modify_shop(romdata, args.modify_shop)
     if args.modify_spell is not None:
         spelldata.modify_spell(romdata, args.modify_spell)
+    if args.modify_weapon is not None:
+        weapons.modify_weapon(romdata, args.modify_weapon)
     if args.restore_j_drops:
         drops.setjdroptables(romdata)
     if args.dk_equip:

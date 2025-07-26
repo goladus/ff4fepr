@@ -221,10 +221,18 @@ def modup_weaponatk(romdata):
     changes += vwfn(['boomerangs'], -20, 40)
     return changes
 
+
 def modify_single_weapon(romdata, weapon, stat, newvalue):
     weapondict=loadweapons(romdata)
-    weapondict[weapon][weaponstat]=newvalue
+    weapondict[weapon][stat]=newvalue
     weapon2rom(romdata, weapondict)
+
+
+def modify_weapon(romdata, arg):
+    '''arg from cli'''
+    weapon, rem = arg.split(':')
+    stat, newvalstr = rem.split('=')
+    modify_single_weapon(romdata, weapon, stat, toint(newvalstr))
 
 def anyweapon(romdata):
     wd=loadweapons(romdata)

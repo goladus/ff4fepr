@@ -38,6 +38,7 @@ modify-monster modifies a monster value <num>:<key>=<value>,<key>=<value>
 modify-shop    Modify a shop eg kaipo-weapons:4=Whip
 modify-menu    Modify a character's battle command menu <charname>:0=Fight,1=Dark
 modify-spell   Modify a spell eg 'Pin*:hitrate=100'
+modify-weapon  Modify a weapon eg 'Rune Axe:tohit=99'
 edit-vchest    Modify a chest from vanilla ROM (testing)
 replace-menu   Replace a character's battle command menu <charname>=Fight,Sing,Dart,Hide,Item
 find-bytes     Find a specific string of bytes in the rom 0x2,0x3,0x4
