@@ -234,6 +234,14 @@ def modify_weapon(romdata, arg):
     stat, newvalstr = rem.split('=')
     modify_single_weapon(romdata, weapon, stat, toint(newvalstr))
 
+def dump_weapon(romdata, arg):
+    '''arg from cli'''
+    weapondict=loadweapons(romdata)
+    wdata = weapondict[arg]
+    keys = sorted(wdata.keys())
+    for key in keys:
+        print("%s:" % key, wdata[key])
+
 def anyweapon(romdata):
     wd=loadweapons(romdata)
     for weapon in wd:

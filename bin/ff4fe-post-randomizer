@@ -31,7 +31,8 @@ remove-bossbit Removes boss bit from comma-delimited list of spells (allows spel
 xp-imp                Set xp value for imp enemy
 dump-monster-values   Arg: keys to dump with each monster
 dump-weapon-by Dump weapons by element-index
-dump-spell     Dump spell stats for comma-delimited list of spells
+dump-spell     Dump stats for one spell
+dump-weapon    Dump stats for one weapon
 test-encoding  Prints the ff4 hex codes for provided string
 modify-offset  Modify an arbitrary byte by offset <offset>=<value>
 modify-monster modifies a monster value <num>:<key>=<value>,<key>=<value>
@@ -39,6 +40,7 @@ modify-shop    Modify a shop eg kaipo-weapons:4=Whip
 modify-menu    Modify a character's battle command menu <charname>:0=Fight,1=Dark
 modify-spell   Modify a spell eg 'Pin*:hitrate=100'
 modify-weapon  Modify a weapon eg 'Rune Axe:tohit=99'
+modify-armor   Modify armor eg 'Ruby Ring:mdef=100'
 edit-vchest    Modify a chest from vanilla ROM (testing)
 replace-menu   Replace a character's battle command menu <charname>=Fight,Sing,Dart,Hide,Item
 find-bytes     Find a specific string of bytes in the rom 0x2,0x3,0x4
@@ -80,6 +82,7 @@ dump-monster-itemtables  Dump monster item table numbers and drop rates to scree
 dump-monster-drops Dump monster drop data to screen. (resolved item-tables)
 dump-spells    Dump spell stats
 dump-shops     Dump shops
+dump-armor     Dump armor
 dump-chests    Dump chests
 dump-chests2   Dump chests2
 dump-vanichests Dump Vanilla Chests (ff2us_manual_chests.yml)
@@ -103,6 +106,7 @@ test-spells    Test loading and writing spell stats with no changes.
 test-eqtables  Test loading and writing equip tables with no changes.
 test-shops     Test loading and writing shops.
 test-menus     Test loading and writing battle command menus.
+test-armor     Test loading and writing armors.
 tpassbuff      Add Bacchus, Silkweb, StarVeil, Elixir, and Spoon to Troia Pass Shop
 vanilla-chest-search  Do a pre-programmed searchdump of all chest offsets found that match vanilla chest contents
 special        ????

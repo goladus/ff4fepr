@@ -37,7 +37,7 @@ dropdata-len: 64
 
 chestdata: 0xa8303
 chestdata-size: 5
-chestdata-len: 1081 # not 342??
+chestdata-len: 1081 # not 342??  Treasure might be a subtype of event.
 
 itemnames: 0x78000
 itemnames-size: 9
@@ -50,13 +50,14 @@ weapondata-size: 8
 weaponspellpower: 0x79070
 weaponspellvisual: 0x7d4e0
 
-numarmors: 80
+numarmors: 79
 armorstart: 97
-armordata: 0x79401
+armordata: 0x79408
 armordata-size: 8
 
 armordata-record:
-  mevade: [0, 0xff, 0]
+  mevade: [0, 0x7f, 0]
+  metal: [0, 0x80, 7]
   defense: [1, 0xff, 0]
   evade: [2, 0xff, 0]
   mdef: [3, 0xff, 0]

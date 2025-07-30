@@ -9,6 +9,7 @@ from . import starting_stats
 from . import starting_equip
 from . import battlemenus
 from . import weapons
+from . import armor
 from . import drops
 from . import monsters
 from . import shops
@@ -113,6 +114,8 @@ def main(args):
         starting_equip.dump2screen(romdata)
     if args.dump_eqtables:
         equip.dumpindexes(romdata)
+    if args.dump_armor:
+        armor.dump_armor(romdata)
     if args.dual_wield is not None:
         starting_stats.setdualwields(romdata, args.dual_wield)
     if args.add_spells_to_weapons is not None:
@@ -188,6 +191,10 @@ def main(args):
         spelldata.modify_spell(romdata, args.modify_spell)
     if args.modify_weapon is not None:
         weapons.modify_weapon(romdata, args.modify_weapon)
+    if args.modify_armor is not None:
+        armor.modify_armor(romdata, args.modify_armor)
+    if args.dump_weapon is not None:
+        weapons.dump_weapon(romdata, args.dump_weapon)
     if args.restore_j_drops:
         drops.setjdroptables(romdata)
     if args.dk_equip:
@@ -204,6 +211,8 @@ def main(args):
         drops.testdroptables(romdata)
     if args.test_shops:
         shops.testshops(romdata)
+    if args.test_armor:
+        armor.test_armor(romdata)
     if args.test_menus:
         battlemenus.testcommands(romdata)
     if args.modify_menu is not None:
