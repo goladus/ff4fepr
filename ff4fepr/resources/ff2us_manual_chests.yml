@@ -351,8 +351,8 @@ feymarch-b3f-bottom-left-3: 0xa91db # Ninja Sword
 feymarch-b3f-bottom-middle: 0xa91e0 # Life
 feymarch-b3f-bottom-right: 0xa91e5 # Cure3
 feymarch-b4f-clockwise-2: 0xa91ef # 2000
-feymarch-b4f-clockwise-1: 0x91f4 # Ether1
-feymarch-b4f-tailchest: 0x91f9 # Rat Tail
+feymarch-b4f-clockwise-1: 0xa91f4 # Ether1
+feymarch-b4f-tailchest: 0xa91f9 # Rat Tail
 feymarch-b4f-clockwise-3: 0xa91fe # 2000
 feymarch-b4f-clockwise-4: 0xa9203 # 3000
 feymarch-secret-top-left: 0 # Samurai Bow
