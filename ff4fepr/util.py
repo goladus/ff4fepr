@@ -46,6 +46,10 @@ def gp2intbyte(gp):
         return (0x80 | (gp // 1000))
 
 
+def gp2i(gp):
+    return hex(gp2intbyte(gp))
+
+
 def dumpaddrs(start, count, increment):
     for x in range(start, start+(count*increment), increment):
         print(hex(x))

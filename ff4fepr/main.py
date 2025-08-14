@@ -193,6 +193,10 @@ def main(args):
         weapons.modify_weapon(romdata, args.modify_weapon)
     if args.modify_armor is not None:
         armor.modify_armor(romdata, args.modify_armor)
+    if args.set_cure2_chests:
+        chests.set_cure2_chests_for_checking(romdata)
+    if args.revert_cure2_chests:
+        chests.revert_cure2_chests(romdata)
     if args.dump_weapon is not None:
         weapons.dump_weapon(romdata, args.dump_weapon)
     if args.restore_j_drops:
@@ -201,6 +205,8 @@ def main(args):
         equip.darkknight_equip(romdata)
     if args.edit_vchest is not None:
         chests.vanichest_edit(romdata, args.edit_vchest)
+    if args.bulk_edit_vchest is not None:
+        chests.bulk_edit_vchest(romdata, args.bulk_edit_vchest)
     if args.test_levelup:
         leveldata.testludata(romdata)
     if args.test_eqtables:
