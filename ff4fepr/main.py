@@ -197,6 +197,10 @@ def main(args):
         chests.set_cure2_chests_for_checking(romdata)
     if args.revert_cure2_chests:
         chests.revert_cure2_chests(romdata)
+    if args.set_chests is not None:
+        chests.set_chests_for_checking(romdata, args.set_chests)
+    if args.revert_chests is not None:
+        chests.revert_chests(romdata, args.revert_chests)
     if args.dump_weapon is not None:
         weapons.dump_weapon(romdata, args.dump_weapon)
     if args.restore_j_drops:

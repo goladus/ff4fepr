@@ -33,6 +33,8 @@ dump-monster-values   Arg: keys to dump with each monster
 dump-weapon-by Dump weapons by element-index
 dump-spell     Dump stats for one spell
 dump-weapon    Dump stats for one weapon
+set-chests     Set chests for checking [life]
+revert-chests  Revert chests for checking [life]
 test-encoding  Prints the ff4 hex codes for provided string
 modify-offset  Modify an arbitrary byte by offset <offset>=<value>
 modify-monster modifies a monster value <num>:<key>=<value>,<key>=<value>
