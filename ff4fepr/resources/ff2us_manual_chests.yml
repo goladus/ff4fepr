@@ -405,37 +405,37 @@ giant-passage: 0xa8ddf # Elixir
 
 
 lunar-b1: 0xa94c9 # Ninja Garb
-lunar-b2-door: 0 # Dragoon Shield
-lunar-b2-pale: 0 # Life Staff
-lunar-b2-tunnel: 0 # Flame Whip
-lunar-b3-1: 0 # Dragoon Helm
-lunar-b3-2: 0 # Dragoon Armor
-lunar-b3-3: 0 # Dragoon Gauntlet
-lunar-b4-top: 0 # Artemis Arrows
-lunar-b4-bottom: 0 # Stardust Rod
-lunar-b5-top: 0 # Crystal Shield
-lunar-secret-2: 0 # Protect Ring
-lunar-b5-topright: 0 # Crystal Armor
-lunar-b5-middle: 0 # Crystal Gauntlet
-lunar-b5-bottom: 0 # Crystal Helm
-lunar-b6-topleft: 0 # Artemis Arrows
-lunar-b6-topright: 0 # Ninja Star
-lunar-b6-bridge: 0 # Cabin
-lunar-secret-1: 0 # Life1 | AuApple
-lunar-core1-1: 0 # Ninja Star
-lunar-core2-1: 0 # Elixir
-lunar-core2-2: 0 # Whistle
-lunar-core3-left: 0 # Ninja Star
-lunar-core3-right: 0 # Ninja Star
-lunar-b4-smallroom: 0 # Elixir
-lunar-b4room-right: 0 # Cure3 | Blizzard
-lunar-b4room-left: 0 # Cure3
-lunar-b5-passage1: 0 # Protect Ring
-lunar-b5-passage2: 0 # White Robes
-lunar-b5-pinkpuff: 0 # Cabin | Firebomb
-lunar-b6-minerva: 0 # Minerva 
-dlunar-left: 0 # Ribbon
-dlunar-right: 0 # Ribbon
+lunar-b2-door: 0xa94dd # Dragoon Shield
+lunar-b2-pale: 0xa94e2 # Life Staff
+lunar-b2-tunnel: 0xa94e7 # Flame Whip
+lunar-b3-1: 0xa94fb # Dragoon Helm
+lunar-b3-2: 0xa9500 # Dragoon Armor
+lunar-b3-3: 0xa9505 # Dragoon Gauntlet
+lunar-b4-top: 0xa950f # Artemis Arrows
+lunar-b4-bottom: 0xa9514 # Stardust Rod
+lunar-b5-top: 0xa952d # Crystal Shield
+lunar-secret-2: 0xa95e6 # Protect Ring
+lunar-b5-topright: 0xa9537 # Crystal Armor
+lunar-b5-middle: 0xa953c # Crystal Gauntlet
+lunar-b5-bottom: 0xa9541 # Crystal Helm
+lunar-b6-topleft: 0xa955f # Artemis Arrows
+lunar-b6-topright: 0xa9564 # Ninja Star
+lunar-b6-bridge: 0xa9569 # Cabin
+lunar-secret-1: 0xa956e # Life1 | AuApple
+lunar-core1-1: 0xa959b  # Ninja Star
+lunar-core2-1: 0xa95aa # Elixir
+lunar-core2-2: 0xa95af # Whistle
+lunar-core3-left: 0xa95b9 # Ninja Star
+lunar-core3-right: 0xa95be # Ninja Star
+lunar-b4-smallroom: 0xa95d2 # Elixir
+lunar-b4room-right: 0xa95d7 # Cure3 | Blizzard
+lunar-b4room-left: 0xa95dc # Cure3
+lunar-b5-passage1: 0xa9532 # Protect Ring
+lunar-b5-passage2: 0xa95f5 # White Robes
+lunar-b5-pinkpuff: 0xa95ff # Cabin | Firebomb
+lunar-b6-minerva: 0xa9609 # Minerva 
+dlunar-left: 0xa9613 # Ribbon
+dlunar-right: 0xa9618 # Ribbon
 
 
 
