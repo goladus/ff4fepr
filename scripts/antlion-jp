@@ -1,0 +1,10 @@
+#!/bin/bash
+FF2US_ROM=$1
+shift
+
+ff4fe-post-randomizer --edit-vchest antlion-b1f-6=SilkWeb $FF2US_ROM "$@"
+ff4fe-post-randomizer --edit-vchest antlion-b1f-5=Cure2 $FF2US_ROM "$@"
+ff4fe-post-randomizer --edit-vchest antlion-b2f-1=Notus $FF2US_ROM "$@"
+ff4fe-post-randomizer --edit-vchest antlion-b2f-2=SilkWeb $FF2US_ROM "$@"
+ff4fe-post-randomizer --edit-vchest antlion-b2f-3=Life1 $FF2US_ROM "$@"
+ff4fe-post-randomizer --edit-vchest antlion-save-3=Exit $FF2US_ROM "$@"

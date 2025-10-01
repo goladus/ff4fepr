@@ -1,0 +1,22 @@
+feymarch-b1f-top-left: Ether1
+feymarch-b1f-top-right: Life1
+feymarch-b1f-bottom-right: Cure2
+feymarch-b2f-top: Cabin
+feymarch-b2f-bottom: Cure2
+feymarch-b3f-top: "Defense Sword"
+feymarch-b3f-bottom-left-1: Cure2
+feymarch-b3f-bottom-left-2: Poison Axe
+feymarch-b3f-bottom-left-3: Ninja Blade
+feymarch-b3f-bottom-middle: Life1
+feymarch-b3f-bottom-right: Cure3
+feymarch-b4f-clockwise-2: 2000
+feymarch-b4f-clockwise-1: Ether1
+feymarch-b4f-tailchest: "Rat Tail"
+feymarch-b4f-clockwise-3: 2000
+feymarch-b4f-clockwise-4: 3000
+feymarch-secret-top-left: "Samurai Bow"
+feymarch-secret-bottom-left: "Samurai Arrows"
+feymarch-secret-top-right: Ether2
+feymarch-secret-bottom-right: Elixir
+feymarch-save-left: Heal
+feymarch-save-right: Life1
